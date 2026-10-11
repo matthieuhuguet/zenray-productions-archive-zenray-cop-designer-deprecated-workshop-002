@@ -1,0 +1,21 @@
+{
+  "name": "sdftorgb",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/sdftorgb.html",
+  "status": "ok",
+  "summary_en": "SDF to RGB converts a 2D signed distance field into an RGB colour layer. It draws the shape, outline and shadow that the field defines, with colours set by parameters or colour ramps.",
+  "inputs": [
+    "sdf: the SDF mono layer to convert; the output is one rgb layer"
+  ],
+  "key_parameters": [
+    "Background: Background Color, Iso Range, Color Ramp",
+    "Shape: Draw Shape, Shape Color, Iso Distance, Color Ramp",
+    "Outline: Draw Outline, Outline Color, Outline Width, Alignment (inside, outside or centered)",
+    "Shadowing: Draw Shadowing, Shadow Density, Shadow Falloff, Shadow Color",
+    "SDF: Iso Value (higher values enlarge the shape), Onion Skin, Smooth, Anti-Aliasing, Invert"
+  ],
+  "caveats": [
+    "The page lists no specific limitations",
+    "The input must be a mono SDF layer; ramp remapping applies only when a colour menu is set to Use Ramp"
+  ],
+  "resume_fr": "Le nœud SDF to RGB transforme un champ de distance signé 2D en couche RGB, avec la forme, le contour et l'ombre qu'il définit."
+}

@@ -1,0 +1,19 @@
+{
+  "name": "stash",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/stash.html",
+  "status": "ok",
+  "summary_en": "Stash caches whatever its input produces when the Stash Input button is clicked, then outputs that saved copy. It never passes the input through live, so it can break a live dependency that would otherwise create a cycle.",
+  "inputs": [
+    "source: original layer to stash"
+  ],
+  "key_parameters": [
+    "Signature: Select Automatically (matches the stashed input type) or Cable (stash several inputs at once)",
+    "Layer Stash (internal name stash): data parameter storing the cached input",
+    "Stash Input: cooks the input and caches it into Layer Stash, click again to recache after the input changes"
+  ],
+  "caveats": [
+    "Stashed data is saved inside the node with the scene, so large geometry can significantly increase the .hip file size",
+    "Caching is manual and does not follow time, the output does not update until Stash Input is clicked again"
+  ],
+  "resume_fr": "Stash met en cache le résultat de son entrée au clic sur un bouton, puis renvoie cette copie figée, ce qui permet de briser un cycle de dépendance."
+}

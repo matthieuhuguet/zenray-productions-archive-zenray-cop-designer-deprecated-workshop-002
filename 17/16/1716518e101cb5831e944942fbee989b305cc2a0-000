@@ -1,0 +1,25 @@
+{
+  "name": "pyro_lightscatter",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/pyro_lightscatter.html",
+  "status": "ok",
+  "summary_en": "Builds a light field representing the internal glow produced when light scatters inside a VDB's emission, so dense smoke can appear to glow from its core. Several instances can be chained; the result can feed Rasterize Volume to render lit smoke.",
+  "inputs": [
+    "density: Float VDB setting the scattering medium and the topology of the light field; light appears only where density is active",
+    "emission: Float VDB used as the emission source, scaled and color-mapped before use",
+    "light (optional): Vector VDB whose existing illumination is added to, allowing chained lights"
+  ],
+  "key_parameters": [
+    "Density Scale: multiplies density, so light is occluded more quickly",
+    "Absorption: how much emitted light is absorbed by particles rather than scattered further",
+    "Emission Scale: global multiplier on the emission VDB",
+    "Emission Color Ramp: maps emission values to color",
+    "Iterations: number of diffusion passes spreading the light; emission acts as a source term; usually stopped early for speed and look",
+    "MipMap Level (Quality): computes scatter at reduced resolution; level 1 runs at half resolution with half the iterations, about 16 times faster, then interpolates back"
+  ],
+  "caveats": [
+    "Requires DOP-level permissions; not in Houdini Core, only in Houdini FX, Apprentice, Indie and Education",
+    "The light field exists only where density is active, so the density VDB defines its extent",
+    "Iterations are typically limited rather than run to convergence, trading physical accuracy for speed and artistic control"
+  ],
+  "resume_fr": "Pyro Light Scatter calcule la lueur interne produite par la diffusion de la lumière dans l'émission d'un VDB, pour faire paraître la fumée dense lumineuse de son cœur."
+}

@@ -1,0 +1,37 @@
+{
+  "name": "remap",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/remap.html",
+  "status": "ok",
+  "summary_en": "Remap rescales the values of a layer, VDB or attribute from one range to another. It can also apply a threshold, which turns values into a hard or soft step around a midpoint. The page is documented for Houdini 22.0.",
+  "inputs": [
+    "source: original layer, VDB or attribute to remap",
+    "input_min: optional per-pixel override for the Input Min parameter; must match the source type",
+    "input_max: optional per-pixel override for the Input Max parameter",
+    "output_min: optional per-pixel override for the Output Min parameter",
+    "output_max: optional per-pixel override for the Output Max parameter",
+    "ramp: optional per-pixel remap ramp that overrides the Ramp parameter",
+    "mask: optional per-pixel mask amount, scaled by the Mask parameter"
+  ],
+  "key_parameters": [
+    "Signature: layer type the source accepts",
+    "Mask: how much of the new value is mixed with the original; default 1 uses only the new value; also sets which RGBA channels are affected",
+    "Toggle RGB, Red, Green, Blue, Alpha: channels the node affects",
+    "Operation: Remap (range to range) or Threshold (midpoint-based step)",
+    "Compute Range: sets Input Min and Input Max from the source's minimum and maximum",
+    "Input Min / Input Max: the input range used in Remap mode",
+    "Outside Range: in Remap mode, Clamp at End, Repeat or Extend",
+    "Threshold When: in Threshold mode, Greater, Greater or Equal, Less, or Less or Equal",
+    "Threshold: in Threshold mode, the input value mapped to the midpoint of the output range",
+    "Width: in Threshold mode, the span on each side of the threshold that defines the input range",
+    "Output Min / Output Max: the output range",
+    "Use Ramp / Ramp: shapes the remapped output with a mono ramp"
+  ],
+  "caveats": [
+    "Input Min, Input Max and Outside Range apply only in Remap mode; Threshold, Threshold When and Width apply only in Threshold mode.",
+    "A Threshold of 0.5 with a Width of 0 gives a hard split, with values becoming 0 or 1.",
+    "Per-pixel inputs must be the same type as the source.",
+    "The Ramp parameter and the ramp input are used only when Use Ramp is enabled.",
+    "The Mask parameter sets the blend amount, so a value below 1 mixes in less of the remapped result."
+  ],
+  "resume_fr": "Ce nœud remet à l'échelle les valeurs d'un calque, d'un VDB ou d'un attribut d'une plage à une autre, ou les coupe en seuil."
+}

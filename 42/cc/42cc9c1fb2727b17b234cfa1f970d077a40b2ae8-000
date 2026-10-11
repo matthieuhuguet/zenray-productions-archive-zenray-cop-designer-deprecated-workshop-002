@@ -1,0 +1,30 @@
+{
+  "name": "xform",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/xform.html",
+  "status": "ok",
+  "summary_en": "Transform 3D moves a layer in 3D space. It can reposition the layer without changing its pixels, or keep the layer fixed and re-rasterize its pixels as if they had been transformed.",
+  "inputs": [
+    "source: the layer or VDB to transform"
+  ],
+  "key_parameters": [
+    "Transform Order / Rotate Order: sequence of transformations and rotations",
+    "Translate: moves the layer along X, Y and Z",
+    "Rotate: rotates about X, Y and Z, in degrees",
+    "Scale / Uniform Scale: non-uniform or uniform scaling",
+    "Shear: skews the layer across three planes",
+    "Pivot Translate / Pivot Rotate: local pivot for transformations",
+    "Invert Transformation: applies the inverse, cancelling a matching transform node",
+    "Rasterize: keeps the layer in place and re-rasterizes its pixels instead of moving the layer",
+    "Crop to Content: resizes the output to the transformed data window",
+    "Perspective Camera: forces a perspective transform when rasterizing",
+    "Border: edge handling when rasterizing (Auto, Constant, Clamp, Mirror, Wrap, Clip)",
+    "Filter: sampling method, Box by default"
+  ],
+  "caveats": [
+    "By default the node transforms the layer's placement, not its pixels, so chained transforms stay lossless",
+    "Pixels are only resampled when Rasterize is enabled",
+    "To convert back to canonical space, the page recommends a Rasterize Layer or Project on Layer COP",
+    "For fuller perspective control, the page suggests an explicit imaging layer built with Rasterize Layer instead of Perspective Camera"
+  ],
+  "resume_fr": "Déplace une couche ou un VDB en 3D sans toucher aux pixels par défaut, et ne ré-échantillonne les pixels que lorsque Rasterize est activé."
+}

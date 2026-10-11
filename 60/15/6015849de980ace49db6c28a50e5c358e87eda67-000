@@ -1,0 +1,20 @@
+{
+  "name": "sdfadjust",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/sdfadjust.html",
+  "status": "ok",
+  "summary_en": "SDF Adjust modifies a Mono signed distance field layer to reshape its shape, with settings for iso offset, outline, absolute value and invert. It has one input and one output, both named sdf.",
+  "inputs": [
+    "sdf: the SDF Mono layer to adjust"
+  ],
+  "key_parameters": [
+    "Iso Offset: crossing point treated as the border; higher values enlarge the shape, lower values shrink it",
+    "Outline: makes a hollow thin outline; the value sets the border thickness by taking the absolute value and subtracting it",
+    "Absolute Value: converts negative values to positive, leaving only a thin border",
+    "Invert: swaps positive and negative values"
+  ],
+  "caveats": [
+    "The page lists no explicit caveats",
+    "The page does not say how other input types are handled"
+  ],
+  "resume_fr": "Le nœud SDF Adjust retouche une couche SDF mono pour en modifier la forme, avec décalage d'isovaleur, contour, valeur absolue et inversion."
+}

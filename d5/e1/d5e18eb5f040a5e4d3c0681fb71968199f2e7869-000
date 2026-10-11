@@ -1,0 +1,26 @@
+{
+  "name": "normaltoheight",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/normaltoheight.html",
+  "status": "ok",
+  "summary_en": "Reconstructs a height (displacement) layer from an RGB normal layer by integrating the slopes stored in the normals. It is the inverse of Height to Normal, useful when a normal map exists but no height channel does.",
+  "inputs": [
+    "normal: an RGB layer of surface normals, in Signed or Offset format"
+  ],
+  "key_parameters": [
+    "Solver: FFT solves in the frequency domain in one fast pass; Poisson uses an iterative multigrid solver with border controls",
+    "Normal Type: Signed (-1 to 1) for geometry-style normals, or Offset (0 to 1) for normal maps",
+    "Height Scale: post-process multiplier; higher values make the result steeper",
+    "Center: the mean value the height is shifted to, since the solve fixes height only up to a constant",
+    "Iterations (Poisson only): number of multigrid V-cycles; more improves accuracy but takes longer",
+    "Smoothing Method (Poisson only): Gauss-Seidel (in place, less memory) or Jacobi (avoids checkerboard residuals, needs an extra copy)",
+    "X Borders / Y Borders: each side can be Open (height of 0), Closed (flattens toward the edge) or Periodic (wraps opposite sides together)"
+  ],
+  "caveats": [
+    "The FFT solver always treats the layer as tiling, so its borders are periodic and it has no border controls.",
+    "The Poisson solver may need more iterations to reach accuracy.",
+    "Height is recovered only up to an additive constant, so the absolute level depends on Center.",
+    "Smoothing Method is disabled when either border is set to Periodic.",
+    "When a left or bottom border is Periodic, the opposite side's own setting is ignored."
+  ],
+  "resume_fr": "Reconstruit un calque de hauteur à partir d'un calque de normales RGB, à l'inverse de Height to Normal, par une résolution FFT rapide ou Poisson itérative."
+}

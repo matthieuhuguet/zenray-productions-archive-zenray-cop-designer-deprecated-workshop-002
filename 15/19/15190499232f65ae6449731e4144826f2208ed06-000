@@ -1,0 +1,33 @@
+{
+  "name": "pyro_uniformforce",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/pyro_uniformforce.html",
+  "status": "ok",
+  "summary_en": "Pyro Uniform Force adds a constant directional force, such as a gravity-like pull on smoke or fire, to a velocity VDB. It combines the force with the incoming velocities using a chosen operation, and masks can limit where it applies. Available since Houdini 21.0.",
+  "inputs": [
+    "v: Vector VDB containing the original velocities",
+    "direction: optional Vector VDB that sets the force direction per voxel",
+    "threshold: optional Float or Vector VDB used as a threshold mask; a Vector VDB contributes its length",
+    "control: optional Float or Vector VDB used as a control mask; a Vector VDB contributes its length",
+    "angledir: optional Vector VDB that sets the per-voxel direction for the angle mask"
+  ],
+  "key_parameters": [
+    "Activation: turns the node on or off, runs only when 1",
+    "Operation: Set (replaces velocities), Add (adds to them), or Drag (blends velocities toward the direction, which is treated as a target velocity)",
+    "Uniform Scale: global multiplier for the force",
+    "Gravity Acceleration: strength of the uniform force",
+    "Direction: direction in which the force is applied",
+    "Use Terminal Velocity / Terminal Velocity: no additional force for fluid moving at or above this speed in the force direction",
+    "Scale by Timestep: consistency under substepping",
+    "Threshold Mask (Volume, Range, Ramp): default range 0.01 to 0 concentrates the effect on edges and empty regions",
+    "Control Mask (Volume, Range, Ramp): default range 0 to 1 concentrates the effect where control values are higher",
+    "Angle Mask (Angle Direction, Spread Angle, Ramp): strongest where velocities align with the reference direction; default 90 degrees",
+    "Axis Mask (Axis Direction, Axis Range, Ramp): scales the effect along a world-space axis range"
+  ],
+  "caveats": [
+    "Requires DOP-level permissions. Not available in Houdini Core.",
+    "If fluid accelerates too much, enable Terminal Velocity. If the force stops affecting the fluid too early, raise that value.",
+    "In Drag mode, Direction acts as a target velocity, not as a force.",
+    "Each mask has its own range and ramp, so the defaults may need adjusting for your setup."
+  ],
+  "resume_fr": "Ce nœud ajoute une force uniforme et directionnelle, comme une pesanteur, au champ de vitesse d'une simulation pyro, avec des masques optionnels."
+}

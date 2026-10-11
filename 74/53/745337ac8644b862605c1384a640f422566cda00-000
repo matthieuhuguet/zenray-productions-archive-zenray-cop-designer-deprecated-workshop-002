@@ -1,0 +1,17 @@
+{
+  "name": "usdmaterial",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/usdmaterial.html",
+  "status": "ok",
+  "summary_en": "Represents a USD material referenced from disk, giving USD a representation of it. It is also the target that the Texture Material Library LOP writes texture inputs into, and those inputs are driven by COPs.",
+  "inputs": [
+    "Texture map parameters are exposed as inputs, but the page does not list them or give their order. Connected inputs appear as op: references to the LOP node when the material is inspected."
+  ],
+  "key_parameters": [],
+  "caveats": [
+    "The page does not describe individual parameters. It says they are similar to the Quick Surface Material, with texture map parameters exposed as inputs. Meanings must be read in the Quick Surface Material documentation.",
+    "In Houdini 22.0, many defaults and assumptions are hardwired around the Quick Surface Material.",
+    "Texture inputs multiply with parameter values and primvars, a behaviour the page attributes to the Quick Surface Material.",
+    "On export, the USD ROP writes the connected textures to disk."
+  ],
+  "resume_fr": "Ce nœud représente un matériau USD référencé depuis le disque et sert de cible où la bibliothèque de matériaux LOP écrit les textures pilotées par les COP."
+}

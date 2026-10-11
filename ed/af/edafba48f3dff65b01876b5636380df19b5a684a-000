@@ -1,0 +1,32 @@
+{
+  "name": "pyro_turbulence",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/pyro_turbulence.html",
+  "status": "ok",
+  "summary_en": "Pyro Turbulence applies a noise-driven turbulent force to a velocity VDB, either replacing the incoming velocities or adding to them. The effect can be masked by threshold, control or axis-based fields. It is part of COP Pyro.",
+  "inputs": [
+    "v: Vector VDB containing the original velocities",
+    "threshold: optional Float or Vector VDB used as a sharp threshold mask; a Vector VDB contributes its length",
+    "control: optional Float or Vector VDB used as a smooth control mask; a Vector VDB contributes its length"
+  ],
+  "key_parameters": [
+    "Operation: Set (replaces the velocities) or Force (adds to them)",
+    "Amplitude and Amplitude Scale: overall strength and anisotropic scaling of the force",
+    "Element Size and Element Scale: size of the base noise features and their anisotropic scaling",
+    "Pulse Duration: time in seconds for the base noise level to fully change",
+    "Attenuation: how the intensity gradually decreases",
+    "Seed: initial noise offset",
+    "Use Curl Noise: divergence-free curl noise, mostly kept by pressure projection, suited to smooth motion; regular noise is faster and better for adding energy",
+    "Fractal group (Max Octaves, Lacunarity, Roughness): number of turbulence levels relative to Element Size, scale between octaves, contribution of each octave",
+    "Mask by Threshold Field: sharp on/off masking, with Range controls to soften the transition",
+    "Mask by Control Field: smooth mask on the strength of the effect",
+    "Mask along Axis: limits the effect to a world-space range along an axis, without a mask VDB"
+  ],
+  "caveats": [
+    "Requires DOP-level permissions. Not available in Houdini Core.",
+    "This turbulence differs from the Pyro Solver SOP turbulence by a factor of about 12, so settings do not transfer directly.",
+    "Roughness below 1 keeps smaller features from overwhelming larger ones.",
+    "Use threshold fields for sharp transitions and control fields for smooth ones.",
+    "The page does not specify the exact behaviour of Attenuation, Pulse Duration or the mask range controls beyond these descriptions."
+  ],
+  "resume_fr": "Ce nœud ajoute une turbulence bruitée au champ de vitesse d'une simulation pyro, avec des masques optionnels."
+}

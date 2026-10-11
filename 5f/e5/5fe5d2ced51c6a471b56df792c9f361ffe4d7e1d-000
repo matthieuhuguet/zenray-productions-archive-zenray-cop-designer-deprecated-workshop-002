@@ -1,0 +1,26 @@
+# adjacency_extrapolate
+
+- Label: Extrapolate with Adjacency
+- Category: Copernicus (`Cop`), Houdini 22.0.368
+- Inputs: 0 to 2
+- Parameters: 2 (exact, read from Houdini by hython)
+- Used by the height graph: no
+
+## Feature summary (web, SideFX reference)
+
+- Source: https://www.sidefx.com/docs/houdini/nodes/cop/adjacency_extrapolate.html
+- Summary (EN): Fills texture pixels that lie outside UV islands with color from neighboring islands, so later nodes that do not understand adjacency can process seams without empty edges. The page says it is similar to Extrapolate Boundaries but faster, and that it can prevent mipmap bleeding.
+- Résumé (FR) : Remplit avec les couleurs des îlots voisins les pixels situés hors des îlots UV, pour que les coutures ne laissent aucun bord vide.
+
+- Inputs meaning: ["texture: layer to extrapolate", "adjacency: adjacency cable from a Geometry to Adjacency COP"]
+
+- Key parameters: ["Signature: layer type accepted", "Transform Vectors between Islands: reorients directional data (velocity fields, normals) to match the rotation of neighboring islands"]
+
+- Caveats: ["Best results when the target texture matches the rasterized adjacency maps", "Vector transformation only matters for directional data, not for ordinary color textures", "Requires an adjacency cable generated upstream by the Geometry to Adjacency COP", "Introduced in Houdini 22.0"]
+
+## Parameters (exact, from the installed Houdini)
+
+| parameter | label | type | default | range | menu tokens |
+|---|---|---|---|---|---|
+| `signature` | Signature | String | ["auto"] |  |  |
+| `tangentxform` | Transform Vectors between Islands | Toggle | false |  |  |

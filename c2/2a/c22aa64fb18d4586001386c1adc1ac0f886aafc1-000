@@ -1,0 +1,22 @@
+{
+  "name": "worleynoise3d",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/worleynoise3d.html",
+  "status": "ok",
+  "summary_en": "Generates cellular Worley noise from 3D world-space positions. Unlike the 2D Worley Noise COP, which uses image coordinates, each pixel is evaluated at its world position. Output: the noise layer.",
+  "inputs": [
+    "size_ref: representative layer that sets the output image size and metadata",
+    "pos: RGB layer or Vector VDB giving the position at each pixel where the noise is evaluated"
+  ],
+  "key_parameters": [
+    "Element Size: size of the basic noise cell in world coordinates; Per-Component Controls exposes Element Scale for per-axis sizing",
+    "Jitter: random displacement of each grid point before distances are measured; Jitter Scale adds per-axis control",
+    "Metric: Euclidean (circular cells), Manhattan (diamonds), Chebyshev (squares)",
+    "Round Border: smooths the border between cells; appears only when Metric is Euclidean",
+    "Offset: shifts the whole noise field in world coordinates",
+    "Post-processing, applied in order: Complement, Bias, Gain, Gamma, Contrast, Clamp Minimum, Clamp Maximum"
+  ],
+  "caveats": [
+    "The page warns that values greater than 1 may produce artifacts because they jitter past the search radius, which applies to the Jitter setting"
+  ],
+  "resume_fr": "Génère un bruit de Worley 3D évalué aux positions monde de chaque pixel, avec taille de cellule, gigue, métrique et décalage en coordonnées monde."
+}

@@ -1,0 +1,26 @@
+{
+  "name": "pyro_disturbance",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/pyro_disturbance.html",
+  "status": "ok",
+  "summary_en": "Applies disturbance to a velocity VDB to break up still air. It adds small noisy forces to a smoke or fire velocity field; the forces cancel out over time, so overall motion and shape are preserved. Output is v, the disturbed Vector VDB.",
+  "inputs": [
+    "v: Vector VDB of the incoming velocities",
+    "threshold (optional): Float or Vector VDB limiting where the effect applies; a Vector VDB is read by its length",
+    "control (optional): Float or Vector VDB smoothly scaling the effect; a Vector VDB is read by its length"
+  ],
+  "key_parameters": [
+    "Operation: Set replaces velocities with the disturbance; Add adds it to existing velocity; Rotate turns existing velocities toward random directions without changing their length",
+    "Mode: Continuous gives each voxel its own random vector for voxel-scale detail; Block-Based layers blockwise-constant noise for larger structured patterns",
+    "Disturbance (Strength): force strength; with Rotate, the speed at which vectors turn",
+    "Reference Scale: normalizes the force against scene and voxel size; set once for the scene scale",
+    "Block Size, Pulse Length: largest noise block and hold time of each pattern (Block-Based only)",
+    "Max Octaves, Lacunarity, Roughness: number of noise layers, block-size ratio, amplitude ratio (Block-Based only)",
+    "Mask by Threshold Field, Mask by Control Field, Mask along Axis: spatial limits on the effect"
+  ],
+  "caveats": [
+    "Requires DOP-level permissions; not in Houdini Core, only in Houdini FX, Apprentice, Indie and Education",
+    "In Continuous mode, a very small voxel size can produce a noisy, undesirable look",
+    "Using density as the threshold input keeps the disturbance out of empty areas so visible smoke is not affected"
+  ],
+  "resume_fr": "Pyro Disturbance ajoute de petites forces bruitées à un champ de vitesse pour casser l'air immobile, en conservant le mouvement global."
+}

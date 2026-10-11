@@ -1,0 +1,21 @@
+{
+  "name": "slopedir",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/slopedir.html",
+  "status": "ok",
+  "summary_en": "Slope Direction converts a height layer, which represents a nominal height, into a UV layer that shows the direction of the slope. Its values are larger where the slope is steeper.",
+  "inputs": [
+    "height: a Mono layer or Float VDB representing a heightmap"
+  ],
+  "key_parameters": [
+    "Signature: the layer type the source accepts",
+    "Space: Image, Pixel or Local, the space in which the slope is computed",
+    "Angle: rotates the computed direction; 90 makes directions circle around hills instead of climbing them",
+    "Scale: adjusts the direction magnitude globally",
+    "Read Pixels outside Image: reads boundary derivatives outside the image, useful for seamless wrap textures",
+    "Kernel Size: widens the derivative distance, which removes stepping artefacts on slowly varying values"
+  ],
+  "caveats": [
+    "The slope direction is always expressed in the frame of the layer or VDB: for a layer, (1,0) points along increasing pixels across its width; for a VDB, (0,0,1) points along increasing voxels through its depth"
+  ],
+  "resume_fr": "Le nœud Slope Direction transforme une carte de hauteur en couche UV indiquant la direction de la pente, plus forte là où elle est plus raide."
+}

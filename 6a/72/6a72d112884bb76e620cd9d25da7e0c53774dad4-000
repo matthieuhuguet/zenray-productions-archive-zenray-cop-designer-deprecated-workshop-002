@@ -1,0 +1,24 @@
+{
+  "name": "planarinflate",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/planarinflate.html",
+  "status": "ok",
+  "date": "11 October 2026",
+  "summary_en": "The Planar Inflate node turns a 2D signed distance field into a smooth height layer, inflating the region inside the shape boundary. Optional wrinkle and mound noise breaks up the surface for base terrain, cushion-like shapes or texture displacement.",
+  "inputs": [
+    "sdf: layer holding the signed distance field to inflate"
+  ],
+  "key_parameters": [
+    "Height Scale: multiplies the base inflation; negative values invert it",
+    "Pre Scale: base inflation strength before the height is solved",
+    "Noise Scale: amount of Wrinkles and Mounds noise added",
+    "Wrinkles: fine phasor noise (Size, Boundary Blend, Seed)",
+    "Mounds: broader fractal noise (Size, Max Octaves, Lacunarity, Roughness)",
+    "Blur: smooths the noise and blends it with the shape (Scale, Mask from Boundary, Mask Smoothing)",
+    "Iterations: Poisson solve iterations; more gives a more converged result but is slower"
+  ],
+  "caveats": [
+    "Inflating directly at the image edge can produce artifacts; SideFX suggests adjusting the SDF radius so it stays inside the image boundary.",
+    "If the height has flat areas, increase Iterations."
+  ],
+  "resume_fr": "Le nœud Planar Inflate gonfle une distance signée 2D en hauteur lisse, avec des rides et des monticules de bruit optionnels."
+}

@@ -1,0 +1,24 @@
+{
+  "name": "vdbvisualizeslice",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/vdbvisualizeslice.html",
+  "status": "ok",
+  "summary_en": "Extracts a slice from a VDB and outputs it as mesh geometry so the voxels can be viewed directly. It matches the Volume Slice SOP but runs inside COPs. Output: slice (geometry with the extracted points).",
+  "inputs": [
+    "vdb: a Float, Vector or Integer VDB to visualize; Integer VDBs are first converted to colour through the ID to RGB COP"
+  ],
+  "key_parameters": [
+    "Signature: the VDB type the source accepts",
+    "Plane: the volume-local axis to slice along",
+    "Relative Location: place the plane relative to the volume, or in world coordinates",
+    "Position: starting point for the slice in world coordinate mode",
+    "Offset: relative mode, -1 to 1 spans the full range (0 is the centre); world mode shifts along the world axis perpendicular to the plane",
+    "Snap to Voxel: slice values come from original voxels rather than blends of two neighbours",
+    "Visualization Min / Max: VDB values mapped to the start and end of the colour ramp",
+    "Visualization Ramp: colour scheme; with multiple volumes the first three map to red, green and blue"
+  ],
+  "caveats": [
+    "Without Snap to Voxel, slice values may be blends of two voxels when the offset does not fall exactly on a voxel",
+    "In world coordinate mode on a rotated volume, the offset does not align with the volume axes"
+  ],
+  "resume_fr": "Extrait une coupe d'un VDB et la sort en géométrie pour voir les voxels directement, sans changer de contexte."
+}

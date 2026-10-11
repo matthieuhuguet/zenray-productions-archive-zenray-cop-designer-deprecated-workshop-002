@@ -1,0 +1,31 @@
+{
+  "name": "pyro_advect",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/pyro_advect.html",
+  "status": "ok",
+  "date": "11 October 2026",
+  "summary_en": "Pyro Advect moves the contents of VDB volumes along a velocity VDB, the core step for transporting smoke or fire in a Pyro simulation. It can also advect the velocity field itself, or skip that step when another Pyro Advect already did it.",
+  "inputs": [
+    "data: cable of all the VDBs to advect",
+    "v: vector VDB driving the advection, which can optionally be self-advected"
+  ],
+  "key_parameters": [
+    "Scale: global multiplier on velocity values",
+    "Ambient Velocity: constant global velocity added to the advection, usable as a wind effect",
+    "Scale by Timestep: scales velocity by the timestep",
+    "Trace Method: integration scheme per trace step, from Forward Euler (fastest, most diffusion) to Runge-Kutta 4 (most accurate, most expensive)",
+    "Path Tracing: several trace steps to follow curved paths, preserving fine detail and vortices",
+    "Maximum Steps: cap on path-tracing steps",
+    "CFL Condition: approximate voxels stepped per trace step; lower is more stable but slower",
+    "Adaptive Step Size: adjusts the step size dynamically",
+    "Enable Data Advection / Scheme: BFECC, Euler + Sharpen or Euler; BFECC preserves sharpness best but costs the most",
+    "Sharpen: counters diffusion; values that are too high cause grid artifacts",
+    "Enable Velocity Advection / Method: self-advection of the velocity VDB and its scheme; can be turned off if another node already advected it",
+    "Outputs: the advected data VDBs and the velocity VDB"
+  ],
+  "caveats": [
+    "Requires DOP-level permissions; not in Houdini Core, only in FX, Apprentice, Indie and Education.",
+    "The page covers the base node available since 21.0 and does not describe a 2.0 variant.",
+    "Search snippets listed different Trace Method options than the fetched page; the fetched page text is used here."
+  ],
+  "resume_fr": "Le nœud Pyro Advect transporte les volumes VDB le long d'un champ de vitesse, étape centrale du transport de fumée ou de feu ; la page ne couvre pas la version 2.0."
+}

@@ -1,0 +1,29 @@
+{
+  "name": "pyro_lightambient",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/pyro_lightambient.html",
+  "status": "ok",
+  "summary_en": "Builds a light field storing how much environment light reaches each voxel of a density VDB. The density shadows the light, and the result can be chained with other light nodes and passed to Rasterize Volume to render the VDB as lit smoke. Available since 21.0.",
+  "inputs": [
+    "density: Float VDB that occludes light; its topology defines the light field",
+    "mipmap (optional): Float VDB MipMap from Pyro Packed MipMap; computed internally if omitted",
+    "light (optional): Vector VDB with existing illumination; new light is added to it for chaining",
+    "envmap (optional): RGB layer holding the environment map in polar coordinates"
+  ],
+  "key_parameters": [
+    "Exposed Color: tint of light on voxels exposed to the surroundings (normally white)",
+    "Occluded Color: light color in shadowed voxels (normally black); white occluded with dark exposed gives a self-lit look suited to clouds",
+    "Intensity: linear brightness",
+    "Exposure: exponential brightness; each +1 doubles brightness",
+    "Density Scale: how fast density occludes light",
+    "Environment Map Offset: rotation of the environment map around the Y axis",
+    "Steps Per MipMap: tracing steps before moving to the next MipMap level for occlusion rays",
+    "Max Steps: maximum samples per occlusion ray",
+    "Environment Map Resolution: resolution the environment map is resampled to, to avoid aliasing from few rays",
+    "MipMap Level: starting level; level 1 computes at half resolution and interpolates back, which the page says is more than eight times faster"
+  ],
+  "caveats": [
+    "Requires DOP-level permissions; not in Houdini Core, only in Houdini FX, Apprentice, Indie and Education",
+    "Starting at MipMap level 1 trades resolution for speed, since light is computed at half resolution then interpolated"
+  ],
+  "resume_fr": "Pyro Light Ambient calcule la lumière d'environnement atteignant chaque voxel d'un VDB de densité, la densité projetant son ombre, pour un rendu de fumée éclairée."
+}

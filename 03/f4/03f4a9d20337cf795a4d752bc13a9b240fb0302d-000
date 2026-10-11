@@ -1,0 +1,44 @@
+# alignpixels
+
+- Label: Align Pixels
+- Category: Copernicus (`Cop`), Houdini 22.0.368
+- Inputs: 0 to 2
+- Parameters: 20 (exact, read from Houdini by hython)
+- Used by the height graph: no
+
+## Feature summary (web, SideFX reference)
+
+- Source: https://www.sidefx.com/docs/houdini/nodes/cop/alignpixels.html
+- Summary (EN): Shifts a layer so it lines up pixel-for-pixel with a reference layer. It snaps the layer into the reference pixel grid, matching pixel size and orientation, then applies an integer-pixel translation. Intended mainly for pixel-perfect overlays such as sprite grids or watermarks.
+- Résumé (FR) : Cale une couche sur la grille de pixels d'une référence, au pixel près, pour les superpositions exactes comme les grilles de sprites ou les filigranes.
+
+- Inputs meaning: ["source: layer to align", "size_ref (optional): reference layer to align to"]
+
+- Key parameters: ["Snapping: point of the source (Data Window or Display Window) that is snapped, with Side Y and Side X", "Justify with: reference or source Data / Display Window, or a Target Point", "Units: Image, Texture, Pixels or World, applied to size_ref", "Target Point: point to align to, interpreted in the chosen Units", "Justify X / Justify Y: None, Min, Center or Max", "Goal X / Goal Y: Same, Min, Center or Max", "Offset by: extra pixel nudge applied after the computed alignment"]
+
+- Caveats: ["The alignment translation is always a whole number of pixels, with no interpolation, so the input is fully preserved", "If the source differs in scale or rotation, points other than the snapping point may drift away from their snapped locations", "No resizing is possible; a Target Point gives only a single point to align to", "Available since Houdini 22.0"]
+
+## Parameters (exact, from the installed Houdini)
+
+| parameter | label | type | default | range | menu tokens |
+|---|---|---|---|---|---|
+| `snapwindow` | Snapping | Menu | 0 |  | data, display |
+| `snapsidey` | Side | Menu | 1 |  | bottom, center, top |
+| `snapsidex` | Side | Menu | 1 |  | left, center, right |
+| `targettype` | Justify with | Menu | 1 |  | refdata, refdisplay, data, display, point |
+| `targetpointunits` | Units | Menu | 0 |  | image, texture, pixel, world |
+| `targetpointx` | Target Point | Float | 0.0 | -1.0 .. 1.0 |  |
+| `targetpointy` | Target Point | Float | 0.0 | -1.0 .. 1.0 |  |
+| `targetpoint_texturex` | Target Point | Float | 0.5 | 0.0 .. 1.0 |  |
+| `targetpoint_texturey` | Target Point | Float | 0.5 | 0.0 .. 1.0 |  |
+| `targetpoint_pixelx` | Target Point | Float | 0.0 | 0.0 .. 2048.0 |  |
+| `targetpoint_pixely` | Target Point | Float | 0.0 | 0.0 .. 2048.0 |  |
+| `targetpoint_worldx` | Target Point | Float | 0.0 | -10.0 .. 10.0 |  |
+| `targetpoint_worldy` | Target Point | Float | 0.0 | -10.0 .. 10.0 |  |
+| `targetpoint_worldz` | Target Point | Float | 0.0 | -10.0 .. 10.0 |  |
+| `justify_x` | Justify X | Menu | 0 |  | none, min, center, max |
+| `goal_x` | Goal X | Menu | 0 |  | same, min, center, max |
+| `offset_x` | Offset by | Int | [0] | -20 .. 20 |  |
+| `justify_y` | Justify Y | Menu | 0 |  | none, min, center, max |
+| `goal_y` | Goal Y | Menu | 0 |  | same, min, center, max |
+| `offset_y` | Offset by | Int | [0] | -20 .. 20 |  |

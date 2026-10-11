@@ -1,0 +1,26 @@
+{
+  "name": "worleynoise",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/worleynoise.html",
+  "status": "ok",
+  "summary_en": "Generates Worley (cellular) noise by measuring distances to a set of points on a grid, useful for cell-like textures. For world-space positions, use Worley Noise 3D. Output: the noise layer.",
+  "inputs": [
+    "size_ref: reference layer that sets the output image size and metadata",
+    "pos (optional): UV layer that replaces the pixel's image coordinates as the noise source"
+  ],
+  "key_parameters": [
+    "Type Info: type information for the output layer",
+    "Element Size: size of the basic noise cell in image coordinates; Element Scale adjusts it per axis when Per-Component Controls is on",
+    "Jitter: random offset of each grid point before distances are measured; Jitter Scale adjusts it per axis",
+    "Lattice Type: square (rectangular) grid or simplicial grid (hexagonal cells)",
+    "Metric: Euclidean (circular cells), Manhattan (diamond), Chebyshev (square)",
+    "Round Border: smooths cell borders, Euclidean only",
+    "Offset: shifts the whole noise pattern",
+    "Tile Size: repeat size so the noise can tile",
+    "Post Processing, applied in order: Complement, Bias, Gain, Gamma, Contrast, Clamp Minimum, Clamp Maximum"
+  ],
+  "caveats": [
+    "The page warns that values greater than 1 may produce artifacts because they jitter past the search radius",
+    "Complement assumes values between 0 and 1, so results can go out of range with other inputs"
+  ],
+  "resume_fr": "Génère un bruit cellulaire de Worley en 2D à partir de distances à une grille de points, avec taille, gigue, métrique et post-traitement réglables."
+}

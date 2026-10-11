@@ -1,0 +1,22 @@
+{
+  "name": "timeloop",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/timeloop.html",
+  "status": "ok",
+  "summary_en": "Repeats a range of frames from its input to create a looping animation. It can also blend the input over time so the wrap point is less visible.",
+  "inputs": [
+    "source: the VDB, Layer or Attribute to loop."
+  ],
+  "key_parameters": [
+    {"name": "Signature", "meaning": "The layer type the source accepts."},
+    {"name": "Frame Start", "meaning": "Frame where the loop begins. Output frame numbers match input frame numbers."},
+    {"name": "Frame Length", "meaning": "Number of frames in the loop."},
+    {"name": "Loop Type", "meaning": "Cycle jumps back to the start frame. Zig-Zag plays backwards at the end. Blend mixes in a copy offset by half the length."},
+    {"name": "Blend Shape", "meaning": "Used with Blend. Linear gives a harsh sawtooth pattern, Cosine gives a smooth curve."}
+  ],
+  "caveats": [
+    "The output keeps the input frame numbering. To start the output at frame 1, the page suggests a Time Shift COP.",
+    "Zig-Zag is seamless, but the reversal of time is obvious.",
+    "Cycle gives a clean loop only if the source already loops seamlessly."
+  ],
+  "resume_fr": "Ce nœud répète une plage d'images de sa source pour créer une animation bouclée, avec un mode Cycle, Zig-Zag ou Blend pour masquer la jointure."
+}

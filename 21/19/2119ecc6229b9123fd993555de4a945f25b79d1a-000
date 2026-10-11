@@ -1,0 +1,21 @@
+{
+  "name": "uvinverse",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/uvinverse.html",
+  "status": "ok",
+  "summary_en": "Computes the inverse of a UV distortion map. The inverse tells Sample COPs where to read from a texture for each image pixel, which can be used to undo lens distortion.",
+  "inputs": [
+    "size_ref: representative layer that sets the output image size and controls metadata.",
+    "uv: the UV distortion map, in texture or image space, to be inverted.",
+    "valid: Mono layer marking which UV pixels contain valid mapping data. Pixels below 0.5 are ignored."
+  ],
+  "key_parameters": [
+    {"name": "Space", "meaning": "Coordinate space of the map. A texture map is stretched to 0..1, and an image map is fitted to -1..1."},
+    {"name": "Polish Iterations", "meaning": "Refines the mapping by iterating the forward and backward maps."},
+    {"name": "Diffuse Iterations", "meaning": "Number of iterations that fill gaps where texture pixels have no image-space equivalent. More iterations improve intermediate values."}
+  ],
+  "caveats": [
+    "The page notes that a distortion map is often not invertible, so one texture coordinate may map to several image locations.",
+    "Use the valid input to limit where the inversion is computed."
+  ],
+  "resume_fr": "Ce nœud calcule l'inverse d'une carte de distorsion UV, pour indiquer aux Sample COP où lire chaque pixel, par exemple afin d'annuler une distorsion d'objectif."
+}

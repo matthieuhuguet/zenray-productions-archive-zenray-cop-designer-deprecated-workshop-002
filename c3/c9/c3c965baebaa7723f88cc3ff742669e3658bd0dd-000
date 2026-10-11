@@ -1,0 +1,26 @@
+{
+  "name": "vdbvisualize",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/vdbvisualize.html",
+  "status": "ok",
+  "summary_en": "Builds a Geometry output that displays several VDBs together as one coloured volume. It works like the Volume Visualization SOP, usable inside COPs without switching context.",
+  "inputs": [
+    "density: Float VDB giving the fog density",
+    "Cd: Float or Vector VDB giving the colour of each voxel",
+    "emit: Float VDB giving the magnitude of self-emission",
+    "emitcd: Float or Vector VDB giving the emission colour"
+  ],
+  "key_parameters": [
+    "Signature: the VDB type the source accepts",
+    "Density Scale: fixed multiplier controlling opacity; Density Ramp remaps the density colour",
+    "Diffuse Color: Input Range remaps the input colour to 0-1; Mode sets how the ramp applies; Diffuse Ramp maps to the final colour",
+    "Emission: Emission Scale sets glow intensity; Input Range, Mode and Emission Ramp shape the emission amount",
+    "Emission Color: Input Range, Mode and Emission Color Ramp shape the emission colour",
+    "Shadows: Shadow Scale adds density for light-driven shadowing; Set Ambient Colors enables Exposed Color and Occluded Color; Ambient Shadow Scale sets self-shadow intensity from ambient lights; Shadow Color tints shadows"
+  ],
+  "caveats": [
+    "Use no ramp when unbounded values are needed, such as light-field colours or emission",
+    "At a larger scene scale, a smaller Density Scale may be needed",
+    "The page states that turning off a checkbox does not disable ambient shadowing; without an Ambient Shadow Scale, the Ambient Occlusion setting in Display Options controls default self-shadowing"
+  ],
+  "resume_fr": "Assemble plusieurs VDB (densité, couleur, émission, couleur d'émission) en un volume coloré affichable directement dans un réseau COP."
+}

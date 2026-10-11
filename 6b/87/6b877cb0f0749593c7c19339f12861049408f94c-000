@@ -1,0 +1,25 @@
+{
+  "name": "pointgenerate",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/pointgenerate.html",
+  "status": "ok",
+  "date": "11 October 2026",
+  "summary_en": "The Point Generate node adds new points to a point cloud. It always outputs a point cloud, and if the geometry has an id point attribute, the new points receive sequential IDs.",
+  "inputs": [
+    "points: geometry to append to, or reference for point attributes",
+    "ref (optional): source for the count attribute and original point values",
+    "count (optional): integer attribute used as the count; in point mode it must match the size of the source points"
+  ],
+  "key_parameters": [
+    "Method: fixed Number of Points, per-point or detail count attribute, or Points per Second using the current timestep",
+    "Seed: decides whether fractional points in Points per Second mode are kept; must change over time to avoid bias",
+    "Count Attribute: name of the attribute holding the count",
+    "Copy Attributes: pattern of source point attributes copied to new points; unmatched attributes keep defaults",
+    "Append Points: on adds to the input geometry; off outputs only the new points",
+    "nextid / idstep (detail attributes): starting ID and spacing for new points"
+  ],
+  "caveats": [
+    "The output is always a point cloud, so incoming primitives are lost.",
+    "Available since Houdini 22.0."
+  ],
+  "resume_fr": "Le nœud Point Generate ajoute des points à un nuage, selon un nombre fixe, un attribut de comptage ou un débit par seconde."
+}

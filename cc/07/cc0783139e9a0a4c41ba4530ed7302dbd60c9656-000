@@ -1,0 +1,33 @@
+{
+  "name": "raytrace",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/raytrace.html",
+  "status": "ok",
+  "summary_en": "Ray Trace casts rays from a per-pixel origin and direction map against input geometry, and reports the first hit with its position and geometric normal. It can bake maps such as occlusion, cavity, curvature, thickness, edge and rounded normal by tracing secondary rays, and it can write geometry attribute values at each hit into output layers. The page does not state its internal name; the Copernicus index links raytrace.html.",
+  "inputs": [
+    "geometry: mesh to trace against",
+    "origins: RGB map of the positions rays start from",
+    "directions: RGB map of the orientations rays travel along; pixels with zero direction cast no ray",
+    "tracesets: ID layer assigning each ray a trace set, so it only hits matching geometry",
+    "lengths: mono layer of ray lengths; unused when Ray Length Mode is Endless"
+  ],
+  "key_parameters": [
+    "Tracer: the backend, shown according to the available hardware",
+    "Ray Bias: offsets each ray origin along its direction",
+    "Face Culling: ignores primary-ray hits on front or back faces, or uses all polygons",
+    "Visibility Culling: same for secondary rays, such as those used for occlusion",
+    "Trace Direction: forward, reverse or both",
+    "Ray Length Mode / Ray Length: custom maximum length, or Endless",
+    "Trace Set Attribute: geometry attribute matched against the tracesets layer",
+    "Map toggles (Occlusion, Cavity, Curvature, Thickness, Edge, Rounded Normal): each bakes its map when enabled, with its own sample count and settings such as Max Distance, Bias, Radius or Cusp Angle",
+    "Custom Attributes: number of attributes to rasterize, with each name and output type"
+  ],
+  "caveats": [
+    "Optix is available only on NVIDIA hardware.",
+    "When a map toggle is off, its output is a Null layer.",
+    "Noisy maps need more samples; a smaller Max Distance is faster but less accurate.",
+    "In Endless mode, rays that point at nothing are not fired.",
+    "Custom attributes must be integers or floats with four or fewer components, and their names must match attributes on the geometry; they can be Point, Vertex or Primitive attributes.",
+    "Trace-set filtering works only when the tracesets IDs match the geometry's Trace Set Attribute values."
+  ],
+  "resume_fr": "Ce nœud lance des rayons contre une géométrie pour trouver le premier impact, et peut cuire des cartes comme l'occlusion ou la courbure."
+}

@@ -1,0 +1,20 @@
+{
+  "name": "pointmerge",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/pointmerge.html",
+  "status": "ok",
+  "date": "11 October 2026",
+  "summary_en": "The Point Merge node combines several point cloud geometries into one by gathering the points of all its inputs into a single output point cloud.",
+  "inputs": [
+    "basepoints: geometry inputs; each input's points are appended to form the final point cloud"
+  ],
+  "key_parameters": [
+    "None documented; the Parameters section of the page is empty."
+  ],
+  "caveats": [
+    "The output uses the attributes of the first input.",
+    "Only points are output.",
+    "The page does not explain how attributes from the other inputs are handled.",
+    "Available since Houdini 22.0."
+  ],
+  "resume_fr": "Le nœud Point Merge fusionne plusieurs nuages de points en un seul, en reprenant les attributs du premier entrant ; la page ne documente aucun paramètre."
+}

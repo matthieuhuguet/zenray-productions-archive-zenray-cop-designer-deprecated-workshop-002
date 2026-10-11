@@ -1,0 +1,23 @@
+{
+  "name": "pyro_configure",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/pyro_configure.html",
+  "status": "ok",
+  "summary_en": "Sets up the starting configuration of a Pyro simulation by determining its voxel size. Also generates placeholder VDBs that give Pyro Block Begin the reference field it needs. Output is vdb_ref, the VDB reference controlling the initial voxel size.",
+  "inputs": [
+    "vdb_ref (optional): float VDB used to set the voxel size",
+    "camera_ref: camera reference, used only when Divisions is set to Coverage",
+    "centroid_ref: point geometry marking the center of the simulation, used only when Divisions is set to Coverage"
+  ],
+  "key_parameters": [
+    "Divisions: Voxel Size uses world units and suits fully 3D simulations; Resolution derives voxel size from a default 2-unit square imaging plane (voxel size = 2 / Resolution); Coverage sizes voxels from camera resolution and distance so invisible detail is not simulated",
+    "Voxel Size: size of one voxel in world coordinates",
+    "Resolution: simulation resolution when it fills the standard imaging plane",
+    "Pixel Coverage: number of screen pixels covering one voxel; default 2.5",
+    "Min Voxel Size: when enabled, prevents voxels from becoming smaller than a set minimum (labeled Min Vozel Size on the page)"
+  ],
+  "caveats": [
+    "Requires DOP-level permissions; not in Houdini Core, only in Houdini FX, Apprentice, Indie and Education",
+    "camera_ref and centroid_ref matter only in Coverage mode"
+  ],
+  "resume_fr": "Pyro Configure fixe la taille des voxels d'une simulation Pyro et fournit la référence de volume attendue par Pyro Block Begin."
+}

@@ -1,0 +1,29 @@
+{
+  "name": "triplanar",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/triplanar.html",
+  "status": "ok",
+  "summary_en": "Generates a texture by projecting X, Y and Z textures onto a position layer. When position and normal layers come from rasterized geometry, it blends the three projections so they join without visible seams.",
+  "inputs": [
+    "position: the position layer from a geometry.",
+    "world normal: the normal vector field layer from a geometry.",
+    "texture: a uniform texture used for all three projections.",
+    "x_texture: texture for the X projection.",
+    "y_texture: texture for the Y projection.",
+    "z_texture: texture for the Z projection."
+  ],
+  "key_parameters": [
+    {"name": "Normal Type", "meaning": "Signed (-1 to 1) for geometry normals, or Offset (0 to 1) for normal maps."},
+    {"name": "Texture Source", "meaning": "Uniform Texture uses the single texture input. Texture Per Axis uses the X, Y and Z inputs."},
+    {"name": "Scale, Rotate, Offset", "meaning": "Global controls for the texture in each projection direction. A smaller scale tiles the texture more."},
+    {"name": "Per-axis Scale, Rotation, Offset", "meaning": "Separate settings for the X, Y and Z projections."},
+    {"name": "Blend, X-Z Blending, Y Blend", "meaning": "Ramp controls that adjust how the projections mix."},
+    {"name": "Filter Scale", "meaning": "Anti-aliasing for non-identity UV maps. Defaults to the voxel size."},
+    {"name": "Filter", "meaning": "Sampling method used for the image."}
+  ],
+  "caveats": [
+    "Seamless blending depends on position and normal layers being in image coordinates, typically from rasterized geometry.",
+    "If the blend ramps are not properly interpolated, visible seams can appear between the projections.",
+    "The output is a single triplanar cable containing both colour information and normal vectors."
+  ],
+  "resume_fr": "Ce nœud projette des textures selon X, Y et Z sur une couche de position, puis mélange les trois projections pour éviter les coutures sur une géométrie rastérisée."
+}

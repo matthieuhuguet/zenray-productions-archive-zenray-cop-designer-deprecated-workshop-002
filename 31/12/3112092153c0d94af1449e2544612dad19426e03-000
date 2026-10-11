@@ -1,0 +1,21 @@
+{
+  "name": "sopinvoke",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/sopinvoke.html",
+  "status": "ok",
+  "summary_en": "SOP Invoke runs a compiled SOP block on its inputs. It converts incoming COP layers into geometry and passes that geometry to the block's matching inputs.",
+  "inputs": [
+    "input1, input2, ...: each receives COP data converted to geometry for the matching input of the compiled SOP block; the count is set by the Inputs parameter"
+  ],
+  "key_parameters": [
+    "Inputs: number of inputs",
+    "Input #: name (not a path) of the Input Name on the Block Begin Compile SOP inside the subnetwork that this input overrides",
+    "Outputs: number of outputs",
+    "Output Node #: path to the Block End Compile SOP of the block to run",
+    "Unload Behavior: Never (cache), Use Node's Flag, or Always (no cache, default, less memory)"
+  ],
+  "caveats": [
+    "Node parameters inside the invoked block are evaluated in their original locations, not through this node's interface",
+    "Distinct from the Invoke Block node listed in the same category"
+  ],
+  "resume_fr": "SOP Invoke exécute un bloc SOP compilé sur des entrées COP converties en géométrie, qu'il reçoit sur ses entrées correspondantes."
+}

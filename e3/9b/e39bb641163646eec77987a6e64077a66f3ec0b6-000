@@ -1,0 +1,30 @@
+{
+  "name": "opencl",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/opencl.html",
+  "status": "ok",
+  "summary_en": "Runs a custom OpenCL kernel on Copernicus layers, attributes, volumes and VDBs. It binds constants and data to kernel parameters so processing stays on the GPU, which the page recommends over VEX for COPs.",
+  "inputs": [
+    "No fixed list. Inputs are defined on the Signature tab, and each has a name that the #bind command references. Types include Varying, ID, Mono, UV, RGB and RGBA layers; Geometry (referenced by name in attribute or volume bindings); Metadata (used for size and metadata only); Integer, Float, Vector and Varying VDB; and an Optional flag."
+  ],
+  "key_parameters": [
+    "Kernel Code: the #bind commands and an @KERNEL function containing the kernel logic",
+    "Run Over: the target, first writeable layer, attribute, volume or VDB",
+    "Kernel Name / Write Back Kernel Name: the main kernel, and an optional @WRITEBACK kernel run with the same parameters to avoid write races",
+    "Compiler Options: compile flags, typically -D defines",
+    "Layer Tile Size / VDB Tile Size: block size each kernel run processes",
+    "Kernel Iterations: re-runs the kernel repeatedly while data stays on the GPU",
+    "Include Time / Include Timestep / Time Scale: bind @Time and @TimeInc",
+    "Precision: fpreal and exint types at 16, 32 or 64 bits, or Auto",
+    "Signature and Bindings tabs: define ports and parameters; the Create inputs and spare parameters button usually sets these up",
+    "Timing Messages: synchronises kernels so profiling is accurate"
+  ],
+  "caveats": [
+    "Solid OpenCL knowledge is required, since incorrect code is easy to write.",
+    "Geometry cannot be bound as a layer. Refer to it by name in an attribute or volume binding.",
+    "If the global @P binding exists, binding P again causes a duplicate. Use a different name such as name=P and access it as @geoP.",
+    "@P is not bound when running over attributes.",
+    "16-bit (half) precision often cannot be used for computation in most drivers.",
+    "The page gives no complete kernel code examples."
+  ],
+  "resume_fr": "Exécute un noyau OpenCL personnalisé sur des calques, attributs et volumes COP en gardant le calcul sur le GPU, ce que la page recommande plutôt que VEX pour les COP."
+}

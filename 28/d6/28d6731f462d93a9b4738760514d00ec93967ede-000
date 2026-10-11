@@ -1,0 +1,28 @@
+# adjacency_attribsample
+
+- Label: Attribute Sample with Adjacency
+- Category: Copernicus (`Cop`), Houdini 22.0.368
+- Inputs: 0 to 2
+- Parameters: 4 (exact, read from Houdini by hython)
+- Used by the height graph: no
+
+## Feature summary (web, SideFX reference)
+
+- Source: https://www.sidefx.com/docs/houdini/nodes/cop/adjacency_attribsample.html
+- Summary (EN): Converts a geometry attribute into a texture image packed into a UV atlas, so the attribute can be used as a map. It needs an adjacency cable and can sample a point attribute coming from another geometry.
+- Résumé (FR) : Transforme un attribut de géométrie en image de texture rangée dans l'atlas UV, à condition de brancher un câble d'adjacence.
+
+- Inputs meaning: ["adjacency (required): adjacency cable from a Geometry to Adjacency COP", "attrib (optional): point attribute sampled from another geometry, for example from an Attribute Extract COP"]
+
+- Key parameters: ["Signature: layer type accepted and produced; 'Select Automatically' is recommended", "Attribute: geometry attribute name to sample (P gives a world-space position map)", "Class: Primitive, Point or Vertex"]
+
+- Caveats: ["Requires an adjacency cable upstream from a Geometry to Adjacency COP", "Output type is determined automatically only when Signature is set to Select Automatically"]
+
+## Parameters (exact, from the installed Houdini)
+
+| parameter | label | type | default | range | menu tokens |
+|---|---|---|---|---|---|
+| `signature` | Signature | String | ["auto"] |  |  |
+| `attribute` | Attribute | String | ["P"] |  |  |
+| `attribmenu` | Attribute Menu | String | ["0"] |  |  |
+| `class` | Class | Menu | 1 |  | prim, point, vertex |

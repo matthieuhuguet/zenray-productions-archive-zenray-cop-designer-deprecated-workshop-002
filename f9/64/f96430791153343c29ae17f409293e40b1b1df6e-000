@@ -1,0 +1,31 @@
+{
+  "name": "pyro_buoyancy",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/pyro_buoyancy.html",
+  "status": "ok",
+  "summary_en": "Applies a buoyancy force to a velocity VDB so hot gas rises and cooler or denser gas sinks. It can also make gas rise or fall relative to an equilibrium temperature, which helps effects such as cloud formation.",
+  "inputs": [
+    "v: Vector VDB with the original velocities",
+    "temperature: Float VDB with the temperature values",
+    "temperature (second input): Float VDB with the equilibrium values; the page lists it under the same name as the first",
+    "direction: Vector VDB giving per-voxel control of the up direction",
+    "threshold: Float or Vector VDB used as a threshold mask; a Vector VDB contributes its length",
+    "control: Float or Vector VDB used as a control mask; a Vector VDB contributes its length",
+    "angledir: Vector VDB giving per-voxel control of the angle mask direction"
+  ],
+  "key_parameters": [
+    "Operation: Set replaces velocities with the force (debugging); Add adds the force to existing velocities",
+    "Buoyancy Scale: global multiplier on buoyancy strength",
+    "Ambient Temp (K) and Reference Temp (K): a field value T maps to Ambient + T x (Reference - Ambient)",
+    "Equilibrium Temp: temperatures above it rise, below it fall",
+    "Gravity Acceleration: scales the strength of the buoyancy force",
+    "Direction: direction in which hotter-than-ambient gas is pushed",
+    "Threshold, Control, Angle and Axis masks: range or spread setting plus optional ramp; Angle Mask uses Angle Direction and Spread Angle; Axis Mask uses Axis Direction and Axis Range"
+  ],
+  "caveats": [
+    "Set mode replaces the velocities and breaks the simulation; use only for debugging",
+    "Newly activated areas start at zero temperature, so Equilibrium Temp usually needs to be zero to keep dead space unaffected",
+    "Requires DOP-level permissions; not in Houdini Core, only in Houdini FX, Apprentice, Indie and Education",
+    "The page does not detail how mask ramps or the Activation toggle behave beyond these summaries"
+  ],
+  "resume_fr": "Pyro Buoyancy Force ajoute une poussée d'Archimède à un champ de vitesse VDB, pour que le gaz chaud monte et le gaz froid ou dense descende."
+}

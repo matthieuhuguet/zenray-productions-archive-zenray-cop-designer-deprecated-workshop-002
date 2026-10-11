@@ -1,0 +1,35 @@
+{
+  "name": "neural_layertomask_sam2",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/neural_layertomask_sam2.html",
+  "status": "ok",
+  "summary_en": "Creates an image segmentation mask from prompts using Meta's SAM 2 neural network. Positive and negative point prompts, or an optional bounding box, define the objects to segment.",
+  "inputs": [
+    "source: the image to segment; RGBA, UV and mono inputs are converted to RGB",
+    "mask (optional): a per-pixel confidence mask, scaled by the Mask parameter",
+    "embeddings (optional): a precomputed image encoding, reused to avoid recomputing the most expensive step",
+    "points (optional): prompt points, interpreted by world-space location and a prompt string attribute"
+  ],
+  "key_parameters": [
+    "Model: SAM2 Large (most accurate, slower), SAM2 Tiny (faster, less accurate) or Custom (your own encoder and decoder ONNX files)",
+    "Download Models: fetches the pre-trained model files",
+    "Units: Image space, Texture space or Pixels for point and box coordinates",
+    "Points / Point Coords / Negative: prompt points; negative points mark areas to exclude",
+    "Bounding Box / BBox Lower Left / BBox Upper Right: box prompt",
+    "Resample Behavior: Stretch to Fit or Fit Minimally, for images that do not match the model's 1024x1024 input",
+    "Color Transform: optional OCIO conversion before processing",
+    "Clean Up (TVD Iterations, TVD Speed): smooths the output mask",
+    "Upsampling Filter: filter used to scale the mask back to the original resolution",
+    "Mask Threshold: converts the soft mask to binary; when off, raw soft values are output",
+    "Preview Color: overlay colour for the mask preview in the viewer",
+    "Execution Provider and Device ID: Automatic, CPU, CUDA, DirectML or CoreML, and the GPU"
+  ],
+  "caveats": [
+    "Click Download Models after a fresh Houdini installation before the node works.",
+    "The page advises against a binary 0 or 1 mask input and recommends a soft mask.",
+    "If a points input is wired, the node uses those points and then appends the Points parameter values. A bounding box set on the node replaces the one in the input.",
+    "Reused embeddings only work with the same model size that created them.",
+    "Points without a prompt attribute default to positive.",
+    "CUDA requires separately installed CUDA and cuDNN. DirectML is Windows only, and CoreML is macOS only."
+  ],
+  "resume_fr": "Produit un masque de segmentation d'image à partir de points positifs ou négatifs et d'une boîte optionnelle, grâce au réseau SAM 2 de Meta, avec un seuil binaire facultatif."
+}

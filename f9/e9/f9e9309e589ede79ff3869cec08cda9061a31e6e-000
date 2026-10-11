@@ -1,0 +1,19 @@
+{
+  "name": "sequence",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/sequence.html",
+  "status": "ok",
+  "summary_en": "Sequence arranges parts of one or more inputs temporally. It cuts clips from its inputs, each defined by a start frame and a length, and places them on a new timeline at an output start frame. The page marks the node as available since Houdini 22.0.",
+  "inputs": [
+    "The page does not name or number the inputs; each clip is taken from its corresponding input in order, and with a single input all clips come from it"
+  ],
+  "key_parameters": [
+    "Clips > Start Frame: frame number to take from the input",
+    "Clips > Length in Frames: how many frames to take",
+    "Clips > Output Start Frame: frame where the first clip starts in the output"
+  ],
+  "caveats": [
+    "If there are more inputs than clips, no clip is left without an input",
+    "If there are more clips than inputs, the extra clips without an input are taken from the last clip"
+  ],
+  "resume_fr": "Le nœud Sequence assemble des extraits d'une ou de plusieurs entrées sur une nouvelle chronologie, chaque extrait étant défini par une frame de départ et une longueur."
+}

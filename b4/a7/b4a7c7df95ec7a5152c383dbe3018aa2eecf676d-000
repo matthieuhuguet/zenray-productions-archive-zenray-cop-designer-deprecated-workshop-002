@@ -1,0 +1,20 @@
+{
+  "name": "visualizevelocity",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/visualizevelocity.html",
+  "status": "ok",
+  "summary_en": "Turns a 2D velocity field into an RGBA layer with the visualization baked in, for debugging or final output. Output: result.",
+  "inputs": [
+    "source: a UV layer providing 2D velocity values"
+  ],
+  "key_parameters": [
+    "Method: HSV (velocity length sets value, direction sets hue; Scale controls magnitude-to-value mapping)",
+    "Method: Streak (particles traced through the flow; Density, Scale, Brightness, Gamma, Seed, Visualize Speed, Speed Min/Max, Ramp, Maximum Steps)",
+    "Method: Quiver Plot (arrows on a grid oriented to velocity; Tile Size, Tile Padding, Shaft Thickness, Head Thickness, Head Ratio, Scale Arrows with Speed, Visualize Speed, Speed Min/Max, Visualization Ramp)",
+    "Speed Min/Max (Streak and Quiver Plot): speed range mapped to the colour ramp or arrow scaling; the Compute Range button fills it from the source length"
+  ],
+  "caveats": [
+    "Maximum Steps caps streak steps, preventing excessive computation in very fast flows",
+    "The page describes no other limitations"
+  ],
+  "resume_fr": "Transforme un champ de vélocité 2D en image RGBA visible, en mode HSV, en traînées (streak) ou en flèches (quiver plot)."
+}

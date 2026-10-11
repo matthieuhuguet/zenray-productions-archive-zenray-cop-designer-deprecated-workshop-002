@@ -1,0 +1,21 @@
+{
+  "name": "mono",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/mono.html",
+  "status": "ok",
+  "summary_en": "Converts a layer, VDB or attribute into a single-channel mono output, usually through a luminance calculation. It can also extract one channel or compute a value such as the maximum, minimum, average, vector length or an HSV component.",
+  "inputs": [
+    "source: the original layer, VDB or attribute to convert"
+  ],
+  "key_parameters": [
+    "Signature: sets the layer type the source accepts",
+    "Operation: how the channels are combined into one value. Options are three luminance methods (SGI, NTSC, HDTV), Average, Maximum Channel, Minimum Channel, Magnitude/Length, Hue, Saturation, Value, Red, Green, Blue, Alpha and Custom",
+    "Weights: only when Operation is Custom; each channel is multiplied by its weight before summing",
+    "Normalize Weights: only when Operation is Custom; scales the weights to total one"
+  ],
+  "caveats": [
+    "Some luminance methods assume a source colour space. The page warns that no implicit conversion is done from scene_linear to that space.",
+    "Custom weights are fixed across the image. For per-pixel weighting the page points to the Dot Product COP.",
+    "To extract a single channel, the page recommends the Channel Extract COP instead."
+  ],
+  "resume_fr": "Convertit un calque, un VDB ou un attribut en un canal unique de gris, en général par luminance, ou calcule une valeur comme le maximum, la moyenne, la longueur ou la teinte."
+}

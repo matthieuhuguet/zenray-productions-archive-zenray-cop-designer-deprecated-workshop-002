@@ -1,0 +1,31 @@
+{
+  "name": "rasterizecurves",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/rasterizecurves.html",
+  "status": "ok",
+  "summary_en": "Rasterize Curves draws curves (polygonal, Bezier or NURBS) onto a COP layer and can rasterize arbitrary attributes carried by those curves. Without a camera reference it uses the COPnet resolution, sits at the origin, and looks down the negative Z axis.",
+  "inputs": [
+    "camera_ref: optional camera metadata that sets the view for the rasterization",
+    "curves: curves to rasterize, usually from a SOP Import COP"
+  ],
+  "key_parameters": [
+    "Quick Setups: add Alpha, Position, Normal, UV or Depth from Eye; Move to Origin moves the output to canonical space",
+    "Border: sampling behaviour outside the incoming layer bounds, defaults to the layer's border property",
+    "Units: Image (default) or Pixels, which defines how curve width is measured",
+    "Width / Width Attribute: output width; if the curves have a width attribute (default Width), the Width value is a multiplier",
+    "Joints: Round (default) or Sharp; Max Joint Scale limits spikes at sharp corners",
+    "Endpoints: Flat (default) or Round caps",
+    "Scale V by Width: No Scaling (default), Average, Maximum or Minimum; Force Tilable V rounds V down to an integer",
+    "Resample / Segment Length: smooths the input curves by breaking them into segments of a set length",
+    "Treat Polygons As: Straight, Subdivision or Interpolating; Resample by Polygon Edge preserves corners",
+    "Number of Attributes: name, output type, optional flag and Default Value; special tokens intrinsic:alpha, intrinsic:depth_ndc and intrinsic:depth_eye"
+  ],
+  "caveats": [
+    "Only integer attributes, or float attributes with four or fewer components, can be rasterized.",
+    "The Normal and UV quick setups require those attributes to exist on the input geometry.",
+    "With Round endpoints, V values at the caps fall outside the 0-1 range because of interpolation.",
+    "Depth from Eye is measured in Houdini units.",
+    "With a camera connected, the layer is generated at the camera focus plane; Match Camera moves it to the origin.",
+    "The Optional fallback refers to a size_ref input that the page's Inputs section does not list; check it in your Houdini version."
+  ],
+  "resume_fr": "Ce nœud rastérise des courbes sur un calque COP et peut transporter des attributs comme l'alpha, la position ou les UV."
+}

@@ -1,0 +1,24 @@
+{
+  "name": "spheresample",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/spheresample.html",
+  "status": "ok",
+  "summary_en": "Sphere Sample maps a latitude-longitude layer onto a sphere by looking up each output pixel's colour from a spherical direction or a sphere intersection. It acts like an environment backdrop or wraps an image around a transformable ball.",
+  "inputs": [
+    "size_ref (optional): reference layer setting output resolution and the camera and view metadata used for sampling",
+    "source: layer sampled as the latitude-longitude sphere map"
+  ],
+  "key_parameters": [
+    "Celestial Sphere: on samples the source as a sphere at infinity (environment map), off samples a transformable unit sphere and outputs a hit mask",
+    "Filter: sampling method from Point (nearest) to Bilinear, Mitchell, B-spline and others",
+    "Projection: Perspective (rays from camera) or Orthographic (parallel rays), used only when Celestial Sphere is off",
+    "Translate, Rotate, Scale, Uniform Scale: transform of the sampled sphere",
+    "Transform Order: order in which transform components are applied",
+    "Outputs: transform (source sampled onto the sphere) and mask (1 where the sphere is hit)"
+  ],
+  "caveats": [
+    "With Celestial Sphere on, only Rotate affects the sampled direction, Translate and Scale have no effect",
+    "In Celestial Sphere mode the mask output is 1 everywhere",
+    "Introduced in Houdini 22.0"
+  ],
+  "resume_fr": "Sphere Sample projette une carte latitude-longitude sur une sphère, soit en fond d'environnement, soit en image enroulée sur une sphère transformable."
+}

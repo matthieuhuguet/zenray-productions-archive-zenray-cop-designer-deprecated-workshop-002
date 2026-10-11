@@ -1,0 +1,35 @@
+{
+  "name": "reactiondiffusion_block_end",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/reactiondiffusion_block_end.html",
+  "status": "ok",
+  "summary_en": "Reaction-Diffusion Block End closes a Reaction-Diffusion simulation block and produces a 2D pattern from two chemicals that react and diffuse. It pairs with Reaction-Diffusion Block Begin, which provides the chemical input. The page body shows only the display name; the internal name is confirmed by the Copernicus nodes index entry.",
+  "inputs": [
+    "chemical: input chemical data from the Reaction-Diffusion Block Begin COP",
+    "feedback: cable carrying the current feedback data, fed back into the simulation; its structure must match the initial structure set on the block begin"
+  ],
+  "key_parameters": [
+    "Signature: Pattern (Mono) for a remapped, corrected output, or Chemical (UV) for raw chemical values",
+    "Model: Gray-Scott (two reaction parameters, Alpha/Feed and Beta/Kill) or Kenjiro Maginu (three reaction parameters, Alpha, Beta and Gamma)",
+    "Preset: fills in reaction parameters for named pattern styles, such as Spots, Worms or Labyrinth for Gray-Scott",
+    "Simulate: feeds outputs back into inputs for a feedback loop; Reset Simulation clears the cache",
+    "Iterations and Iterations per Step: number of iterations in non-simulation mode and per step",
+    "Live Simulation: interactive mode that runs independently of the playbar and is not cached",
+    "Time Scale and Substeps: reaction speed and number of substeps per simulated frame",
+    "Caching (Start Frame, Cached Frames, Checkpoint Rate): frame caching during Simulate",
+    "Switch to Raw Values: off is recommended, so parameters are normalized to reduce instability",
+    "Scale Multiplier: changes pattern size by adjusting the reaction rate relative to diffusion",
+    "Diffusion A / Diffusion B: how fast each chemical diffuses; the two models use different typical ratios",
+    "Boundary inputs (Invert Boundary, Boundary Threshold, Boundary Smoothing): shape growth within an SDF boundary",
+    "Output Correction (Invert, Normalize Model, Clamp Minimum, Clamp Maximum): active only with Pattern (Mono)"
+  ],
+  "caveats": [
+    "Compiled COP networks do not support simulation.",
+    "The reaction is sensitive to parameter changes and can become unstable or die out.",
+    "The solver is resolution-sensitive: doubling the resolution may require about four times the Substeps, or a quarter of the Time Scale.",
+    "Live Simulation does not save results, so use a Stash COP to keep them; its caching parameters do not apply.",
+    "Chemical (UV) output is raw and offers no colour control, so it may look unfriendly.",
+    "The activation mask must sit inside a valid area of the boundary, or the reaction cannot grow.",
+    "Alpha, beta and gamma inputs on the Block Begin COP override the matching parameters on this node."
+  ],
+  "resume_fr": "Ce nœud ferme un bloc de simulation Réaction-Diffusion et produit un motif 2D à partir de deux chimiques qui réagissent et diffusent."
+}

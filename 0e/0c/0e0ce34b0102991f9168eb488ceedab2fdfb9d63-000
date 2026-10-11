@@ -1,0 +1,41 @@
+# attribextract
+
+- Label: Attribute Extract
+- Category: Copernicus (`Cop`), Houdini 22.0.368
+- Inputs: 0 to 1
+- Parameters: 17 (exact, read from Houdini by hython)
+- Used by the height graph: no
+
+## Feature summary (web, SideFX reference)
+
+- Source: https://www.sidefx.com/docs/houdini/nodes/cop/attribextract.html
+- Summary (EN): Pulls a detached attribute out of an input geometry, so it can be handled as its own wire without staying attached to the geometry.
+- Résumé (FR) : Extrait un attribut de géométrie sous forme de fil indépendant, réutilisable ailleurs dans le réseau.
+
+- Inputs meaning: ["geometry: geometry to extract the attribute from"]
+
+- Key parameters: ["Class: attribute class (point, primitive); stored to help re-insertion, advisory only", "Attribute Name: name of the attribute to extract", "Output Type: attribute type to extract; the geometry attribute must match its size and type", "Optional: when the attribute is missing, creates a constant attribute filled with the default value instead of raising an error", "Default Value (one per type): fallback for Float, Vector 2, Vector, Vector 4 and Integer"]
+
+- Caveats: ["The extracted attribute length equals the number of elements in the source geometry", "The attribute on the geometry must match the Output Type in both size and type", "Without Optional enabled, a missing attribute causes an error", "Class is advisory and enforces nothing", "Default values are documented only for the five listed types"]
+
+## Parameters (exact, from the installed Houdini)
+
+| parameter | label | type | default | range | menu tokens |
+|---|---|---|---|---|---|
+| `numattribs` | Outputs | Folder | 1 |  |  |
+| `class1` | Class | Menu | 2 |  | detail, primitive, point, vertex |
+| `attrib1` | Attribute Name | String | [""] |  |  |
+| `attribmenu1` | Attribute Menu | String | ["0"] |  |  |
+| `outtype1` | Output Type | Menu | 1 |  | aint, afloat, avector2, avector3, avector4 |
+| `optional1` | Optional | Toggle | false |  |  |
+| `f1_def1` | Default Value | Float | [1.0] | 0.0 .. 10.0 |  |
+| `f2_def11` | Default Value | Float | 1.0 | 0.0 .. 10.0 |  |
+| `f2_def12` | Default Value | Float | 1.0 | 0.0 .. 10.0 |  |
+| `f3_def1r` | Default Value | Float | 1.0 | 0.0 .. 10.0 |  |
+| `f3_def1g` | Default Value | Float | 1.0 | 0.0 .. 10.0 |  |
+| `f3_def1b` | Default Value | Float | 1.0 | 0.0 .. 10.0 |  |
+| `f4_def1r` | Default Value | Float | 1.0 | 0.0 .. 10.0 |  |
+| `f4_def1g` | Default Value | Float | 1.0 | 0.0 .. 10.0 |  |
+| `f4_def1b` | Default Value | Float | 1.0 | 0.0 .. 10.0 |  |
+| `f4_def1a` | Default Value | Float | 1.0 | 0.0 .. 10.0 |  |
+| `i_def1` | Default Value | Int | [0] | 0 .. 10 |  |

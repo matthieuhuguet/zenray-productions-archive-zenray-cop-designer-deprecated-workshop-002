@@ -1,0 +1,23 @@
+{
+  "name": "pyro_advectbymap",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/pyro_advectbymap.html",
+  "status": "ok",
+  "date": "11 October 2026",
+  "summary_en": "Pyro Advect By Map moves a VDB along a provided flow map so that it follows the simulated motion. The forward map records where each voxel came from after advection, and the reverse map records the opposite. It outputs advect, the advected source.",
+  "inputs": [
+    "source: vector or float VDB to advect",
+    "fwdmap: vector VDB map of forward advection origins",
+    "revmap: vector VDB map of backward advection origins; only needed for the BFECC scheme"
+  ],
+  "key_parameters": [
+    "Signature: VDB type accepted by the source",
+    "Scheme: BFECC (best preservation of sharp features, most time and memory), Euler + Sharpen (simplest, with a dynamic sharpen field), Euler (simplest and fastest, tends to over-blur)",
+    "Sharpen: sharpening amount, adjusted per voxel by sampling; values that are too high produce grid artifacts"
+  ],
+  "caveats": [
+    "Requires DOP-level permissions; available in FX, Apprentice, Indie and Education, not in Houdini Core.",
+    "The reverse map is only needed for BFECC.",
+    "Available since 21.0."
+  ],
+  "resume_fr": "Le nœud Pyro Advect By Map déplace un VDB selon des cartes de flux avant et arrière, avec trois schémas dont BFECC est le plus précis."
+}

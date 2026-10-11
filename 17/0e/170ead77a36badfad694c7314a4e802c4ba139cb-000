@@ -1,0 +1,29 @@
+{
+  "name": "rasterizesetup",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/rasterizesetup.html",
+  "status": "ok",
+  "summary_en": "Rasterize Setup prepares geometry for the Rasterize Geometry COP. It fits and aligns the geometry to the default layer camera, a unit-radius cube at the origin, so the geometry renders as expected, and it can unwrap the geometry into UV space. It has one input, source, and one output, result.",
+  "inputs": [
+    "source: geometry to prepare for rasterization"
+  ],
+  "key_parameters": [
+    "Space: world position (P), or unwrap into UV space so UVs can be checked in the viewport",
+    "Orientation: Y-Up leaves the geometry unchanged; Z-Up rotates it for top-down rasterization",
+    "Fit From: No Fitting, Bounding Box or Reference Box; Reference Box uses a fixed size and position, which helps with animated sources",
+    "Target Position / Target Size: the box the geometry is fitted into",
+    "Scale to Fit: applies a uniform scale when fitting; otherwise only translation is applied",
+    "Fit Depth: squashes the depth range to given bounds without changing the other axes",
+    "UV Attribute: vertex or point UVs used for unwrapping",
+    "Add Normals If Needed: computes normals when none exist",
+    "Flatten UV Z Values: sets the Z component of float3 UVs to 0 when Space is UV",
+    "Add Depth: creates a normalized depth attribute, 1 nearest the camera and 0 farthest, useful for masks",
+    "Original Position: stores the position before unwrapping or fitting, so the original positions can be rasterized"
+  ],
+  "caveats": [
+    "Fitting matters because the default camera has a fixed unit-radius frame; geometry outside it may not render as expected.",
+    "The Rasterize Geometry COP does not compute missing normals, so enable Add Normals If Needed when geometry varies over time.",
+    "When Space is UV, UV nodes that output float3 values can cause unexpected results unless the Z values are flattened.",
+    "UV unwrapping splits polygons along UV seams, which changes the topology of the geometry."
+  ],
+  "resume_fr": "Ce nœud prépare la géométrie pour Rasterize Geometry en la cadrant sur la caméra par défaut, avec une option de dépliage en UV."
+}

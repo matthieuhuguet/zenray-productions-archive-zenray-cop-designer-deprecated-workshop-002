@@ -1,0 +1,40 @@
+{
+  "name": "rasterizevolume",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/rasterizevolume.html",
+  "status": "ok",
+  "summary_en": "Rasterize Volume renders a volume, such as a VDB from SOPs or a pyro fire simulation, as seen through a camera, producing a 2D raster for compositing. The page's URL and navigation list match rasterizevolume, but the body does not state the internal name explicitly. Documented as since Houdini 21.0.",
+  "inputs": [
+    "camera_ref: optional camera layer that sets the view ray for each output pixel; without it, a default orthographic projection (-1 to 1) along Z is used",
+    "density: density field, required when Bake Light Fields is on",
+    "diffusecolor: diffuse field",
+    "emission: emission scale field",
+    "emissioncolor: emission colour field",
+    "vieworigin: per-pixel ray origins, used instead of camera_ref",
+    "viewdir: per-pixel ray directions, used instead of camera_ref",
+    "mindepth: raymarch minimum depth boundary",
+    "maxdepth: raymarch maximum depth boundary"
+  ],
+  "key_parameters": [
+    "Signature: layer type the source accepts; float VDBs apply the same value to all three components",
+    "Depth Conversion (Distance, Depth, Height): how mindepth and maxdepth are interpreted",
+    "Density Scale, Min, Max, Mode (No Ramp, Clamped Ramp, Periodic Ramp): Min and Max define the interval remapped linearly to 0-1; Density Scale multiplies the result after the ramp",
+    "Diffuse Tint: RGB multiplier applied after the ramp",
+    "Emission Scale and Emission Tint: multipliers applied after the ramp",
+    "Input Range (on Diffuse, Emission and Emission Color): overrides the Density Min/Max interval for that field",
+    "Bake Light Fields: combines the light fields before raymarching; faster, but output can look blocky when VDBs contain tiles",
+    "Multiply Diffuse with Density before Interpolation: more accurate at density boundaries, but slower",
+    "Integration Step Size: length of ray slices, which sets the expected distance between samples",
+    "Max Step Count: limits raymarch steps to prevent timeouts; default 4096",
+    "Transmittance Cutoff: stops raymarching once accumulated transmittance drops below this value; -1 disables it",
+    "Sample Jitter Scale, Stratification Jitter Scale, Seed Jitter with Time: control jitter of samples and ray slices"
+  ],
+  "caveats": [
+    "Diffuse Color is truncated where Density is smaller than Diffuse.",
+    "Emission and Emission Color multiply together and are independent of Density and Diffuse Color; wiring only emission produces pure light.",
+    "To rasterize Emission with no Density, wire the same layer into density and emission and set Density Scale to 0.",
+    "Bake Light Fields always requires a density input, because it uses that field's topology.",
+    "Without baking, the node can take longer, because the kernel iterates over four uncombined VDBs.",
+    "For a live camera workflow, the page suggests enabling Export View Continuously in the viewport camera menu."
+  ],
+  "resume_fr": "Ce nœud rend un volume VDB tel qu'il est vu à travers une caméra, en un raster 2D prêt pour la composition, avec densité, diffusion et émission."
+}

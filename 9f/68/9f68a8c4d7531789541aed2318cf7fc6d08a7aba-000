@@ -1,0 +1,34 @@
+{
+  "name": "pyro_emitfromflame",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/pyro_emitfromflame.html",
+  "status": "ok",
+  "summary_en": "Burns up the flame field. Dissipates the flame over time and emits smoke (density) and temperature from the burned flame; can also add divergence to drive expansion in the simulation. Available since Houdini 22.0.",
+  "inputs": [
+    "flame: Float VDB representing the flame",
+    "density: Float VDB that emitted smoke is combined with",
+    "temperature: Float VDB that emitted heat is combined with",
+    "divergence: Float VDB that flame expansion is combined with",
+    "control_cooling (optional): control field for flame cooling",
+    "control_density (optional): control field for density emission",
+    "control_temperature (optional): control field for temperature emission",
+    "control_divergence (optional): control field for flame expansion"
+  ],
+  "key_parameters": [
+    "Activation: enables the node; runs only when the value is 1",
+    "Cool Flame: when on, emitted amounts scale by how much flame was dissipated",
+    "Dissipation Mode, Dissipation Rate, Subtraction Rate, Lifespan, Half-Life: flame decay controls",
+    "Goal Value and Goal Tolerance: value the flame cools toward (usually zero), snapped there once close enough",
+    "Emit Density / Emit Temperature / Enable Expansion: on or off switches for each output",
+    "Operation: how emitted values combine with the incoming field (Add, Maximum, Average, Blend, Pull)",
+    "Emission Scale (or Expansion Scale): output amount multiplier",
+    "Flame Range and Emission Range: select the part of the flame field that emits, optionally remapped",
+    "Acceleration, Deceleration, Blend: strength of push toward or mix with the incoming field (Pull and Blend)",
+    "Use Ramp and Flame Ramp: shape the mapping from flame values to output",
+    "Control Mask subsections (per section): Use Control Field, Control Range, Use Ramp, Control Ramp for spatial scaling"
+  ],
+  "caveats": [
+    "Requires DOP-level permissions; not in Houdini Core, only in Houdini FX, Apprentice, Indie and Education",
+    "The Blend description under Expansion contains a typo on the page, so that wording may be imprecise"
+  ],
+  "resume_fr": "Pyro Emit from Flame consume le champ de flamme et en tire de la fumée, de la chaleur et, si besoin, de la divergence pour faire gonfler la simulation."
+}

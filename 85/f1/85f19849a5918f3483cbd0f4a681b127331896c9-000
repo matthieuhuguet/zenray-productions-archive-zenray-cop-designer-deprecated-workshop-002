@@ -1,0 +1,32 @@
+{
+  "name": "tilepattern",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/tilepattern.html",
+  "status": "ok",
+  "summary_en": "Creates rectangular tiles that form texture patterns such as brick bonds, herringbone or basketweave. It offers predefined pattern types and a Custom Pattern mode for building your own layouts.",
+  "inputs": [
+    "size_ref: reference layer that sets the output image size and metadata.",
+    "pointmask: optional mask that scales the amount of points.",
+    "stamp0: optional scaling input for stamping."
+  ],
+  "key_parameters": [
+    {"name": "Pattern Size", "meaning": "Area the tiles must cover. The page says it should usually be the size of the image."},
+    {"name": "Pattern Type", "meaning": "Selects a predefined bond or pattern, or Custom Pattern."},
+    {"name": "Mode", "meaning": "In Custom Pattern: Seamless, Tile Count or Tile Size, which control how tile count and size are defined."},
+    {"name": "Shape Class / Shape", "meaning": "Chooses the shape drawn in each tile (Basic, Marker or Compound)."},
+    {"name": "Draw As", "meaning": "Filled, Distance, Gradient or Outline."},
+    {"name": "Tile Value / Background Value", "meaning": "Value inside and outside the shape."},
+    {"name": "Row Offset / Row Slide Offset", "meaning": "Shifts tiles horizontally, for example to create brick-wall offsets."},
+    {"name": "Rotate Pattern / Rotate Tile", "meaning": "Rotates the whole pattern or each tile."},
+    {"name": "Uniform Scale / Horizontal Scale / Vertical Scale / Inset", "meaning": "Controls tile size and edge dilation."},
+    {"name": "Prune Tiles", "meaning": "Removes tiles by order, threshold, or every Nth row, column or tile."},
+    {"name": "Split Tiles", "meaning": "Splits tiles iteratively based on a threshold, number of splits and orientation ratio."}
+  ],
+  "caveats": [
+    "The page does not explain how the pattern is generated internally, so the exact tiling math is not covered.",
+    "Clip to Size only matters when Pattern Size is smaller than the image.",
+    "Turning off Inset can still leave faint lines. The page suggests disabling Anti-Aliasing and setting Shape Edge Filter to 0.",
+    "Changing Seed changes the random variation.",
+    "The Pattern Expression syntax is described with limited examples."
+  ],
+  "resume_fr": "Ce nœud génère des pavages de carreaux (appareillages de briques, chevrons, vannerie) avec un mode Custom Pattern pour dessiner ses propres dispositions."
+}

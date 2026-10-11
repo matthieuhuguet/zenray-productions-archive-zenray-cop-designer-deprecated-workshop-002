@@ -1,0 +1,30 @@
+{
+  "name": "pyro_activate::2.0",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/pyro_activate.html",
+  "status": "ok",
+  "fetched_on": "11 October 2026",
+  "summary_en": "Pyro Activate changes which voxels are active in the VDBs of a Pyro simulation. The solve only runs where voxels are active, so the node keeps the simulated volume active with a buffer of surrounding air. Activation works per leaf, in blocks of 8x8x8 voxels. Fewer active leaves use less memory and speed up the simulation. The output is a VDB reference with leaves activated per these rules. The page recommends VDB Visualize Tree to inspect the activated regions.",
+  "inputs": [
+    "density: Float VDB, reference for activation and source of values for culling",
+    "temperature: Float VDB, same role as density",
+    "v: Vector VDB supplying velocities for velocity dilation",
+    "flame: Float VDB, same role as density",
+    "activate_pts: optional points, any leaf containing a point is activated"
+  ],
+  "key_parameters": [
+    "References: fields that contribute to activation",
+    "Density Cutoff: leaves whose max combined reference value falls below it become eligible for deactivation",
+    "Leaf Dilation / Leaf Dilation Dist: expand the active region by leaves or by world distance, the larger of the two is used",
+    "Velocity Dilation: expands each leaf by its max velocity",
+    "Velocity Scale, Tangential Scale, Ambient Velocity: listed on the page but not described",
+    "Clip Min/Max X, Y, Z: deactivate leaves whose world positions fall outside the bounds"
+  ],
+  "caveats": [
+    "Requires DOP-level permissions, not available in Houdini Core (only FX, Apprentice, Indie, Education)",
+    "Available since Houdini 21.0",
+    "Leaf Dilation Dist is rounded up to the nearest leaf",
+    "Deactivation only applies to leaves below the density cutoff, so cutoff and buffer must be balanced",
+    "The page does not explain Velocity Scale, Tangential Scale or Ambient Velocity"
+  ],
+  "resume_fr": "Pyro Activate choisit quels voxels restent actifs dans les VDB d'une simulation Pyro. Le solveur ne calcule que là où les voxels sont actifs, donc le nœud garde le volume simulé actif avec une marge d'air autour et désactive le reste. Moins de feuilles actives économisent la mémoire et accélèrent le calcul. Requiert les permissions DOP, donc absent de Houdini Core."
+}

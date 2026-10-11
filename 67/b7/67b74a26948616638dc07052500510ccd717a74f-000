@@ -1,0 +1,18 @@
+{
+  "name": "uvtorgba",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/uvtorgba.html",
+  "status": "ok",
+  "summary_en": "Combines two UV layers or attributes into one RGBA layer or attribute. The red and green channels come from the first input, the blue and alpha channels from the second. Output: rgba.",
+  "inputs": [
+    "rg: UV layer or attribute supplying the red and green channels",
+    "ba: UV layer or attribute supplying the blue and alpha channels"
+  ],
+  "key_parameters": [
+    "Signature: sets the layer type the source accepts"
+  ],
+  "caveats": [
+    "The page lists no specific limitations or edge-case behaviour",
+    "Signature options are only briefly described"
+  ],
+  "resume_fr": "Assemble deux couches UV en une couche RGBA : le rouge et le vert viennent de la première entrée, le bleu et l'alpha de la seconde."
+}

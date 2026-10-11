@@ -1,0 +1,31 @@
+{
+  "name": "neural_layertodepth_moge2",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/neural_layertodepth_moge2.html",
+  "status": "ok",
+  "summary_en": "Estimates metric-scale depth, normal and position maps from a 2D image using Microsoft's MoGe-2 model. It also produces a sky mask and a 3D point cloud. The page says this is one of four variants (depth, normal, points, position) that differ only in which output is displayed.",
+  "inputs": [
+    "source: the image to estimate; non-RGB inputs are converted to RGB"
+  ],
+  "key_parameters": [
+    "Model: MoGe-2 ViT-L Normal, or Custom to load your own ONNX file",
+    "Download Models / Reload Model: downloads the ONNX model to the SHFS model location, or forces a reload",
+    "Number of Tokens: inference resolution; higher values keep more detail but cost more runtime and memory",
+    "Resample Size: resamples the input to a chosen size; when off, the input size is used",
+    "Color Transform: OCIO transform from Original Space to To Space, or none",
+    "Attempt Aspect Correct: estimates the field of view from the points and applies it to the point cloud",
+    "Scale by Metric: expresses depth and position in real-world units",
+    "Apply Sky Mask / Sky Depth Shift: masks sky regions and offsets their depth in metres",
+    "Remove Edges / Max Depth Change: removes points near depth discontinuities; lower values remove more points",
+    "Normal Type: Signed (-1 to 1) or Offset (0 to 1)",
+    "Create GSplat Points / GSplat Scale: displays the point cloud as Gaussian splats and sets their size in metres",
+    "Use Solved Camera, with RANSAC Seed, Iterations and Tolerance: matches outputs to a camera solved from point correspondences",
+    "Execution Provider / Device ID: Automatic, CPU, CUDA, DirectML or CoreML, and the GPU"
+  ],
+  "caveats": [
+    "Click Download Models after a fresh Houdini installation before using the node.",
+    "On macOS, set Execution Provider to CPU. The page says this prevents initialisation errors.",
+    "Number of Tokens changes the internal working resolution, not the final output image size.",
+    "Device ID has no effect when using CPU inference."
+  ],
+  "resume_fr": "Estime à partir d'une image des cartes de profondeur, de normales et de positions à l'échelle métrique, avec un masque du ciel et un nuage de points, grâce au modèle MoGe-2 de Microsoft."
+}

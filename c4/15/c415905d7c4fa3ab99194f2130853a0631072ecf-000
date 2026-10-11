@@ -1,0 +1,25 @@
+{
+  "name": "smoothfill",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/smoothfill.html",
+  "status": "ok",
+  "summary_en": "Smooth Fill fills a region of a layer with smoothly varying values. It solves the Poisson equation inside the provided fill area, so the filled region blends into the boundary values around it.",
+  "inputs": [
+    "source: the layer to fill",
+    "fillarea: Mono layer defining which pixels get filled",
+    "mask (optional): per-pixel amount scaled by the Mask parameter"
+  ],
+  "key_parameters": [
+    "Signature: layer type the source accepts",
+    "Mask: mix between original and new value, default 1 uses only the new value",
+    "Fill: fill pixels Below Threshold or Above Threshold in fillarea",
+    "Threshold: fillarea value where filling starts (dropper can sample it)",
+    "Iterations: relaxation passes used to smooth the filled values",
+    "Acceleration: successive over-relaxation factor, 1 is smooth and stable, up to 1.98 converges faster"
+  ],
+  "caveats": [
+    "Iterative, may need many iterations to converge",
+    "If not converged, the result depends on resolution",
+    "Starting values close to the final result speed up convergence"
+  ],
+  "resume_fr": "Smooth Fill remplit une zone d'un calque avec des valeurs qui varient en douceur, en résolvant l'équation de Poisson à l'intérieur de la zone de remplissage."
+}

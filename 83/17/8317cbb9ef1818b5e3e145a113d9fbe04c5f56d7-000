@@ -1,0 +1,23 @@
+{
+  "name": "posmap",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/posmap.html",
+  "status": "ok",
+  "date": "11 October 2026",
+  "summary_en": "The Position Map node generates an RGB position map in which each pixel stores a 3D location. The map can serve as the reference position for noise nodes such as Fractal Noise 3D.",
+  "inputs": [
+    "size_ref: representative layer that sets output image size and metadata"
+  ],
+  "key_parameters": [
+    "Signature: layer type accepted by the source (no further detail on the page)",
+    "Source Position: world-space pixel location (Position), camera origin (Camera Origin) or normalised direction from the camera origin (View Direction)",
+    "X/Y/Z Border: mapping outside the canonical cube (sides of size 2): Clamp, Mirror, Wrap or Extend",
+    "X/Y/Z Shift: offset added before border correction",
+    "X/Y/Z Cycles: scale applied before border correction; with Wrap it acts as a cycle count for periodic patterns",
+    "Output: pos, an RGB layer or a Vector VDB"
+  ],
+  "caveats": [
+    "With Camera Origin, the origin can vary per pixel for orthographic cameras.",
+    "Border and Cycles take effect only for values outside the cube, so results depend on the scene scale."
+  ],
+  "resume_fr": "Le nœud Position Map produit une carte RGB où chaque pixel stocke une position 3D, utilisable comme référence pour les bruits 3D."
+}

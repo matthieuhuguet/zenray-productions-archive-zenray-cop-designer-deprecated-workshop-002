@@ -1,0 +1,29 @@
+{
+  "name": "pyro_lightfrompoints",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/pyro_lightfrompoints.html",
+  "status": "ok",
+  "summary_en": "Builds a light field recording how much light from point lights reaches each voxel of a VDB. Light comes from a geometry input or from position and direction parameters. Chaining several nodes accumulates light from several sources; the result can feed Rasterize Volume to render the VDB as lit smoke.",
+  "inputs": [
+    "density (required): Float VDB defining occlusion and the topology of the light field; light appears only where density is active",
+    "mipmap (optional): Float VDB MipMap from a Packed MipMap COP; computed internally if omitted",
+    "light (optional): Vector VDB that new light is added to, enabling chaining",
+    "points (optional): geometry whose points act as light sources"
+  ],
+  "key_parameters": [
+    "Directional: when on, lights are infinitely distant with parallel rays; when off, they are point lights at their 3D positions",
+    "Light Position / Light Direction: used only when no point geometry is connected",
+    "Light Radius: treats each light as a sphere, preventing infinite brightness when a point light sits inside the volume; multiplied by the pscale attribute",
+    "Color: light color, multiplied by the Cd attribute",
+    "Intensity: linear brightness",
+    "Exposure: exponential brightness; each +1 doubles brightness",
+    "Density Scale: how fast the volume occludes light",
+    "Steps Per MipMap: tracing steps before moving to a coarser MipMap level; shadows get blurrier farther from the light",
+    "Max Steps: maximum number of samples per occlusion ray"
+  ],
+  "caveats": [
+    "The page says every point is tested against every voxel, so care should be taken not to use too many points",
+    "Requires DOP-level permissions; not in Houdini Core, only in Houdini FX, Apprentice, Indie and Education",
+    "Without a radius, a point light inside the volume produces an infinitely bright spot, so Light Radius matters in that case"
+  ],
+  "resume_fr": "Pyro Light from Points calcule la lumière venant de sources ponctuelles atteignant chaque voxel d'un VDB, avec un rayon de lumière pour éviter les éclats infinis."
+}

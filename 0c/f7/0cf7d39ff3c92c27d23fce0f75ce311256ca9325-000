@@ -1,0 +1,29 @@
+{
+  "name": "surfacedither",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/surfacedither.html",
+  "status": "ok",
+  "summary_en": "Surface Dither applies a halftone dither pattern whose scale is set in UV (texture map) space, so the pattern stays attached to the object rather than the camera. It switches texture levels in UV space so the dots do not become too small and alias.",
+  "inputs": [
+    "uv: UV layer giving surface locations as a texture map, required for the surface-stable behaviour",
+    "dotscale (optional): layer scaling the size of the dots",
+    "shape (optional): SDF layer defining the dot shape, a plain dot is used when unwired"
+  ],
+  "key_parameters": [
+    "Density Scale: overall scale of the surface-stable pattern in UV space",
+    "Pattern Scale / Pattern Scale XY: uniform and per-axis scale in UV space",
+    "Pattern Offset / Pattern Rotate: translation and rotation in UV space",
+    "Dot Scale: global scale for dotscale and the Level Transition",
+    "Output Type: Mask (black and white, uses Iso Offset and Smooth) or raw SDF",
+    "Iso Offset: threshold converting the SDF to a mask, adjusts dot size without changing level transitions",
+    "Smooth: softness of the edge when converting the SDF to a mask",
+    "Level Transition: adjusts dot scale when switching texture levels",
+    "Shape Resolution: resolution the shape input is resampled to, trading filtering detail for speed"
+  ],
+  "caveats": [
+    "The pattern is computed in texture map space, so the UV input must be valid for the dither to stick to the surface",
+    "The pattern repeats, so large Pattern Offset changes may look like little or no effect",
+    "A custom shape or a lower Shape Resolution changes the look and filtering, results may need tuning",
+    "Introduced in Houdini 21.0"
+  ],
+  "resume_fr": "Surface Dither applique une trame de points dont l'échelle est fixée dans l'espace UV, pour que le motif reste attaché à la surface et non à la caméra."
+}

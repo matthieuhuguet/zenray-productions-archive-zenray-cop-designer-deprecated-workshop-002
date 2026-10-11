@@ -1,0 +1,39 @@
+{
+  "name": "shapescatter",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/shapescatter.html",
+  "status": "ok",
+  "summary_en": "The page at this URL, titled Scatter Shapes, documents the node named shapescatter. It scatters stamps across an image with randomisation of placement, scale, angle, colour and more, and places a star pattern by default when no stamps input is connected.",
+  "inputs": [
+    "size_ref: sets the output image size and metadata",
+    "density: rejection sampling of the stamps",
+    "jitter: random position offsets",
+    "direction: stamp angle direction, for example from Slope Direction",
+    "angle: rotates stamps",
+    "scale: multiplies uniform scale",
+    "stretch: multiplies non-uniform scale",
+    "color: tints stamps",
+    "alpha: multiplies stamp alpha",
+    "sort: depth-based sorting",
+    "select: chooses which stamps to use",
+    "stamps: up to 10 stamps"
+  ],
+  "key_parameters": [
+    "Stamps X / Stamps Y: number of stamps along each axis",
+    "Scatter Seed: seeds the randomness of jitter, density, angle, scale and stretch",
+    "Density: rejection sampling; 0.8 gives each stamp a 20 percent chance to disappear",
+    "Jitter: random position offset per grid point",
+    "Angle: rotation in degrees, with Uniform, Variance, Min/Max and Round to Multiples modes",
+    "Stretch X / Stretch Y: non-uniform scale",
+    "Blend Method: how overlapping stamps combine (Add, Multiply, Maximum, Depth-Sorted Over, etc.)",
+    "Stamp Color / Stamp Alpha: Uniform, Variance or Random from Ramp",
+    "Mode: stamp selection, Cycle, Random, Layer Select or Limit Selection",
+    "Grid Type: Grid or Hexagonal, with Scale, Offset and Angle"
+  ],
+  "caveats": [
+    "Depth-Sorted Over has a performance cost and handles partially transparent stamps poorly",
+    "Wiring the sort input overrides the sort behaviour of the Blend Method",
+    "With Do Tiled enabled, Grid Angle is clamped to 90 degrees and Grid Offset and Scale snap to divisors of Stamps X or Y",
+    "The page is inconsistent: the select input says Layer Sort, but the parameter is labelled Layer Select"
+  ],
+  "resume_fr": "Le nœud Shape Scatter, titré Scatter Shapes sur sa page officielle, disperse des tampons sur une image avec des variations de position, d'échelle, d'angle et de couleur."
+}

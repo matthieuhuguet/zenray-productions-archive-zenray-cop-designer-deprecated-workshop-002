@@ -1,0 +1,17 @@
+{
+  "name": "rgbatouv",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/rgbatouv.html",
+  "status": "ok",
+  "summary_en": "The RGBA to UV node takes one RGBA layer or attribute and splits it into two UV outputs. Red and green go to the first output, and blue and alpha go to the second.",
+  "inputs": [
+    "rgba: the layer to split"
+  ],
+  "key_parameters": [
+    "Signature: sets the layer type the source accepts (see the Signatures glossary entry)"
+  ],
+  "caveats": [
+    "The page states no caveats",
+    "Only the Signature parameter is documented"
+  ],
+  "resume_fr": "Le nœud RGBA to UV sépare une couche RGBA en deux sorties UV, rouge et vert d'un côté, bleu et alpha de l'autre."
+}

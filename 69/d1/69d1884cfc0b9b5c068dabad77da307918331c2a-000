@@ -1,0 +1,19 @@
+{
+  "name": "sequenceblend",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/sequenceblend.html",
+  "status": "ok",
+  "summary_en": "Sequence Blend mixes several image layers with a blend factor, interpolating across the numbered image inputs. The page recommends the Blend COP when only two layers need blending.",
+  "inputs": [
+    "blend (optional): per-pixel blend amount, scaled by the Blend parameter",
+    "image#: the layers to blend, one per numbered input"
+  ],
+  "key_parameters": [
+    "Signature: the layer type the source image accepts",
+    "Invert: inverts the Blend value",
+    "Blend: blend factor from 0 to 1, mapped across all image inputs"
+  ],
+  "caveats": [
+    "Use the Blend COP instead when you only need to blend two layers"
+  ],
+  "resume_fr": "Le nœud Sequence Blend mélange plusieurs couches image à l'aide d'un facteur de fondu réparti sur ses entrées numérotées."
+}

@@ -1,0 +1,26 @@
+# attribfromlayer
+
+- Label: Attribute from Layer
+- Category: Copernicus (`Cop`), Houdini 22.0.368
+- Inputs: 0 to 1
+- Parameters: 2 (exact, read from Houdini by hython)
+- Used by the height graph: no
+
+## Feature summary (web, SideFX reference)
+
+- Source: https://www.sidefx.com/docs/houdini/nodes/cop/attribfromlayer.html
+- Summary (EN): Converts an input layer into a detached attribute by flattening its pixels into a 1D array whose length equals the pixel count. The page names Layer from Attribute as the related reverse operation.
+- Résumé (FR) : Aplatit les pixels d'une couche en attribut détaché de longueur égale au nombre de pixels, avec un ordre de lecture réglable.
+
+- Inputs meaning: ["layer: layer whose pixels are flattened into the attribute"]
+
+- Key parameters: ["Signature: layer type accepted", "Data Ordering: default starts bottom left and reads left to right, bottom to top; alternative starts top left and reads left to right, top to bottom"]
+
+- Caveats: ["Output length always equals the layer pixel count, so attribute size depends on layer resolution", "Data Ordering determines how pixels map into the 1D array, which matters to nodes that interpret it", "Added in Houdini 22.0"]
+
+## Parameters (exact, from the installed Houdini)
+
+| parameter | label | type | default | range | menu tokens |
+|---|---|---|---|---|---|
+| `signature` | Signature | String | ["auto"] |  |  |
+| `order` | Data Ordering | Menu | 0 |  | leftbottom, lefttop |

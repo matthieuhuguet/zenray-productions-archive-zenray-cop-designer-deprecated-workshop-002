@@ -1,0 +1,29 @@
+{
+  "name": "pyro_velocityscale",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/pyro_velocityscale.html",
+  "status": "ok",
+  "summary_en": "Pyro Velocity Scale Force adjusts a fluid's velocity field according to how fast the fluid already moves, either slowing it down or speeding it up. The page title is Pyro Velocity Scale Force and the URL and icon use pyro_velocityscale; the internal name is inferred from these, not stated in the body. Listed as since Houdini 22.0.",
+  "inputs": [
+    "v: Vector VDB holding the original velocities",
+    "direction: Vector VDB that sets the force direction per voxel",
+    "threshold: Float or Vector VDB used as the threshold field; a Vector VDB contributes its length",
+    "control: Float or Vector VDB used as a mask-like control field; a Vector VDB contributes its length",
+    "angledir: Vector VDB that sets the per-voxel direction for the angle mask"
+  ],
+  "key_parameters": [
+    "Activation: turns the node on or off, active only when 1",
+    "Threshold Range, Scale at Min/Max Threshold: map threshold values to scale amounts at each end of the range",
+    "Apply Scale Below/Above Threshold: whether scaling applies outside the range, which prevents runaway speed-up or stalling",
+    "Remap Scale / Scale Ramp: ramp controlling how values between min and max are mapped",
+    "Control Volume, Control Range, Use Ramp: mask the effect with the control field; default 0 to 1 concentrates it on higher control values",
+    "Angle Mask, Angle Direction, Spread Angle: scale by how closely velocity aligns with a reference direction; fades to zero at 90 degrees by default",
+    "Axis Mask, Axis Direction, Axis Range: scale by world-space position along an axis, without a VDB"
+  ],
+  "caveats": [
+    "Requires DOP-level permissions. Not available in Houdini Core.",
+    "Without the apply-scale toggles, motion may speed up indefinitely or come to a halt.",
+    "Vector VDB inputs for threshold and control are reduced to their length, so direction is ignored for those fields.",
+    "The node outputs v, the modified velocities."
+  ],
+  "resume_fr": "Ce nœud ralentit ou accélère le champ de vitesse d'un fluide selon sa vitesse existante."
+}

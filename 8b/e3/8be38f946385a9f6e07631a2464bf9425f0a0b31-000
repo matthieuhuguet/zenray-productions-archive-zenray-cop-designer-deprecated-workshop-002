@@ -1,0 +1,22 @@
+{
+  "name": "slapcompimport",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/slapcompimport.html",
+  "status": "ok",
+  "summary_en": "Slap Comp Import brings live layers from the Solaris interactive viewport, namely Karma CPU and XPU renders, into a COP network. If no layers have been posted by an interactive render, it passes its inputs through unchanged.",
+  "inputs": [
+    "input#: AOV input layers, numbered; the page does not specify their order beyond the numbering"
+  ],
+  "key_parameters": [
+    "Reload Image: dirties the node and tries to reload the last layers posted by an interactive render",
+    "Live Recook: each new interactive render frame dirties the node, giving continuous live output",
+    "Import Cameras with Slap Comp Inputs: when off, layers are always imported in canonical coordinates",
+    "Add AOVs from Last Render: fills the AOV list with every AOV exported by the last render",
+    "Number of AOVs, with per-AOV Slap Comp AOV name and Channel Type: which AOVs are imported and their data types"
+  ],
+  "caveats": [
+    "An interactive render must already have been run in the Solaris viewport; the node cannot trigger renders itself",
+    "Live Recook may slow the render process if the COP network is visible",
+    "The AOV list from Add AOVs from Last Render may contain unneeded entries, and the page says this method is more reliable than entering names and types by hand"
+  ],
+  "resume_fr": "Le nœud Slap Comp Import importe dans un réseau COP les couches rendues en direct depuis la vue interactive de Solaris, et les transmet telles quelles s'il n'y en a aucune."
+}

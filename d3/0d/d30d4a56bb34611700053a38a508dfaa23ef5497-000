@@ -1,0 +1,23 @@
+{
+  "name": "weave",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/weave.html",
+  "status": "ok",
+  "summary_en": "Generates a woven fabric texture by interlacing horizontal weft fibres and vertical warp fibres. Useful for fabric, basket-weave and similar textile patterns.",
+  "inputs": [
+    "size_ref: reference layer that sets the output image size and metadata",
+    "pattern (optional): Mono layer supplying a custom over/under arrangement"
+  ],
+  "key_parameters": [
+    "Rows / Columns: number of weft (horizontal) and warp (vertical) fibres",
+    "Weave Multiplier: increases the number of over/under crossings for a tighter weave",
+    "Arrangement (Every Nth Column, Every Nth Tile, Checkerboard): controls which fibres pass over at each tile, including a classic plain-weave checkerboard",
+    "Row Inset / Column Inset: gap spacing between rows and between columns",
+    "Edge Gradient: softens fibre edges for a rounder profile",
+    "Overlap Gradient / Overlap Gradient Ramp: shading at crossings and its falloff",
+    "Fiber Scale / Fiber Strength: fineness, elongation and intensity of procedural strand detail"
+  ],
+  "caveats": [
+    "The Arrangement parameters are disabled when a custom arrangement is connected to the pattern input, which overrides them"
+  ],
+  "resume_fr": "Génère une texture de tissage en entrelaçant des fibres de trame et de chaîne, avec réglage des rangées, colonnes, croisements et ombrages."
+}

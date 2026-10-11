@@ -1,0 +1,27 @@
+{
+  "name": "ml_computervisioninference",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/ml_computervisioninference.html",
+  "status": "ok",
+  "summary_en": "Runs an ONNX model produced by the ML Train Computer Vision TOP on an input image, detecting and masking objects. The Detection Type must match the setting used when the model was trained.",
+  "inputs": [
+    "The page does not describe the input connectors or their order. It refers only to an input image or input volume in the Inference Resolution settings."
+  ],
+  "key_parameters": [
+    "Model File: the .onnx file to use; Reload Model forces a reload",
+    "Detection Type: Objects (bounding boxes only), Masks (boxes plus segmentation masks) or Keypoints (boxes plus keypoints)",
+    "Minimum Confidence: detections below this threshold are discarded",
+    "Inference Resolution / Custom Resolution: native input resolution or a custom one, with the input resampled as needed",
+    "Object Definitions: number of classes with each name and display colour, and keypoint count, names and colours",
+    "Pre-Process: colour transform, None (Raw) or OCIO, with Pixel Mean and Pixel Deviation for converting input colours",
+    "Bounding Boxes, Masks, Keypoints: options for writing class, name and score attributes, setting point colours, and for masks, using confidence as mask values or refining mask edges",
+    "Advanced: Execution Provider (Automatic, CPU, CUDA, DirectML, CoreML) and Device ID for choosing a GPU"
+  ],
+  "caveats": [
+    "Detection Type must match the training node's setting, or results will be wrong.",
+    "CUDA requires CUDA and cuDNN installed from NVIDIA's packages.",
+    "DirectML is Windows only, and CoreML is macOS only.",
+    "Device ID has no effect with CPU inference.",
+    "The page does not explain how to choose Pixel Mean and Pixel Deviation values."
+  ],
+  "resume_fr": "Exécute un modèle ONNX entraîné par le TOP ML Train Computer Vision pour détecter des objets et produire leurs masques dans une image, avec un seuil de confiance."
+}

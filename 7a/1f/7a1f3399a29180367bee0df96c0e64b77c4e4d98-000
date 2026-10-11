@@ -1,0 +1,29 @@
+{
+  "name": "streakblur",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/streakblur.html",
+  "status": "ok",
+  "summary_en": "Streak Blur smears an image in one direction to create a motion-blur-like effect. Its streaks have a fixed direction and length unless changed by parameters or inputs.",
+  "inputs": [
+    "source: layer the effect is applied to",
+    "direction (optional): UV layer setting the streak direction per pixel, for example a Constant COP or Fractal Noise COP feeding a Slope Direction COP",
+    "scalelength (optional): value multiplying the Length parameter",
+    "mask (optional): per-pixel mask scaled by the Mask parameter"
+  ],
+  "key_parameters": [
+    "Mask: mix of new result with original, default 1 uses only the new result",
+    "Border: sampling behaviour outside the layer edges, taken automatically from the layer border property",
+    "Direction Type: Angle (0 horizontal, 90 vertical) or Direction vector in polar coordinates",
+    "Normalise Direction: when off, the direction vector is multiplied by the length",
+    "Units: Image or Pixels",
+    "Length: streak length in the chosen units",
+    "Bias: 0 centres the streak, -1 ends it at the pixel, 1 starts it at the pixel",
+    "Mode: Blur (average), Min (erodes shapes), Max (edge roughness)",
+    "Use Streak Weight / Streak Weight: ramp fading samples along the streak, left side is the start"
+  ],
+  "caveats": [
+    "The page states that the direction and length of the streaks are constant",
+    "To vary them, wire the direction input or use the scalelength input",
+    "Identity matched from the page title and the Copernicus index link, the page body does not repeat the internal name"
+  ],
+  "resume_fr": "Streak Blur étire une image dans une seule direction pour simuler un flou de mouvement, avec une direction et une longueur constantes, sauf si une entrée les fait varier."
+}

@@ -1,0 +1,29 @@
+{
+  "name": "ripple_block_end",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/ripple_block_end.html",
+  "status": "ok",
+  "summary_en": "Ripple Block End marks the end of a Ripple simulation block in Copernicus and must be paired with a Ripple Block Begin. When Simulate is on, its outputs feed back into its inputs, creating the simulation loop.",
+  "inputs": [
+    "height: the wave height",
+    "feedback: cable of the current feedback data routed back into the input; its structure must match the initial structure set on the Block Begin"
+  ],
+  "key_parameters": [
+    "Simulate: turns on the feedback loop",
+    "Reset Simulation: clears the whole simulation cache when Simulate is on",
+    "Time Scale: scales time inside the block; above 1 speeds up, below 1 slows down",
+    "Substeps: divides each frame into this many substeps, for accuracy and stability with fast ripples",
+    "Iterations: number of iterations when not simulating",
+    "Live Simulation: interactive, non-deterministic mode independent of the playbar, not cached",
+    "Caching, Start Frame, Cached Frames, Checkpoint Rate: frame caching controls",
+    "Wave Speed: how fast ripples travel across pixels",
+    "Conservation: how much wave velocity is kept over time; 1 keeps all velocity, values outside 0 to 1 are clamped",
+    "Spring: strength of the force pulling pixels back toward rest (called Rest Spring in the introduction)"
+  ],
+  "caveats": [
+    "Requires DOP-level permissions: not in Houdini Core, only in Houdini FX, Apprentice, Indie and Education",
+    "Compiled COP networks do not support simulation",
+    "Live Simulation does not save results; use a Stash COP to keep them",
+    "When Live Simulation is on, Start Frame, Cached Frames and Checkpoint Rate no longer apply"
+  ],
+  "resume_fr": "Le nœud Ripple Block End referme un bloc de simulation de vagues et renvoie ses résultats dans la boucle quand Simulate est activé."
+}

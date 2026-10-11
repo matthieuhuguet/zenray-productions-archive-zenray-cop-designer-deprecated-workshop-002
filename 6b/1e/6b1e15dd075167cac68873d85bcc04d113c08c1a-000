@@ -1,0 +1,23 @@
+{
+  "name": "mirror",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/mirror.html",
+  "status": "ok",
+  "summary_en": "Mirrors an input image across a user-defined number of planes, creating symmetry such as radial patterns. By default it reflects the left side of the image across a vertical line down the middle.",
+  "inputs": [
+    "source: the original layer to which the mirrors are applied"
+  ],
+  "key_parameters": [
+    "Signature: the layer type the source accepts",
+    "Mode: Number and Offset (default) sets a total plane count with a shared angle and offset; Custom Mirror Planes configures each plane individually",
+    "Number of Planes: total number of mirror planes in Number and Offset mode",
+    "Mirrors: number of planes in Custom Mirror Planes mode, applied in list order",
+    "Angle: in degrees; in Number and Offset mode each plane's angle accumulates (20 with 3 planes gives 20, 40 and 60). Positive values mirror the left side, negative values the right side",
+    "Offset: perpendicular shift of the mirror plane from the origin in image space; positive shifts right, negative shifts left",
+    "Reverse Mirror Plane Direction: flips the plane, so 180 behaves like 0"
+  ],
+  "caveats": [
+    "In Number and Offset mode angles are cumulative, so one value does not apply to every plane. The page gives the expression [-]180/ch(\"numberplanes\") to produce a full circle of radial symmetry.",
+    "The page gives no explicit warnings or limitations."
+  ],
+  "resume_fr": "Reproduit une image à travers un nombre donné de plans miroirs pour créer des symétries, comme des motifs radiaux, avec un angle cumulé et un décalage réglables."
+}

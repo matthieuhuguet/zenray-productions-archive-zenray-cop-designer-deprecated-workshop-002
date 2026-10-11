@@ -1,0 +1,33 @@
+{
+  "name": "phasornoise",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/phasornoise.html",
+  "status": "ok",
+  "date": "11 October 2026",
+  "summary_en": "The Phasor Noise node procedurally generates wave-like noise by summing local phasor kernels, each defining sine and cosine waves in a small area. It suits wood grain, water ripples and wind-blown textures, with finer control over direction and spacing than OpenCL sine and cosine code.",
+  "inputs": [
+    "size_ref: sets output image size and metadata",
+    "pos (optional): UV layer replacing pixel coordinates",
+    "time (optional): per-pixel time value",
+    "bias (optional): sets wave peak positions for Phasor Wave",
+    "scale (optional): multiplies Element Size",
+    "direction (optional): UV layer setting the initial kernel angle"
+  ],
+  "key_parameters": [
+    "Signature / Rotate Channel: layer type; non-Mono signatures give one noise per channel, each rotated by an offset",
+    "Amplitude / Center / Noise Contrast: scale, offset and contrast of noise values",
+    "Type: Phasor Wave (Sine, Rectangle or Saw profile), Phasor Noise, Gabor Noise or Intensity Field",
+    "Element Size / Element Scale: wave width, with per-axis scaling",
+    "Offset / Tile Size: shift and repeat period",
+    "Wave Bias / Blending Radius / Kernels / Seed: peak position, kernel overlap, kernel count, randomness",
+    "3D Noise (Animate, Pulse Length, Time Scale, Loop Length): third dimension for animation and seamless loops",
+    "Rotate Pattern / Rotation Varying: kernel angles, uniform or randomised, with optional secondary set",
+    "Post Processing (Fold, Complement, Bias, Gain, Gamma, Contrast, Clamp Minimum, Clamp Maximum): applied in the listed order"
+  ],
+  "caveats": [
+    "Procedural patterns can look more artificial than simulation-based results.",
+    "Values can fall outside 0 to 1 after amplitude or contrast changes; use a Clamp COP to enforce a range.",
+    "Element Size values outside 0 to 1 can give unwanted results.",
+    "With Tile Size enabled, some parameters are rounded or clamped to stay tileable."
+  ],
+  "resume_fr": "Le nœud Phasor Noise génère un bruit ondulatoire procédural en sommant des noyaux phaseurs locaux, adapté aux veines de bois, aux ondulations d'eau et aux textures de vent."
+}

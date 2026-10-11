@@ -1,0 +1,36 @@
+{
+  "name": "randomrgb",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/randomrgb.html",
+  "status": "ok",
+  "summary_en": "Random RGB generates random colours for an RGB layer, VDB or attribute. Colours come from Min/Max channel ranges, a colour ramp, or a palette of specific values, and colour derivation modes (complementary, analogous, triadic, tetradic, shades, tints) apply to Specific Values.",
+  "inputs": [
+    "size_ref: representative layer that sets the output image size and metadata",
+    "min: minimum component limit when Range Values is Min/Max",
+    "max: maximum component limit when Range Values is Min/Max",
+    "ramp: ramp sampled horizontally when Range Values is Color Ramp",
+    "seed: controls the random colour distribution, allowing variation per custom shape"
+  ],
+  "key_parameters": [
+    "Signature: layer type the node outputs",
+    "Range Values: Min/Max, Color Ramp or Specific Values",
+    "Color Model (Min/Max only): RGB constrains the red, green and blue ranges; HSV restricts hue, saturation and value to a slice of the colour wheel",
+    "Relative to Color: base colour that small random deviations are applied around",
+    "Red/Green/Blue and Hue/Saturation/Value Min/Max: range limits per component",
+    "Color Ramp: maps the intermediate random value through a ramp to get the final colour",
+    "Color Palette and Number of Colors (Specific Values only): preset palette filling the number of colours",
+    "Color # modes: Constant, Complementary, 2 Analogous, 4 Analogous, Triadic, Tetradic, 5 Shades, 5 Tints",
+    "Weight: how often each adjustment value is sampled; equal weights mean equal probability",
+    "Angle and Distance: Angle sets the spacing around the colour wheel; Distance sets the brightness step for 5 Shades or the saturation step for 5 Tints",
+    "Random per Pixel: selection varies per pixel for grain-like noise",
+    "Seed and Time: both drive the randomness",
+    "Zero Negative IDs: when a seed input is connected, outputs black where the seed is a negative integer"
+  ],
+  "caveats": [
+    "Per-pixel variation requires Random per Pixel to be enabled or a seed input to be wired; otherwise the fill is uniform across the layer.",
+    "Min/max and ramp inputs apply only in their matching Range Values mode.",
+    "Color Model applies only when Range Values is Min/Max.",
+    "Zero Negative IDs has an effect only when a seed is connected.",
+    "The page gives identical descriptions for Triadic and 2 Analogous, so the difference between them is unclear from this page alone."
+  ],
+  "resume_fr": "Ce nœud génère des couleurs aléatoires pour un calque RGB, à partir de plages, d'une rampe de couleurs ou d'une palette de valeurs."
+}

@@ -1,0 +1,27 @@
+{
+  "name": "rop_image",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/rop_image.html",
+  "status": "ok",
+  "summary_en": "The ROP Image Copernicus node writes the output of a COP network to disk as image files. It is the Image ROP placed inside a COP network and renders the COP chosen by its COP Path parameter.",
+  "inputs": [
+    "The page lists no numbered inputs; a wired input is used only by the Add AOVs from Input button, which imports AOVs from its outputs",
+    "Otherwise the source to render is set by the COP Path parameter"
+  ],
+  "key_parameters": [
+    "Render to Disk / Render to MPlay / Render to Disk in Background: where the images go",
+    "Valid Frame Range: current frame, a range that can include referenced frames, or a strict Start/End/Inc range",
+    "UDIM List: Disabled, Use Context, Explicit or Range",
+    "COP Path: the COP node or subnetwork to render",
+    "Output File: file path with tokens LAYER (one file per AOV), F / F# (frame number) and UDIM",
+    "Colorspace Conversion: OpenColorIO Colorspace, Bake to OpenColorIO Display/View, or Raw",
+    "Set Default Resolution / Pixel Scale / Border / Precision: each overrides the COP node value when enabled",
+    "File Layout (AOV list): name, data size, Raw toggle and optional explicit Port index per AOV",
+    "Save Retries: retries of a save that fails due to a disk or network error"
+  ],
+  "caveats": [
+    "AOVs added out of sequential order need explicit Port parameters to get the correct order",
+    "The Default Resolution override does not apply when the resolution comes from a File COP or a SOP-converted volume; the page suggests a Resample COP to force a resolution",
+    "Save in Background can speed up large files but uses more memory, since it keeps the output until the save finishes"
+  ],
+  "resume_fr": "Le nœud ROP Image écrit sur disque, sous forme de fichiers image, la sortie d'un réseau COP, en rendant le COP désigné par son chemin."
+}

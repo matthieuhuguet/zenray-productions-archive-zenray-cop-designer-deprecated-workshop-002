@@ -1,0 +1,23 @@
+{
+  "name": "timeshift",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/timeshift.html",
+  "status": "ok",
+  "summary_en": "Makes its input cook at a different time than the node itself. You can use it to reach earlier or later frames, or to fetch data from a specific absolute frame.",
+  "inputs": [
+    "input1: the only input. The page gives no further description of its content."
+  ],
+  "key_parameters": [
+    {"name": "Method", "meaning": "Whether the input is cooked at a frame number or at a time in seconds."},
+    {"name": "Mode", "meaning": "Absolute Shift moves an origin to a destination. Relative Shift applies an offset. Custom takes a value meant to be driven by an expression."},
+    {"name": "Frame / Time", "meaning": "The frame or time to pull (Custom), or the offset (Relative Shift)."},
+    {"name": "Shift from / to", "meaning": "The anchor and its new position (Absolute Shift)."},
+    {"name": "Integer Frames", "meaning": "Rounds frame numbers down to integers after the other calculations."},
+    {"name": "Clamp", "meaning": "Limits the retrieved value to the start, the end, both, or neither."},
+    {"name": "Start/End Frame or Time", "meaning": "Bounds used by Clamp. Shown only when Clamp is not None."}
+  ],
+  "caveats": [
+    "In Copernicus blocks, Time Shift cannot be used when block inputs must cook at different times. Suggested workaround: a Time Pack before Block Begin, with the frames wired in as a cable.",
+    "For Relative Shift, a negative offset moves the input forward in time, the opposite of what the name suggests."
+  ],
+  "resume_fr": "Ce nœud fait cuire son entrée à un autre instant que lui-même, pour lire des images antérieures ou postérieures ou une frame absolue donnée."
+}

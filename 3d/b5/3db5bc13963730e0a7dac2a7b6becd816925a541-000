@@ -1,0 +1,27 @@
+{
+  "name": "pyro_sourcefromvolume",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/pyro_sourcefromvolume.html",
+  "status": "ok",
+  "summary_en": "Pyro Source from Volume updates one VDB using the values of another VDB of the same type (Float into Float, Vector into Vector). It is part of COP Pyro and is documented since Houdini 22.0.",
+  "inputs": [
+    "target: Float or Vector VDB that receives the mixed source values",
+    "source: Float or Vector VDB whose values are mixed into the target",
+    "control: optional Float or Vector VDB that masks the effect; a Vector VDB contributes its length"
+  ],
+  "key_parameters": [
+    "Activation: enables the node, runs only when set to 1",
+    "Signature: VDB type the source accepts",
+    "Source Mode: Continuous (every solver step), First Frame Only, or Copy on First Frame",
+    "Operation: Add, Copy, Maximum, Average, Blend, Pull or Scale",
+    "Scale by Timestep: keeps sourcing consistent under substepping",
+    "Acceleration / Deceleration: how strongly source values above the target are pushed toward it (used with Pull)",
+    "Blend: weight used when Operation is Blend",
+    "Control Volume, Control Range, Use Ramp, Control Ramp: mask mapped from Control Range to 0-1 and multiplied on top of Scale"
+  ],
+  "caveats": [
+    "Requires DOP-level permissions. Not available in Houdini Core.",
+    "The node does not activate voxels, so sources outside active regions have no effect.",
+    "In First Frame Only mode, source animation is ignored after the first frame."
+  ],
+  "resume_fr": "Ce nœud met à jour un VDB avec les valeurs d'un autre VDB de même type, sous le contrôle d'un masque optionnel."
+}

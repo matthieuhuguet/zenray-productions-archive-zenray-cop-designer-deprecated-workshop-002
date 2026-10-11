@@ -1,0 +1,23 @@
+{
+  "name": "prefixsum",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/prefixsum.html",
+  "status": "ok",
+  "date": "11 October 2026",
+  "summary_en": "The Prefix Sum node accumulates values across a layer's pixels along a chosen scan path. It combines values with addition, or tracks a running minimum, maximum or count.",
+  "inputs": [
+    "source: original layer to compute the prefix sum from",
+    "active (optional): per-pixel mask; values above 0.5 are included, values below 0.5 are excluded"
+  ],
+  "key_parameters": [
+    "Signature: layer type accepted by the source",
+    "Direction: scan path: +X, -X, +Y, -Y, a meandering +X+Y path, or Linear (each horizontal line scanned before the next)",
+    "Operation: Add, Minimum, Maximum or Count",
+    "Scale: normalises non-integer sums by pixel size or by texture or image size; None disables scaling; the factor depends on whether the scan includes X, Y or both passes"
+  ],
+  "caveats": [
+    "Scale applies only to non-integer summation.",
+    "With Image scale, a constant pixel value of 1 across the image sums to 2, not 1.",
+    "The active input only affects which values enter the statistics."
+  ],
+  "resume_fr": "Le nœud Prefix Sum accumule les valeurs d'une couche le long d'un trajet de balayage, en addition, minimum, maximum ou comptage."
+}

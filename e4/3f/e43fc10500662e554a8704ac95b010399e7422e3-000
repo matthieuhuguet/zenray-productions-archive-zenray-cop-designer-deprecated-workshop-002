@@ -1,0 +1,19 @@
+{
+  "name": "premult",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/premult.html",
+  "status": "ok",
+  "date": "11 October 2026",
+  "summary_en": "The Premult node converts an RGBA layer between straight and premultiplied alpha, multiplying or dividing the R, G and B channels by alpha.",
+  "inputs": [
+    "source: layer to premultiply or un-premultiply",
+    "mask (optional): per-pixel mask amount, scaled by Mask"
+  ],
+  "key_parameters": [
+    "Mask: how much of the new result mixes in; default 1 uses only the new value",
+    "Operation: Premultiply by Alpha (multiplies RGB by alpha) or Un-Premultiply by Alpha (divides RGB by alpha)"
+  ],
+  "caveats": [
+    "The page does not say how zero-alpha pixels are handled during un-premultiply, where division by alpha is undefined; check in practice if layers contain fully transparent pixels."
+  ],
+  "resume_fr": "Le nœud Premult convertit un RGBA entre alpha droit et alpha prémultiplié, en multipliant ou divisant RGB par alpha ; la page ne précise pas le cas d'un alpha nul."
+}

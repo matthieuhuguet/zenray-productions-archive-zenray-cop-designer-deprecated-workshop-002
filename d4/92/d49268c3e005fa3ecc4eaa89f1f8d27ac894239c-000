@@ -1,0 +1,31 @@
+{
+  "name": "pyro_sourceshape",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/pyro_sourceshape.html",
+  "status": "ok",
+  "summary_en": "Pyro Source Shape creates points representing implicit surfaces (box, sphere, torus, tube, or a custom implicit surface) that feed a Pyro simulation as sources. Per-field sourcing, force, curl noise and inherited velocity are configured on this node. It is documented as a Copernicus node in Houdini 22.0.",
+  "inputs": [
+    "implicitsurface: optional implicit surface geometry that replaces the default primitives"
+  ],
+  "key_parameters": [
+    "Activation: turns the node on or off, active only when 1",
+    "Shape: primitive type and its size, roundness, radius, sphere cut, torus link length, or tube radii and end caps",
+    "Transform: translate, rotate and uniform scale of the shape",
+    "Distortion Noise: animated noise distortion (amplitude, element size, pulse duration, roughness, seed)",
+    "Sourcing per field (Density, Temperature, Velocity, Flame, Divergence): Source toggle, Source Mode, Operation (Add, Copy, Maximum, Average, Blend, Pull, Scale), Blend, Acceleration, Deceleration",
+    "Scale by Timestep: consistency under substepping",
+    "Scale by Noise: multiplies the source by noise (Scale Min/Max, Avoid Negatives)",
+    "Inherited Velocity: Point Velocity and Velocity Scale for moving or rotating sources",
+    "Force: Directional, Spherical, Spin or Radial force field (Scale, Direction, Axis)",
+    "Curl Noise: noise-based vector field (amplitude and noise controls)",
+    "Flame: Source Flame toggle plus Source Mode, Operation and noise settings"
+  ],
+  "caveats": [
+    "The output must connect to the source_points input of Pyro Block Begin. Merge several sources with Point Merge.",
+    "With First Frame Only, source animation is ignored after the first frame.",
+    "Copy on First Frame copies the source on frame one, then applies the chosen Operation on later frames.",
+    "Point Velocity refers to a Velocity Approximation parameter that this page does not describe.",
+    "Scale Min/Max with negative values creates empty spaces only together with Avoid Negatives, which otherwise zeroes negative values.",
+    "Requires DOP-level permissions. Not available in Houdini Core."
+  ],
+  "resume_fr": "Ce nœud crée des points sources qui représentent des surfaces implicites, primitives ou personnalisées, pour alimenter une simulation pyro."
+}

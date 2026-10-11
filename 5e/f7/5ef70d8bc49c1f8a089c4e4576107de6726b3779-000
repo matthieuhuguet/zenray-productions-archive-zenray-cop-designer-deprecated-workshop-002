@@ -1,0 +1,22 @@
+{
+  "name": "testgeometry_otto",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/testgeometry_otto.html",
+  "status": "ok",
+  "summary_en": "Test Geometry: Otto generates Otto, a realistic test character, as polygon geometry or as a VDB signed distance field. Because Otto uses UDIM textures, it is a useful test case for UDIM-based workflows.",
+  "inputs": [
+    "None documented: the page lists parameters and outputs only (geo, basecolor, roughness)"
+  ],
+  "key_parameters": [
+    "Signature: polygons or VDB signed distance field (SDF)",
+    "Level of Detail: Render (high quality) or Proxy (lower resolution, faster)",
+    "Voxel Size: SDF voxel size, smaller is more accurate but costs more time and memory",
+    "Translate / Rotate / Uniform Scale: position by the feet, rotation about the centre, uniform scale",
+    "Add Shader: default shader with embedded texture maps",
+    "UDIM: overrides which UDIM tile is exported, by default the @UDIM context option controls it"
+  ],
+  "caveats": [
+    "The UDIM tiles are not contiguous, do not assume a continuous tile range",
+    "Smaller voxel sizes improve SDF accuracy at a higher time and memory cost"
+  ],
+  "resume_fr": "Test Geometry: Otto génère un personnage de test réaliste, en polygones ou en SDF VDB, avec des textures UDIM."
+}

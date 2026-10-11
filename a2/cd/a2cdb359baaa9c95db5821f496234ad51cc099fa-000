@@ -1,0 +1,26 @@
+{
+  "name": "pyro_advect::2.0",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/pyro_advect.html",
+  "status": "ok",
+  "fetched_on": "11 October 2026",
+  "summary_en": "Pyro Advect moves the contents of VDBs along a provided velocity VDB ('Advects VDBs by Velocity'). It can also apply an ambient wind velocity and advect the velocity field itself. Outputs: data (the advected VDBs) and v (the velocity VDB, possibly self-advected).",
+  "inputs": [
+    "data: cable of VDBs to advect",
+    "v: vector VDB supplying the velocity, can optionally be self-advected"
+  ],
+  "key_parameters": [
+    "Advection: Scale (global velocity multiplier), Ambient Velocity (constant wind added to the field), Scale by Timestep",
+    "Tracing: Trace Method (Forward Euler, Average of Two, Explicit Midpoint, Runge-Kutta 3, Runge-Kutta 4, by increasing accuracy and cost), Path Tracing, Maximum Steps, CFL Condition, Adaptive Step Size",
+    "Data Advection: Enable Data Advection, Scheme (BFECC, Euler + Sharpen, Euler), Sharpen",
+    "Velocity: Enable Velocity Advection, Method (same scheme options), Sharpen"
+  ],
+  "caveats": [
+    "Requires DOP-level permissions, not available in Houdini Core (only FX, Apprentice, Indie, Education)",
+    "Forward Euler is fastest but tends to blur smoke and flatten turbulence, higher orders cost more",
+    "BFECC preserves sharpness best but needs considerable time and memory",
+    "Excessive Sharpen can create grid artifacts",
+    "For very fast motion, raising CFL Condition may work better than raising Maximum Steps",
+    "Disable Velocity Advection if the velocity was already advected by another Pyro Advect COP"
+  ],
+  "resume_fr": "Pyro Advect déplace le contenu des VDB le long d'un champ de vitesse fourni. Il peut aussi ajouter un vent ambiant et advecter le champ de vitesse lui-même. Les schémas vont de Forward Euler, le plus rapide mais le plus flou, à Runge-Kutta 4 et BFECC, plus coûteux et plus nets. Requiert les permissions DOP."
+}

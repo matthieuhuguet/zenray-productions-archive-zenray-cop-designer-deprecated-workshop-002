@@ -1,0 +1,27 @@
+{
+  "name": "oceanspectrum",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/oceanspectrum.html",
+  "status": "ok",
+  "summary_en": "Generates layers describing the wave behaviour of an ocean under constant wind and tidal pull, without modelling time-varying changes. Its outputs feed the Ocean Evaluate COP, which animates the surface height. It is the COP counterpart of the Ocean Spectrum SOP.",
+  "inputs": [
+    "size_ref: a representative layer that sets the output image size and controls metadata"
+  ],
+  "key_parameters": [
+    "Ocean Size: world-space size of the spectrum tile; larger values fit more wave peaks into one tile, so waves appear to move slower",
+    "Depth: water depth; deeper water produces stronger dispersion, so large low-frequency waves travel faster than small ones",
+    "Gravity: affects wavelength and wave speed",
+    "Seed: randomises the spectrum without changing the wave dynamics",
+    "Spectrum Type: Phillips (classic fully developed ocean with wind direction control) or TMA (adds fetch and swell, performs better at low depths)",
+    "Wind Direction and Wind Speed: dominant direction and wave energy; higher speed produces larger low-frequency waves",
+    "Distribution: randomises amplitudes with None, Uniform, Gaussian or Log Normal; None is useful when the amplitude layer is post-multiplied by hand",
+    "Normalize: keeps wave height consistent as shaping parameters change; Wind Speed then affects dynamic range and Scale affects overall amplitude",
+    "Min Wavelength: dampens very small waves to reduce aliasing at high resolution",
+    "Scale: constant gain applied to all amplitudes",
+    "Loop Period: length of the looping animation in seconds, when looping is enabled"
+  ],
+  "caveats": [
+    "The COP result is noticeably less sharp than the Ocean Spectrum SOP output.",
+    "For correct visualisation of the height field from Ocean Evaluate, the spectrum should be uniformly scaled by the Ocean Size value."
+  ],
+  "resume_fr": "Génère les couches décrivant le comportement des vagues d'un océan sous vent constant, à transmettre à Ocean Evaluate COP ; c'est la version COP du spectre d'océan SOP, un peu moins nette."
+}

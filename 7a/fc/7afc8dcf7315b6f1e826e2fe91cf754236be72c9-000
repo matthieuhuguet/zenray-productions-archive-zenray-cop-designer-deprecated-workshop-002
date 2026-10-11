@@ -1,0 +1,28 @@
+{
+  "name": "resample",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/resample.html",
+  "status": "ok",
+  "summary_en": "The Resample node scales an image by changing its width, height and pixel size, producing a new output canvas that can have a different aspect ratio or resolution. An optional size reference sets the output size and metadata.",
+  "inputs": [
+    "source: the image to resample",
+    "size_ref: representative layer that sets the output size and metadata; uses source when not wired"
+  ],
+  "key_parameters": [
+    "Size Control: Resolution (pixel count), Aspect Ratio or Pixel Size",
+    "Base Size: Parameter (values entered) or Size Input (inherited from size_ref or source)",
+    "Base Resolution / Base Aspect Ratio / Pixel Size: base values when Base Size is Parameter",
+    "Uniform Scale: scales the Base Size",
+    "Resolution Scale: scales pixel count in width and height (Resolution mode)",
+    "Fixed Dimension: keeps width, height, smaller or larger dimension fixed (Aspect Ratio mode)",
+    "Size Scale: scales pixel width and height (Pixel Size mode)",
+    "Reframe to Destination: stretches input to fill the output boundary so the display window matches the data window",
+    "Filter: Point, Bilinear, Box, Bartlett, Catmull-Rom, Mitchell or B-spline",
+    "Stretch Behavior: Stretch to Fit, Fit Horizontally, Fit Vertically, Fit Maximally or Fit Minimally"
+  ],
+  "caveats": [
+    "Stretch Behavior has no effect when Reframe to Destination is on",
+    "Fixed Dimension applies only in Aspect Ratio mode; Size Scale only in Pixel Size mode",
+    "The page does not state the default filter"
+  ],
+  "resume_fr": "Le nœud Resample redimensionne une image en changeant sa largeur, sa hauteur et la taille de ses pixels, sur un nouveau canevas de sortie."
+}

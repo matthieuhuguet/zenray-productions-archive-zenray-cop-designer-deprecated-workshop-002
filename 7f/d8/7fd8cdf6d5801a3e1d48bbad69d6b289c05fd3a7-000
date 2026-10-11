@@ -1,0 +1,58 @@
+# align
+
+- Label: Align
+- Category: Copernicus (`Cop`), Houdini 22.0.368
+- Inputs: 0 to 2
+- Parameters: 34 (exact, read from Houdini by hython)
+- Used by the height graph: no
+
+## Feature summary (web, SideFX reference)
+
+- Source: https://www.sidefx.com/docs/houdini/nodes/cop/align.html
+- Summary (EN): Applies a 2D transformation that moves, and optionally scales, a source layer so it lines up with a reference target. The target can be a reference layer, a reference data or display window, or a target point.
+- Résumé (FR) : Déplace et met à l'échelle une couche pour l'aligner sur une couche de référence ou sur un point cible.
+
+- Inputs meaning: ["source: layer to align", "size_ref (optional): reference layer to align to"]
+
+- Key parameters: ["Source Data Window / Display Window: source rectangle used for alignment", "Justify with: Reference Data Window, Reference Display Window or Target Point", "Units: Image, Texture, Pixels or World, applied to the size_ref target values", "Target Point and Target Size: target position and size in the chosen units", "Justify X / Justify Y: None, Min, Center or Max", "Goal X / Goal Y: Same, Min, Center or Max", "Offset by: extra image-space offset applied after alignment", "Scale to Fit: Uniform Scale, or per-axis Scale X and Scale Y through Scale Axis"]
+
+- Caveats: ["The transformation runs in world space, so pixel values are unchanged", "Merging should also be done in world space for the transform to take effect", "Units only affects the target values tied to size_ref", "Offset by is in image space, not in the units chosen for the target", "The page points to Align Pixels as a related node without explaining the difference", "Available since Houdini 22.0"]
+
+## Parameters (exact, from the installed Houdini)
+
+| parameter | label | type | default | range | menu tokens |
+|---|---|---|---|---|---|
+| `sourcewindow` | Source | Menu | 0 |  | data, display |
+| `targettype` | Justify with | Menu | 1 |  | refdata, refdisplay, point |
+| `folder1` |  | FolderSet |  |  |  |
+| `targetpointunits` | Units | Menu | 0 |  | image, texture, pixel, world |
+| `targetpointx` | Target Point | Float | 0.0 | -1.0 .. 1.0 |  |
+| `targetpointy` | Target Point | Float | 0.0 | -1.0 .. 1.0 |  |
+| `targetpoint_texturex` | Target Point | Float | 0.5 | 0.0 .. 1.0 |  |
+| `targetpoint_texturey` | Target Point | Float | 0.5 | 0.0 .. 1.0 |  |
+| `targetpoint_pixelx` | Target Point | Float | 0.0 | 0.0 .. 2048.0 |  |
+| `targetpoint_pixely` | Target Point | Float | 0.0 | 0.0 .. 2048.0 |  |
+| `targetpoint_worldx` | Target Point | Float | 0.0 | -10.0 .. 10.0 |  |
+| `targetpoint_worldy` | Target Point | Float | 0.0 | -10.0 .. 10.0 |  |
+| `targetpoint_worldz` | Target Point | Float | 0.0 | -10.0 .. 10.0 |  |
+| `targetsizex` | Target Size | Float | 0.0 | 0.0 .. 2.0 |  |
+| `targetsizey` | Target Size | Float | 0.0 | 0.0 .. 2.0 |  |
+| `targetsize_texturex` | Target Size | Float | 0.0 | 0.0 .. 1.0 |  |
+| `targetsize_texturey` | Target Size | Float | 0.0 | 0.0 .. 1.0 |  |
+| `targetsize_pixelx` | Target Size | Float | 0.0 | 0.0 .. 2048.0 |  |
+| `targetsize_pixely` | Target Size | Float | 0.0 | 0.0 .. 2048.0 |  |
+| `targetsize_worldx` | Target Size | Float | 0.0 | 0.0 .. 10.0 |  |
+| `targetsize_worldy` | Target Size | Float | 0.0 | 0.0 .. 10.0 |  |
+| `targetsize_worldz` | Target Size | Float | 0.0 | 0.0 .. 10.0 |  |
+| `folder0` |  | FolderSet |  |  |  |
+| `justify_x` | Justify X | Menu | 0 |  | none, min, center, max |
+| `goal_x` | Goal X | Menu | 0 |  | same, min, center, max |
+| `offset_x` | Offset by | Float | [0.0] | -2.0 .. 2.0 |  |
+| `justify_y` | Justify Y | Menu | 0 |  | none, min, center, max |
+| `goal_y` | Goal Y | Menu | 0 |  | same, min, center, max |
+| `offset_y` | Offset by | Float | [0.0] | -2.0 .. 2.0 |  |
+| `doscale` | Scale to Fit | Toggle | false |  |  |
+| `uniformscale` | Uniform Scale | Toggle | true |  |  |
+| `scale_axis` | Scale Axis | Menu | 2 |  | x, y, min |
+| `scale_x` | Scale X | Toggle | true |  |  |
+| `scale_y` | Scale Y | Toggle | true |  |  |

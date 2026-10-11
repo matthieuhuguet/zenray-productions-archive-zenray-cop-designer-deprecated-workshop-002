@@ -1,0 +1,25 @@
+{
+  "name": "pyro_sourcefromlayer::2.0",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/pyro_sourcefromlayer.html",
+  "status": "ok",
+  "fetched_on": "11 October 2026",
+  "summary_en": "Pyro Source from Layer adds density to a float VDB based on an envelope defined by Mono layers, useful for pyro sourcing. The combination method is chosen by the user, the envelope can be modulated with noise or its shape distorted. Output: result (the modified source VDB). Introduced in Houdini 22.0.",
+  "inputs": [
+    "source: Float VDB to modify",
+    "thickness: Mono layer setting the envelope thickness at each pixel",
+    "height: Mono layer setting the envelope centre line",
+    "density: Mono layer setting the envelope density"
+  ],
+  "key_parameters": [
+    "Method: how the envelope updates the VDB (Add, Copy, Maximum, Average, Blend, Pull)",
+    "Border: overrides the border mode used when sampling reference layers, Auto uses the input layer mode",
+    "Shape: Acceleration, Deceleration, Blend weight, Scale, Thickness (global scale), Scale by Timestep, Falloff",
+    "Enable Noise: Noise Scale, Element Size, Element Scale, Noise Offset, Noise Pulse",
+    "Enable Distortion: Distort Scale, Element Size, Element Scale, Distort Offset, Distort Pulse"
+  ],
+  "caveats": [
+    "The node does not activate voxels: sources outside activated areas have no effect",
+    "Requires DOP-level permissions, not available in Houdini Core"
+  ],
+  "resume_fr": "Pyro Source from Layer ajoute de la densité à un VDB flottant selon une enveloppe définie par des calques Mono (épaisseur, hauteur centrale, densité). La méthode de combinaison (Add, Copy, Maximum, Average, Blend, Pull) et un bruit ou une distorsion peuvent moduler l'enveloppe. Il n'active aucun voxel, donc une source hors des zones activées n'a aucun effet. Requiert les permissions DOP."
+}

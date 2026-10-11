@@ -1,0 +1,24 @@
+{
+  "name": "segmentbyvalue",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/segmentbyvalue.html",
+  "status": "ok",
+  "summary_en": "Segment by Value takes a mono layer and outputs an ID layer in which pixels with similar values share an ID. It forms a series of iso-contours, even between pixels that are not connected.",
+  "inputs": [
+    "source: the mono layer to segment"
+  ],
+  "key_parameters": [
+    "Method: Width and Offset, or Number of Segments",
+    "Width: maximum value difference inside one segment (Width and Offset method)",
+    "Offset: where the first segment starts (Width and Offset method)",
+    "Segments: number of segments between the minimum and maximum values (Number of Segments method)",
+    "Segment Location: Starts at Value (floor) or Centered at Value (round)",
+    "Minimum Value / Maximum Value: input range; a dropper can set them from the layer",
+    "Values Below / Values Above: Extend, Invalid (-1), Clamp or Wrap"
+  ],
+  "caveats": [
+    "Several parameters apply to one method only",
+    "With Invalid (-1), out-of-range pixels receive the explicit segment ID -1",
+    "The page does not state default parameter values"
+  ],
+  "resume_fr": "Le nœud Segment by Value transforme une couche mono en couche d'identifiants, où les pixels de valeurs voisines partagent le même numéro."
+}

@@ -1,0 +1,26 @@
+{
+  "name": "vignette",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/vignette.html",
+  "status": "ok",
+  "summary_en": "Darkens the corners of an input layer, reducing brightness toward the edges to draw attention to the centre. Useful for framing a subject or giving an old lens look. Output: the vignetted layer.",
+  "inputs": [
+    "source: the original layer to apply the vignetting to",
+    "mask (optional): per-pixel mask whose amount is scaled by the Mask parameter"
+  ],
+  "key_parameters": [
+    "Signature: sets the layer type the source accepts",
+    "Mask: how much of the new value mixes with the original (default 1)",
+    "Brightness: scales how bright or dim the vignette is",
+    "Shape: Round (circular), Rectangle, or Blend between the two",
+    "Circle Radius and Circle Scale: size of the round vignette and its non-uniform stretch",
+    "Rectangle Size and Round Corners: size and corner rounding of the rectangle",
+    "Blend: mixes Round and Rectangle when Shape is Blend",
+    "Center: vignette centre in image space",
+    "Blur: softens the edge of the vignette",
+    "Shape Ramp: adjusts the shape profile of the vignette"
+  ],
+  "caveats": [
+    "The Shape Ramp only has a visible effect when the vignette is fairly smooth, meaning blurred"
+  ],
+  "resume_fr": "Assombrit les coins d'une couche pour recentrer le regard, avec une forme ronde, rectangulaire ou mixte et un bord adouci."
+}

@@ -1,0 +1,17 @@
+{
+  "name": "rgbtorgba",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/rgbtorgba.html",
+  "status": "ok",
+  "summary_en": "The RGB to RGBA node combines an RGB layer or attribute with a mono layer that supplies the alpha channel, producing an RGBA result.",
+  "inputs": [
+    "rgb: the RGB layer or attribute to join",
+    "alpha: the mono layer or attribute used as the alpha channel"
+  ],
+  "key_parameters": [
+    "Premultiply Alpha: when on, premultiplies the inputs to create an associated RGBA layer; when off, joins RGB and alpha directly"
+  ],
+  "caveats": [
+    "RGBA layers are usually premultiplied, and the output may be premultiplied depending on Premultiply Alpha"
+  ],
+  "resume_fr": "Le nœud RGB to RGBA assemble une couche RGB et une couche mono d'alpha en une couche RGBA, prémultipliée ou non selon son réglage."
+}

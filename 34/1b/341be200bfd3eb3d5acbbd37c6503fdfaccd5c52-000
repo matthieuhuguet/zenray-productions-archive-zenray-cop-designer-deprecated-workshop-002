@@ -1,0 +1,25 @@
+{
+  "name": "subnet",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/subnet.html",
+  "status": "ok",
+  "summary_en": "Subnetwork groups a set of COP nodes into a single node to keep higher-level networks tidy. Inside it, Input and Output nodes bring data in from outside and send results back out.",
+  "inputs": [
+    "No fixed list: the number of inputs is set by the Inputs multiparm, and each input port's type and label are set by its own parameters. Inside, each input is read through an Input COP node"
+  ],
+  "key_parameters": [
+    "Rename Wires Using Output Labels: when on, each output wire takes its port label name",
+    "Inputs: number of input ports",
+    "Input Label: label of each input port",
+    "Input Type: data type of each input port, which determines what can be connected",
+    "Outputs: number of output ports",
+    "Output Label: label of each output port",
+    "Output Type: data type of each output port"
+  ],
+  "caveats": [
+    "The signature comes from the Inputs and Outputs multiparms, and the contained Input and Output nodes inherit it",
+    "Wire names pass through from inputs unless label renaming is enabled",
+    "Can be converted into an HDA with Create Digital Asset from the right-click menu",
+    "Identity matched from the page title and the Copernicus index entry, the page body does not repeat the internal name"
+  ],
+  "resume_fr": "Subnetwork regroupe plusieurs nœuds COP dans un seul nœud, dont les entrées et sorties se définissent par des multiparms de types et d'étiquettes."
+}

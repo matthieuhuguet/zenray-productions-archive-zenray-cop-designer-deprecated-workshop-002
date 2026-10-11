@@ -1,0 +1,24 @@
+{
+  "name": "vdbvisualizevelocity",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/vdbvisualizevelocity.html",
+  "status": "ok",
+  "summary_en": "Traces streamers through a velocity VDB to show its flow. Outputs polylines and points representing the paths as geometry.",
+  "inputs": [
+    "v: a Vector VDB of velocities through which the streamers are traced"
+  ],
+  "key_parameters": [
+    "Trail per Voxel: uses every voxel in the slicing plane as a streamer source",
+    "Number Trails: scatters a fixed number of streamer sources, keeping density consistent across resolutions",
+    "Plane: axis to extract, in the volume's local space",
+    "Relative Location: slicing plane relative to the volume or in world coordinates",
+    "Position: centre point where slicing starts in world coordinate mode",
+    "Offset: positions the plane; relative mode range -1 to 1, 0 at the centre",
+    "Trail Length: how long each trail lasts, in seconds",
+    "Maximum Velocity: divides point speeds by this value to colour trails by speed"
+  ],
+  "caveats": [
+    "Trail per Voxel can get heavy with high resolutions",
+    "In world coordinate mode the offset follows the world axis perpendicular to the plane, so it does not align with a rotated volume's axes"
+  ],
+  "resume_fr": "Trace des lignes de courant dans un VDB de vélocité et les sort en polylignes et points colorés selon la vitesse."
+}

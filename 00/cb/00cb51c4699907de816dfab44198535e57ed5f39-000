@@ -1,0 +1,21 @@
+{
+  "name": "statisticsbyid",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/statisticsbyid.html",
+  "status": "ok",
+  "summary_en": "Statistics by ID computes statistics for the pixels of a Mono source layer, grouped by connected ID islands in an id layer. It reports each island's area, minimum and maximum values.",
+  "inputs": [
+    "id: ID layer, each connected component is treated as a separate statistics source",
+    "source: Mono layer whose pixel values are measured"
+  ],
+  "key_parameters": [
+    "No parameters are documented on the page (the Parameters section is empty)",
+    "area: Mono layer giving the area of the island each pixel belongs to, in image units",
+    "minimum: Mono layer giving the lowest source value within each pixel's island",
+    "maximum: Mono layer giving the highest source value within each pixel's island"
+  ],
+  "caveats": [
+    "The page documents no parameters, check settings in Houdini itself",
+    "Area is reported in image units, not pixel counts"
+  ],
+  "resume_fr": "Statistics by ID calcule, pour chaque îlot connexe d'un calque ID, son aire ainsi que les valeurs minimale et maximale du calque source."
+}

@@ -1,0 +1,22 @@
+{
+  "name": "sdftomono",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/sdftomono.html",
+  "status": "ok",
+  "summary_en": "SDF to Mono converts a 2D signed distance field into a mono grayscale layer, to make a black-and-white image or use the field as a mask. Its parameters control the background, shape, outline, shadow and the field itself.",
+  "inputs": [
+    "sdf: the SDF mono layer to convert; the output is one mono layer"
+  ],
+  "key_parameters": [
+    "Background: Background Value, Iso Range, Number of Cycles, Remap Ramp",
+    "Shape: Draw Shape, Shape Value, Iso Distance, Remap Ramp",
+    "Outline: Draw Outline, Outline Value, Outline Width, Alignment (inside, outside or centered)",
+    "Shadowing: Draw Shadowing, Shadow Value, Shadow Density, Shadow Falloff",
+    "SDF: Iso Offset, Onion Skin, Smooth, Anti-Aliasing, Invert"
+  ],
+  "caveats": [
+    "Shadows appear only if Shadow Value differs from Background Value",
+    "Background Value and Shape Value remap the distance field only when their menu is changed from Constant to Iso Distance",
+    "To convert a mono layer back into an SDF, use the Mono to SDF node"
+  ],
+  "resume_fr": "Le nœud SDF to Mono convertit un champ de distance signé 2D en couche mono en niveaux de gris, utilisable comme image ou comme masque."
+}

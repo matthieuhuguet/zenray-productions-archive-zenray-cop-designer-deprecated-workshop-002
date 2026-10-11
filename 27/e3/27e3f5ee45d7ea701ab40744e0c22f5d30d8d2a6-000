@@ -1,0 +1,41 @@
+{
+  "name": "swirl",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/swirl.html",
+  "status": "ok",
+  "summary_en": "Swirl twists an image layer into one or more spiral-shaped deformation regions. Combined with noise layers it can add organic variation such as tides, tree knots or lichen on rocks.",
+  "inputs": [
+    "size_ref: sets output image size and metadata",
+    "source: layer to twist",
+    "points: geometry setting the swirl centres and scale values",
+    "stength (spelled this way on the page): strength scale",
+    "bulge: bulge scale",
+    "radius: radius scale",
+    "blendregion: blend region scale",
+    "innerradius: inner radius scale",
+    "innerblendregion: inner blend region scale",
+    "rotate: rotate scale",
+    "roundness: roundness scale",
+    "The last eight inputs are optional, each sampled at every swirl centre"
+  ],
+  "key_parameters": [
+    "Wrap Mode: Auto, Off (clamps at the boundary), On (wraps at the boundary)",
+    "Filter: sampling filter when the deformation reads between pixels",
+    "Tile Size: size of the base deformation region",
+    "Parameter Mode: Uniform (same controls for all swirls) or Random (variation from a standard deviation)",
+    "Translation: moves the deformation regions in image space",
+    "Strength: spiral amount, positive counterclockwise, negative clockwise",
+    "Bulge: radial deformation, lens-distortion effect",
+    "Radius and Blend Region: size of the deformed area and its soft edge",
+    "Inner Radius and Inner Blend Region: undeformed centre and its soft edge",
+    "Rotate: rotation of the deformation ellipse, in degrees",
+    "Roundness: 1 is circular, lower values are elliptical",
+    "Number of Points: number of swirl centres, each with its own Position and scale controls",
+    "Randomize (Seed, Position Random, Central Value, Scatter): random variation of the shape"
+  ],
+  "caveats": [
+    "When geometry is wired into points, the Match Attributes Names parameters replace the manual Swirl parameters",
+    "Each Match Attributes field takes a point attribute name, and scales default to 1 if the attribute is not set",
+    "The page lists the input as 'stength', which looks like a typo for strength, check the real input name in the network before wiring"
+  ],
+  "resume_fr": "Swirl tord une couche image en une ou plusieurs zones de déformation en spirale, dont les centres et les échelles peuvent venir de points de géométrie."
+}

@@ -1,0 +1,29 @@
+{
+  "name": "paint",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/paint.html",
+  "status": "ok",
+  "date": "11 October 2026",
+  "summary_en": "The Paint 3D node lets you paint directly on a COP layer or a UV-mapped geometry. It stores strokes as PaintLayers, blends them over a background through a blend stack, and outputs the combined result.",
+  "inputs": [
+    "canvas: background layer that paint is applied over; a default blank canvas is used if unwired",
+    "uvgeo: geometry with a uv attribute, providing the surface for visualisation and stroke projection"
+  ],
+  "key_parameters": [
+    "Signature: canvas type and paint output type",
+    "Group: limits painting to a region of uvgeo",
+    "FG Color / BG Color: foreground colour and swappable secondary colour",
+    "FG Mask / BG Mask: equivalent values for mask painting",
+    "Stroke Alignment: strokes positioned on the Surface or in Screen space",
+    "Write to Mask: switches writing from colour to mask",
+    "Tile Symmetry and Reflection: mirror strokes across canvas edges or a 3D plane",
+    "Brush tools Paint, Erase, Smooth: radius, opacity, flow, stroke spacing, depth falloff",
+    "Fill Threshold: colour similarity for flood fill"
+  ],
+  "caveats": [
+    "SideFX marks the feature as beta; functionality may change.",
+    "UDIM tiles are not supported: split the geometry by tile and use one Paint 3D node per tile.",
+    "Interactive parameters do not affect the paint and layers outputs, which are driven by the blend stack.",
+    "The page text is 118900 characters; the first 100000 were read, which covers the node description."
+  ],
+  "resume_fr": "Le nœud Paint 3D peint directement sur une couche COP ou une géométrie UV, empile les traits en PaintLayers et renvoie le résultat composé ; il reste en bêta."
+}

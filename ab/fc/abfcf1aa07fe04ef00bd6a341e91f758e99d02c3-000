@@ -1,0 +1,44 @@
+# adjacency_distort
+
+- Label: Distort with Adjacency
+- Category: Copernicus (`Cop`), Houdini 22.0.368
+- Inputs: 0 to 4
+- Parameters: 20 (exact, read from Houdini by hython)
+- Used by the height graph: no
+
+## Feature summary (web, SideFX reference)
+
+- Source: https://www.sidefx.com/docs/houdini/nodes/cop/adjacency_distort.html
+- Summary (EN): Shifts the pixels of a layer across geometry texture seams, using adjacency data from a rasterized geometry map. It is the version to use when distortion must follow UV seams, since the standard Distort COP has no adjacency support.
+- Résumé (FR) : Décale les pixels d'une couche à travers les coutures UV grâce aux données d'adjacence, ce que le Distort COP standard ne sait pas faire.
+
+- Inputs meaning: ["source: layer to distort", "dir (optional): texture-space direction, often wired from a Space Transform with Adjacency COP", "mask (optional): per-pixel mask scaled by the Mask parameter", "adjacency: adjacency cable from a Geometry to Adjacency COP"]
+
+- Key parameters: ["Signature and Border: layer type accepted and sampling behavior outside bounds", "Mask: mix between original and new value (default 1, only the new value)", "Direction: world-space direction, ignored when the dir input is wired", "Scale: distortion strength, negative values trace backward", "Scale by Timestep: scales strength by the current timestep", "Streak: Off, Blur (average), Min (erodes shapes) or Max (adds edge roughness)", "Use Streak Weight Ramp and Streak Weight: fade samples along the trajectory (Blur, Min, Max only)", "Pixels per Step: better tracing on curved paths; off is faster but can give seam inconsistencies", "Maximum Steps: cap on steps when Pixels per Step is on"]
+
+- Caveats: ["Best results when the target texture matches the rasterized adjacency maps", "With Pixels per Step off, seams can look inconsistent", "Direction has no effect when the dir input is wired", "Streak Weight only applies when Streak is Blur, Min or Max", "Introduced in Houdini 22.0"]
+
+## Parameters (exact, from the installed Houdini)
+
+| parameter | label | type | default | range | menu tokens |
+|---|---|---|---|---|---|
+| `signature` | Signature | String | ["auto"] |  |  |
+| `border` | Border | Menu | 0 |  | auto, constant, clamp, mirror, wrap |
+| `mask` | Mask | Float | [1.0] | 0.0 .. 1.0 (strict) |  |
+| `dirx` | Direction | Float | 0.0 | 0.0 .. 10.0 |  |
+| `diry` | Direction | Float | 1.0 | 0.0 .. 10.0 |  |
+| `dirz` | Direction | Float | 0.0 | 0.0 .. 10.0 |  |
+| `scale` | Scale | Float | [0.005] | -0.05 .. 0.05 |  |
+| `scalebytimeinc` | Scale by Timestep | Toggle | false |  |  |
+| `streak` | Streak | Menu | 0 |  | off, on, min, max |
+| `usestreakweight` | Use Streak Weight Ramp | Toggle | false |  |  |
+| `streakweight` | Streak Weight | Ramp | 2 |  |  |
+| `usecfl` | Pixels per Step | Toggle | true |  |  |
+| `cfl` | Pixels per Step | Float | [1.0] | 0.1 .. 1000.0 (strict) |  |
+| `maxsteps` | Maximum Steps | Int | [100] | 1 .. 1000 |  |
+| `streakweight1pos` | Position | Float | [0.0] | 0.0 .. 1.0 (strict) |  |
+| `streakweight1value` | Value | Float | [0.0] | 0.0 .. 10.0 |  |
+| `streakweight1interp` | Interpolation | Menu | 1 |  | constant, linear, catmull-rom, monotonecubic, bezier, bspline, hermite |
+| `streakweight2pos` | Position | Float | [0.0] | 0.0 .. 1.0 (strict) |  |
+| `streakweight2value` | Value | Float | [0.0] | 0.0 .. 10.0 |  |
+| `streakweight2interp` | Interpolation | Menu | 1 |  | constant, linear, catmull-rom, monotonecubic, bezier, bspline, hermite |

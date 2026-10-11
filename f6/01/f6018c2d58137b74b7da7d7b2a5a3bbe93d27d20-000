@@ -1,0 +1,19 @@
+{
+  "name": "possample",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/possample.html",
+  "status": "ok",
+  "date": "11 October 2026",
+  "summary_en": "The Position Sample node reads values from a texture by looking up each pixel or voxel's position. It takes the world-space position in one input and fetches the matching value from another. The output, named sample, has the same shape as the pos input.",
+  "inputs": [
+    "pos: RGB layer, vector VDB or vector attribute giving the world-space position to look up",
+    "texture: layer or VDB from which values are read"
+  ],
+  "key_parameters": [
+    "Signature: layer type accepted by the source; the only documented parameter"
+  ],
+  "caveats": [
+    "The page gives no further parameter detail.",
+    "Related nodes: Position Map and UV Sample."
+  ],
+  "resume_fr": "Le nœud Position Sample lit une texture à partir des positions monde d'une première entrée, et renvoie un résultat de même forme que pos."
+}

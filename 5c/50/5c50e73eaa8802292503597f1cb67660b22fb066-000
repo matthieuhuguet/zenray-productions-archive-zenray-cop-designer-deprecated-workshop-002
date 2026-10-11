@@ -1,0 +1,20 @@
+{
+  "name": "sdfshape",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/sdfshape.html",
+  "status": "ok",
+  "summary_en": "SDF Shape builds a 2D signed distance field for a selected shape, negative inside and positive outside. Its Mono output can be combined with SDF Blend, or converted with SDF to Mono or SDF to RGB.",
+  "inputs": [
+    "size_ref: sets the output image size and metadata (the only input)"
+  ],
+  "key_parameters": [
+    "Shape Class: Basic, Marker or Compound",
+    "Basic shapes: Circle (Radius, Arc, Thickness, Round Ends, Quadratic Circle); Diamond and Rectangle (Size, Rectangle adds Round Corners and Separate Controls); Line (Length, Use Points, Add Thickness, Bulge); Polygon and Star (Radius, Number of Sides, Star adds Angle Factor); Spiral (Radius, Arc Bend, Number of Arcs); Squircle (Radius, Blend); Trapezoid (Height, Bottom Length, Top Length); Triangle (Width, Height, or Points 0 to 2); Wave (Arc, Element Size)",
+    "Marker: Size, the radius of the marker",
+    "Compound: Arch, Arrow, Cross, Egg, Fishscale, Horseshoe, Moon, Octagon-Dot, Vesica, each with its own controls",
+    "Transform: Translate, Rotate, Shear, Uniform Scale"
+  ],
+  "caveats": [
+    "The node shows the field through a visualizer by default; add a Layer Properties node with Type Info on and set to None to read the raw values"
+  ],
+  "resume_fr": "Le nœud SDF Shape construit un champ de distance signé 2D pour une forme choisie, négatif à l'intérieur et positif à l'extérieur."
+}

@@ -1,0 +1,22 @@
+{
+  "name": "wrangle",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/wrangle.html",
+  "status": "ok",
+  "summary_en": "Lets users who know VEX change pixel values in layers through code. It corresponds to the Volume Wrangle SOP but automatically converts incoming layers or VDBs into bound volumes.",
+  "inputs": [
+    "input1: layers, VDBs or other inputs sent into the wrangle; the page lists only this input, but Number of Inputs can add more; layers and VDBs bind to geometry input 0, so additional geometry uses higher input numbers"
+  ],
+  "key_parameters": [
+    "Volumes to Write to: pattern limiting which layers can be modified; narrowing it speeds up the node because unlisted layers are not copied",
+    "Enforce Prototypes: requires @ bindings (such as @Cd or @ptnum) to be declared first, catching typos",
+    "Evaluation Node Path: where VEX functions such as ch() start their path search",
+    "Export Parameters: pattern stopping the VEX shader from writing to certain volumes; those stay bound for reading",
+    "Rename Wires Using Output Labels: output wire names come from port labels instead of inputs",
+    "Number of Inputs: for each input sets Type (Mono, UV, RGB, RGBA, ID, Geometry or VDB types), Binding Name and Input Index"
+  ],
+  "caveats": [
+    "Wrangles run on the CPU and can noticeably slow networks",
+    "The page says it is still encouraged to use the OpenCL COP rather than a Wrangle, reserving the Wrangle for tasks needing high-level geometry functions"
+  ],
+  "resume_fr": "Permet de modifier les valeurs de pixels par du code VEX, en convertissant automatiquement les couches et VDB en volumes liés, au prix d'une exécution CPU plus lente."
+}

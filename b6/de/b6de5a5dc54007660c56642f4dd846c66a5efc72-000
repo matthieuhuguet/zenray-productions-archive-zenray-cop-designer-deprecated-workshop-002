@@ -1,0 +1,42 @@
+# attribute
+
+- Label: Attribute
+- Category: Copernicus (`Cop`), Houdini 22.0.368
+- Inputs: 0 to 1
+- Parameters: 18 (exact, read from Houdini by hython)
+- Used by the height graph: no
+
+## Feature summary (web, SideFX reference)
+
+- Source: https://www.sidefx.com/docs/houdini/nodes/cop/attribute.html
+- Summary (EN): Creates a detached attribute of a chosen type and size, sized either explicitly or from a reference attribute. Useful to reserve array sizes, or to match an existing attribute's size while changing its type.
+- Résumé (FR) : Crée un attribut détaché de type et de taille choisis, dimensionné par un paramètre ou calqué sur un attribut de référence.
+
+- Inputs meaning: ["attrib_ref (optional): reference attribute supplying sizing and initial properties"]
+
+- Key parameters: ["Signature: attribute type to generate, which need not match the input type", "Class: a hint for how the detached attribute is treated; copy from input, set a specific class, or None", "Value fields: initial values for Float, Vector 2, Vector (Color), Vector 4 (Color and alpha) and Integer", "Sizing Method: Set (uses Size, ignores input), Add (input size plus Size) or Multiply (input size times Multiply Size)", "Size and Multiply Size: values used by the chosen sizing method", "Set Type Info: None, Position, Vector, Normal, Color, Quaternion, Transform Matrix or Texture Coordinate"]
+
+- Caveats: ["With no input connected, the base size is 0, so sizing depends entirely on the Size parameter", "Setting Class to None stops automatic class deduction on insertion", "The page gives no size limits and describes Set Type Info only in general terms", "Available since Houdini 22.0"]
+
+## Parameters (exact, from the installed Houdini)
+
+| parameter | label | type | default | range | menu tokens |
+|---|---|---|---|---|---|
+| `signature` | Signature | String | ["f1"] |  | f1, f2, f3, f4, i |
+| `class` | Class | Menu | 0 |  | input, none, detail, primitive, point, vertex |
+| `f1` | Value | Float | [1.0] | 0.0 .. 10.0 |  |
+| `f21` | Value | Float | 1.0 | 0.0 .. 10.0 |  |
+| `f22` | Value | Float | 1.0 | 0.0 .. 10.0 |  |
+| `f3r` | Color | Float | 1.0 | 0.0 .. 10.0 |  |
+| `f3g` | Color | Float | 1.0 | 0.0 .. 10.0 |  |
+| `f3b` | Color | Float | 1.0 | 0.0 .. 10.0 |  |
+| `f4r` | Color | Float | 1.0 | 0.0 .. 10.0 |  |
+| `f4g` | Color | Float | 1.0 | 0.0 .. 10.0 |  |
+| `f4b` | Color | Float | 1.0 | 0.0 .. 10.0 |  |
+| `f4a` | Color | Float | 1.0 | 0.0 .. 10.0 |  |
+| `i` | Value | Int | [0] | 0 .. 10 |  |
+| `sizemethod` | Sizing Method | Menu | 1 |  | set, add, multiply |
+| `size` | Size | Int | [0] | 0 .. 10 |  |
+| `scale` | Multiply Size | Float | [1.0] | 0.0 .. 10.0 (strict) |  |
+| `settypeinfo` | Set Type Info | Toggle | false |  |  |
+| `typeinfo` | Type Info | Menu | 0 |  | none, point, vector, normal, color, quaternion, transform, texturecoord |

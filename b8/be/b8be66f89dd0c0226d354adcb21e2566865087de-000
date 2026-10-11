@@ -1,0 +1,25 @@
+{
+  "name": "spacetransform",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/spacetransform.html",
+  "status": "ok",
+  "summary_en": "Space Transform converts position, vector and UV values from one coordinate space to another. It uses the camera from the coord input, or the reference cameras when they are wired in, to perform the conversion.",
+  "inputs": [
+    "coord: layer or attribute supplying the coordinate values to transform",
+    "src_ref (optional): camera reference for the source space, uses coord if unwired",
+    "dst_ref (optional): camera reference for the destination space, uses coord if unwired"
+  ],
+  "key_parameters": [
+    "Signature: layer type the source accepts",
+    "Vector Type: Position (translates, rotates, scales) or Vector/Displacement/Velocity (rotates and scales only)",
+    "Source Space and Destination Space, each one of Buffer, Pixel, Texture (0 to 1 over the data window), Image (unstretched -1 to 1 in the fitted display window), World"
+  ],
+  "caveats": [
+    "Source space is interpreted relative to src_ref if wired, otherwise coord; destination works the same with dst_ref",
+    "Choosing Position versus Vector changes the result, because only Position applies translation",
+    "Buffer and Pixel coordinates diverge when a pixel scale is in use",
+    "Available since version 21.0",
+    "Identity matched from the URL and the Copernicus index listing, the page body does not repeat the internal name",
+    "Does not cover the separate Space Transform with Adjacency node"
+  ],
+  "resume_fr": "Space Transform convertit des positions, vecteurs et coordonnées UV d'un espace de coordonnées vers un autre, à l'aide des caméras de référence."
+}

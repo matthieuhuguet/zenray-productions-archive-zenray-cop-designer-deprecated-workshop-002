@@ -1,0 +1,25 @@
+{
+  "name": "ociotransform",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/ociotransform.html",
+  "status": "ok",
+  "summary_en": "Converts a layer's colours between colour spaces using the current OpenColorIO (OCIO) settings. It supports either a reversible conversion between two spaces (Between Spaces) or a one-way conversion from a space into a display and view (Space to View).",
+  "inputs": [
+    "source: the layer whose colours will be adjusted"
+  ],
+  "key_parameters": [
+    "Signature: the layer type the source accepts",
+    "Transform Method: Between Spaces converts from one OCIO space to another and is invertible; Space to View converts into a display and view, can include tone mapping, and bakes the colours into final values",
+    "Original Space: the space the input colour is in",
+    "To Space (Between Spaces only): the desired output colour space",
+    "To Display and To View (Space to View only): output display device and view",
+    "Treat RGBA as Premultiplied: un-premultiplies before the transform and re-premultiplies after, so black-alpha areas stay black",
+    "Invert Transform: reverses the transform; for Between Spaces it is like swapping source and destination"
+  ],
+  "caveats": [
+    "The page says Space to View is not invertible, so Invert Transform cannot fully undo the baking.",
+    "Colour transforms are defined in RGB and may be non-linear, so they should not be applied to only the RGB channels of a premultiplied layer. Use the premultiplied option instead.",
+    "The available view may depend on the current display.",
+    "Colour space dropdowns depend on the OCIO configuration. The meaning of each space depends on the config."
+  ],
+  "resume_fr": "Convertit les couleurs d'un calque entre espaces colorimétriques OCIO, de façon réversible entre deux espaces ou à sens unique vers une vue d'affichage avec tone mapping."
+}

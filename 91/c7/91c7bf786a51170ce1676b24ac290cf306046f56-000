@@ -1,0 +1,30 @@
+{
+  "name": "starglow",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/starglow.html",
+  "status": "ok",
+  "summary_en": "Star Glow adds star-like light streaks to a layer by streaking its bright areas in multiple directions. It finds pixels above a luminance threshold and applies the streaks only to those regions.",
+  "inputs": [
+    "source: original layer receiving the effect",
+    "effect (optional): layer controlling which areas get the effect, works with the Threshold parameter",
+    "mask (optional): per-pixel mask whose amount is scaled by the Mask parameter"
+  ],
+  "key_parameters": [
+    "Threshold / Width: luminance level above which pixels glow, and the range on either side",
+    "Streaks: number of streaks spread evenly around 360 degrees",
+    "Streak Length: overall strength of the streaks, negative values trace the opposite direction",
+    "Brightness: lightens and expands the glow at high values, dims and shrinks it at low values",
+    "Streak: Blur (averages samples) or Max (keeps brightest sample, for edge roughness)",
+    "Streak Weight: ramp multiplying pixel values along each streak",
+    "Combine Streaks with: Add, Screen, Hypot, Maximum, or Difference",
+    "Color Mode / Color / Color Ramp / Multiply with Original: tinting of the streaks",
+    "Aberration (Red, Green, Blue): per-channel rotation of streaks for chromatic fringing",
+    "Glimmer, Animate, Pulse Length, Time Scale, Loop Length: shimmer and animation",
+    "Output Star Glow Only: outputs only the glow, usable as a separate AOV or with Blend COP",
+    "Maximum Steps (Advanced): samples taken along each streak"
+  ],
+  "caveats": [
+    "Long streaks can leave gaps, increase Maximum Steps to fill them",
+    "For a glow or blur in one direction only, use the Glow COP or Streak Blur COP instead"
+  ],
+  "resume_fr": "Star Glow ajoute des traînées lumineuses en étoile aux zones claires d'un calque, en les étirant dans plusieurs directions à partir des pixels au-dessus d'un seuil de luminance."
+}

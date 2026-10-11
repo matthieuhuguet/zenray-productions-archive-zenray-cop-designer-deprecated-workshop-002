@@ -1,0 +1,20 @@
+{
+  "name": "output",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/output.html",
+  "status": "ok",
+  "date": "11 October 2026",
+  "summary_en": "The Output node defines where a subnetwork hands its results back to the parent network. It forwards whatever reaches its inputs so the parent can use them as its outputs.",
+  "inputs": [
+    "1: first input, becomes the parent subnetwork's first output",
+    "2: second input, becomes the second output",
+    "Each further input maps to the next output, in order"
+  ],
+  "key_parameters": [
+    "No parameters documented on the Output node itself. The Outputs parameter of the parent Subnetwork COP sets the output signature."
+  ],
+  "caveats": [
+    "Only one Output COP should exist at the same level of a network.",
+    "Inside an HDA, the node signature reflects that of the containing operator."
+  ],
+  "resume_fr": "Le nœud Output renvoie les résultats d'un sous-réseau vers le réseau parent, dans l'ordre de ses entrées."
+}

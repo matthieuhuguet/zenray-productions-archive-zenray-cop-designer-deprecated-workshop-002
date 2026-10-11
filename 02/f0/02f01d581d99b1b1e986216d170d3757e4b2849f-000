@@ -1,0 +1,17 @@
+{
+  "name": "vdbreshape",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/vdbreshape.html",
+  "status": "ok",
+  "summary_en": "Rebuilds a VDB so its activation follows another VDB's topology. The original values are kept while the reference's active shape is adopted. Output: reshape.",
+  "inputs": [
+    "source: the VDB to reshape",
+    "ref: the reference VDB whose activation shape is copied"
+  ],
+  "key_parameters": [
+    "The page has a Parameters heading but lists no parameters"
+  ],
+  "caveats": [
+    "Newly activated voxels are zero: any voxel the reference activates that the source did not has a value of zero"
+  ],
+  "resume_fr": "Recopie la forme d'activation d'un VDB de référence sur un VDB source en gardant ses valeurs ; les voxels nouvellement activés valent zéro."
+}

@@ -1,0 +1,37 @@
+{
+  "name": "pyro_block_end::2.0",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/pyro_block_end.html",
+  "status": "ok",
+  "fetched_on": "11 October 2026",
+  "summary_en": "Pyro Block End marks the end of a Pyro simulation block in COPs, paired with a Pyro Block Begin COP. It takes the simulation fields, runs the solver steps and outputs the updated fields. Its parameters control caching, sparse domain bounds, collisions, sourcing (density, temperature, velocity, flame, divergence), field dissipation and diffusion, forces, advection and pressure projection.",
+  "inputs": [
+    "density: Float VDB of current densities, fed back to the input",
+    "temperature: Float VDB of current temperatures, fed back",
+    "v: Vector VDB of current velocities, projected to non-divergent values and fed back",
+    "flame: Float VDB of current flames, fed back",
+    "divergence (optional): Float VDB giving a goal divergence so the fluid can expand or contract",
+    "collision (optional): Float VDB signed distance field of a collider",
+    "collisionv (optional): Vector VDB of collider velocities in world space",
+    "feedback and passthrough: cables fed back, structure must match the Pyro Block Begin"
+  ],
+  "key_parameters": [
+    "Reset Simulation: clears the simulation cache",
+    "Sparse Simulation and Voxel Size: control where calculations occur and voxel resolution",
+    "Live Simulation: interactive mode running independently of the playbar",
+    "Cache: cached frames and checkpoint rate, affecting scrubbing speed",
+    "Bounds and Collision: limit the domain and handle colliders",
+    "Sourcing (density, temperature, velocity, flame, divergence): source mode (Continuous, First Frame Only, Copy on First Frame), operation, blend and acceleration",
+    "Fields: dissipation, diffusion and cooling for density, temperature and flame, with optional control masks, flame-based emission",
+    "Forces: buoyancy, disturbance, turbulence, viscosity, vortex confinement, ambient velocity, velocity scale",
+    "Advanced: advection tracing and schemes, advection reflection, pressure projection iterations"
+  ],
+  "caveats": [
+    "Requires DOP-level permissions, not available in Houdini Core (only FX, Apprentice, Indie, Education)",
+    "Compiled COP networks do not support simulation",
+    "Without Sparse Simulation, a bounds_geo input is required to define the domain",
+    "Live Simulation does not save results, use a Stash COP to store output",
+    "Page formatting issues: Min Swirl Size appears twice, Source Velocity section has no description line",
+    "Read was truncated: the page text is 125130 characters, only the first 100000 were read, the final 25130 are not covered"
+  ],
+  "resume_fr": "Pyro Block End ferme le bloc de simulation Pyro ouvert par Pyro Block Begin. Il reprend densité, température, vitesse et flamme, exécute les étapes du solveur (sources, dissipation, forces, advection, projection de pression) et renvoie les champs mis à jour. Ses réglages couvrent le cache, le domaine épars, les collisions et les sources. Le texte lu est tronqué, les 25 130 derniers caractères de la page n'ont pas été lus."
+}

@@ -1,0 +1,21 @@
+{
+  "name": "uvxform",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/uvxform.html",
+  "status": "ok",
+  "summary_en": "Moves, rotates and scales the values of a UV layer in 2D. Each UV value is treated as an XY location and replaced by the transformed result. Pixels are not moved.",
+  "inputs": [
+    "uv: UV layer of image or texture coordinates to transform",
+    "uvscale: Mono layer holding the original filter scale, combined with the transforms",
+    "seed: ID layer supplying a random seed; pixels sharing an ID get the same random transform"
+  ],
+  "key_parameters": [
+    "Pivot: local pivot for transformations",
+    "Translate, Rotate (degrees), Uniform Scale, Scale (non-uniform): core transform controls",
+    "Randomize group: Offset, Rotation, Uniform Scaling, Scale Min/Max, Uniform Scale Min/Max, Seed",
+    "Fitting Method: None, Frame (uniform fit) or Stretch (non-uniform fit) to a rectangle set by Center and Size; per UV island when a seed input is connected"
+  ],
+  "caveats": [
+    "The node does not move pixels; it only changes the UV values each pixel represents"
+  ],
+  "resume_fr": "Transforme les valeurs UV (translation, rotation, échelle) sans déplacer les pixels, avec une randomisation optionnelle par îlot grâce à l'entrée seed."
+}

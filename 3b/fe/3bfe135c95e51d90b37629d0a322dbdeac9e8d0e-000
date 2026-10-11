@@ -1,0 +1,29 @@
+{
+  "name": "ramp",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/ramp.html",
+  "status": "ok",
+  "summary_en": "Ramp generates linear or radial gradient patterns shaped by keyframe points. Its Type parameter selects Horizontal, Vertical, Radial or Concentric, and cycles, phase and outside-range behaviour control repetition. Ramp Mono COP and Ramp RGB COP are variants that default to Mono and RGB signatures; their details are not documented on this page.",
+  "inputs": [
+    "size_ref: representative layer that sets the output image size and metadata",
+    "pos: optional UV layer whose values replace the pixel image coordinates when computing the ramp",
+    "ramp: optional per-pixel amount that overrides the Ramp parameter"
+  ],
+  "key_parameters": [
+    "Signature: Mono (float) or RGB (colour)",
+    "Type: Horizontal and Vertical (linear), Radial (rays from a centre), Concentric (ripple rings)",
+    "Number of Cycles: how many times the pattern repeats",
+    "Phase: offsets where the pattern starts; 0 aligns the start with the first point",
+    "Outside Range: Clamp at End, Repeat or Mirror",
+    "Size Method: Framed to Display or Two Points",
+    "Center, Rotation, Start Position, End Position: geometry controls whose meaning changes with Type (End Position is the crossover for Radial and the radius for Concentric)",
+    "Ramp, Point No., Position, Color, Value: edit the keyframe points",
+    "Interpolation: how values blend between a point and the next, per point"
+  ],
+  "caveats": [
+    "Per-point Interpolation is discouraged; the page recommends the Interpolation for all points setting from the general ramp documentation.",
+    "The page does not explain the Two Points size method.",
+    "Ramp Mono COP and Ramp RGB COP are only mentioned; their details are not documented here.",
+    "Ramp parameter editing mechanics are referenced to a separate page."
+  ],
+  "resume_fr": "Ce nœud crée des dégradés linéaires ou radiaux pilotés par des points clés, en mono ou en couleur."
+}

@@ -1,0 +1,27 @@
+{
+  "name": "uvshape",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/uvshape.html",
+  "status": "ok",
+  "summary_en": "Generates UV coordinates, a filter scale and a mask for procedural 2D shapes, so an image can be mapped onto a shape. Wire its uv output into a UV Sample COP to do this. Marked Since 22.0.",
+  "inputs": [
+    "size_ref: representative layer that sets the output image size and controls metadata."
+  ],
+  "key_parameters": [
+    {"name": "Shapes", "meaning": "Disk, Square, Horseshoe, Spiral, Annulus or Fishscale."},
+    {"name": "Disk Mode and Radius", "meaning": "Disk-to-square mapping (Linear, Polar, Equal Area, Squircle, Elliptic Arc, Conformal). Radius sets the disk size in image space."},
+    {"name": "Square Mode and Folds", "meaning": "Linear or Conformal mapping, with 2-fold or 4-fold symmetry. Vertex and Flip Tile Orientation adjust the tile."},
+    {"name": "Horseshoe controls", "meaning": "Size, Separation, Length, Thickness and U Adjust control the curve, gap, sides, band width and U split."},
+    {"name": "Spiral controls", "meaning": "Spiral Type (Archimedean, Log, Loxodrome), U Mode (Angle or Arc Length), Size, Start Radius, Turns and Thickness."},
+    {"name": "Annulus controls", "meaning": "Mode (Polar or Log), Inner Radius and Outer Radius."},
+    {"name": "Fishscale controls", "meaning": "Mode (Offset or Fill), Disk Mode, Radius, Grid Scale and Center Blend."},
+    {"name": "Transform", "meaning": "Offset, Angle and Shear adjust the generated uv."},
+    {"name": "UV Filter Bound, U/V Border, U/V Scale", "meaning": "UV Filter Bound limits the uvscale output for anti-aliasing. Border modes (Clamp, Mirror, Wrap, Extend) handle values outside -1 to 1. Scale multiplies the coordinates."}
+  ],
+  "caveats": [
+    "UVs are in image coordinates, with a valid range generally -1 to 1.",
+    "Some parameters only appear in certain modes. Do Tiled and Grid Scale apply in Offset mode, and Center Blend applies in Fill mode.",
+    "Per-axis Grid Scale control requires Per-Component Controls to be turned on.",
+    "Wire uvscale into the filterscale of a UV Sample COP for the proper filter width. The mask output is 1 inside the shape and 0 outside."
+  ],
+  "resume_fr": "Ce nœud génère des coordonnées UV, une échelle de filtrage et un masque pour des formes 2D procédurales (disque, carré, fer à cheval, spirale, anneau, écailles)."
+}

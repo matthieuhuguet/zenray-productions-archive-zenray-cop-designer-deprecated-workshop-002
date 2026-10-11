@@ -1,0 +1,30 @@
+{
+  "name": "onnx",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/onnx.html",
+  "status": "ok",
+  "summary_en": "Runs a pre-trained ONNX machine learning model on its input layers and produces the model's outputs as new layers. It converts image pixels into the 1D tensor layout the model expects, then converts the results back into layers.",
+  "inputs": [
+    "n_input#: source layers for inference; the number is set by Number of Inputs on the Input and Output tab and can change dynamically"
+  ],
+  "key_parameters": [
+    "Execution Provider: Automatic, CPU, CUDA, DirectML (Windows only) or CoreML (macOS only)",
+    "Model File: the .onnx file to load; Setup Shapes from Model reads the file and fills the input and output settings",
+    "Input/Output Tensor Shape: a 3x3 table giving the shape the model requires (for example components, width, height); the total must match the data size",
+    "Tensor Order (YX or XY): whether pixels are unpacked horizontally or vertically",
+    "Collate Channels Separately: stores channels as rrrgggbbb when on, or rgbrgbrgb when off",
+    "Flip Input/Output Vertically: converts between bottom-left and top-left origin for 2D models",
+    "Resample Size: resizes an input to the model's expected dimensions; -1 preserves aspect ratio",
+    "Brightness Multiplier: scales values, for example x255 on input and x1/255 on output, for models using 0 to 255 integers",
+    "Max Batch Size: splits inputs into batches to reduce peak memory use; applies only to the first dynamic dimension"
+  ],
+  "caveats": [
+    "Input and output order must match the ONNX model, because the node does not match them by name.",
+    "Only tensor types are supported; other ONNX input and output types are not.",
+    "A warning appears if an input size does not match the model's expected size; use Resample Size to fix it.",
+    "An error appears if Model File is set but the input and output information is empty; setting the other Model parameters resolves it.",
+    "CUDA requires NVIDIA's CUDA and cuDNN packages to be installed separately.",
+    "Device ID has no effect with CPU inference.",
+    "Deduce Output Shapes from Data String requires the Model tab to be populated first."
+  ],
+  "resume_fr": "Exécute un modèle ONNX pré-entraîné sur des calques d'entrée et renvoie ses sorties sous forme de nouveaux calques, les pixels étant convertis en tenseurs puis reconvertis en images."
+}

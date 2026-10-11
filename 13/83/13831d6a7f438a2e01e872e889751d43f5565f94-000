@@ -1,0 +1,19 @@
+{
+  "name": "timeblend",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/timeblend.html",
+  "status": "ok",
+  "summary_en": "Produces in-between results for a Copernicus source that exists only on whole frames. It cooks the input at the frames surrounding the current fractional time and mixes the two results by the fractional position, for layers and VDBs.",
+  "inputs": [
+    "source: the VDB or Layer to blend at fractional time values."
+  ],
+  "key_parameters": [
+    {"name": "Signature", "meaning": "The layer type the source accepts. The options are referenced to the Copernicus glossary."},
+    {"name": "Hold First Frame", "meaning": "When enabled, evaluations before the first frame use the first frame's value."},
+    {"name": "Hold Last Frame", "meaning": "When enabled, evaluations after the last frame use the last frame's value."}
+  ],
+  "caveats": [
+    "The Signature options are not listed on the page.",
+    "Performance, memory use and behaviour with inputs of different topology or resolution are not covered."
+  ],
+  "resume_fr": "Ce nœud crée des valeurs intermédiaires entre deux images entières d'une source, en mélangeant les deux images voisines selon la position fractionnaire du temps."
+}

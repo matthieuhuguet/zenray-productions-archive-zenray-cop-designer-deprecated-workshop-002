@@ -1,0 +1,26 @@
+# adjacency_spacetransform
+
+- Label: Space Transform with Adjacency
+- Category: Copernicus (`Cop`), Houdini 22.0.368
+- Inputs: 0 to 2
+- Parameters: 2 (exact, read from Houdini by hython)
+- Used by the height graph: no
+
+## Feature summary (web, SideFX reference)
+
+- Source: https://www.sidefx.com/docs/houdini/nodes/cop/adjacency_spacetransform.html
+- Summary (EN): Re-expresses a world-space vector in tangent space, the parametrization of the tangent plane fitted to a 3D surface. It is used when a geometry's vectors need to point in a specific direction.
+- Résumé (FR) : Exprime un vecteur monde dans l'espace tangent de la surface, avec un câble d'adjacence obligatoire.
+
+- Inputs meaning: ["coord: world-space vector to transform, supplied as an RGB vector", "adjacency: adjacency cable from a Geometry to Adjacency COP"]
+
+- Key parameters: ["Signature: output layer type; RGB keeps the full vector, UV keeps only X and Y", "Transformation: the only option is World to Tangent"]
+
+- Caveats: ["The adjacency input is mandatory and must come from a Geometry to Adjacency COP", "Choosing UV drops the Z component of the vector", "Only world-to-tangent conversion is offered", "The page text does not state the internal name; the match relies on the page icon and the node index link", "Results are best when the target texture matches the rasterized adjacency maps", "Introduced in Houdini 22.0"]
+
+## Parameters (exact, from the installed Houdini)
+
+| parameter | label | type | default | range | menu tokens |
+|---|---|---|---|---|---|
+| `signature` | Signature | String | ["default"] |  |  |
+| `method` | Transformation | Menu | 0 |  | world_to_tangent, tangent_to_world |

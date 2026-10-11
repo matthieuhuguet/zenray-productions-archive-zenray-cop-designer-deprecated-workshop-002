@@ -1,0 +1,20 @@
+{
+  "name": "vdbvisualizetree",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/vdbvisualizetree.html",
+  "status": "ok",
+  "summary_en": "Builds a geometry visualizing the topology of a VDB, showing which regions are active, since a VDB is only defined where it has been activated. Output is geometry.",
+  "inputs": [
+    "src: a Float, Vector or Integer VDB whose topology is converted into a tree"
+  ],
+  "key_parameters": [
+    "Signature: the VDB type the source accepts",
+    "Leaf Nodes: drawn in blue, as wireframe or solid boxes",
+    "Internal Nodes: non-leaf nodes as wireframe or solid boxes; first internal level green, others orange",
+    "Active Tiles: active nodes holding the default empty value; positive values red, negative values white",
+    "Points: described as one point at the centre of each node, but the section lists Wireframe Boxes and Solid Boxes as its options"
+  ],
+  "caveats": [
+    "The Points section lists Wireframe Boxes and Solid Boxes, which does not match its description of single points; the page does not explain this, so check the output in Houdini"
+  ],
+  "resume_fr": "Dessine la topologie d'un VDB (feuilles, nœuds internes et tuiles actives) pour voir quelles régions sont réellement activées."
+}

@@ -1,0 +1,31 @@
+# average
+
+- Label: Layer Merge
+- Category: Copernicus (`Cop`), Houdini 22.0.368
+- Inputs: 0 to 2048
+- Parameters: 7 (exact, read from Houdini by hython)
+- Used by the height graph: no
+
+## Feature summary (web, SideFX reference)
+
+- Source: https://www.sidefx.com/docs/houdini/nodes/cop/average.html
+- Summary (EN): Combines all connected inputs into one output, processing each channel separately. The combination is set by the Operation parameter (Add, Average, Multiply, Min, Max, Over, Clip by Data Window, Crop to Content). The page title is Layer Merge; the file and internal name are average, and Average is only one Operation option.
+- Résumé (FR) : Fusionne toutes les entrées connectées en une seule sortie, canal par canal, selon l'opération choisie (Add, Average, Multiply, Min, Max, Over, etc.).
+
+- Inputs meaning: ["source: one or more layers, VDBs or attributes; all connected inputs are merged"]
+
+- Key parameters: ["Signature: layer type accepted", "Space: Image, Texture, Pixel or World, controlling how pixels are matched", "Border: Auto uses the input's own border property", "Filter: sampling method", "Operation: Add, Average, Multiply, Min, Max, Over, Clip by Data Window, Crop to Content"]
+
+- Caveats: ["The UI label is Layer Merge; the internal name is average", "All inputs must share the same Signature; mismatched inputs are converted by channel extension rules", "With Border Auto and a Constant border on an input, the Clip border behavior is used instead", "Clip by Data Window produces sharp, hard-edged clipping", "With Over, non-RGBA layers simply copy the pixels of the final layer"]
+
+## Parameters (exact, from the installed Houdini)
+
+| parameter | label | type | default | range | menu tokens |
+|---|---|---|---|---|---|
+| `signature` | Signature | String | ["auto"] |  |  |
+| `space` | Space | Menu | 0 |  | image, texture, pixel, world |
+| `border` | Border | Menu | 0 |  | auto, constant, clamp, mirror, wrap, clip |
+| `filter` | Filter | Menu | 2 |  | point, bilinear, box, triangle, cubic, mitchell, bspline |
+| `operation` | Operation | Menu | 1 |  | add, average, multiply, min, max, over |
+| `clipbydata` | Clip by Data Window | Toggle | false |  |  |
+| `crop` | Crop to Content | Toggle | false |  |  |

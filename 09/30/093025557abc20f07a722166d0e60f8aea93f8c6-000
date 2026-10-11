@@ -1,0 +1,18 @@
+{
+  "name": "pyro_packedmipmap",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/pyro_packedmipmap.html",
+  "status": "ok",
+  "summary_en": "Builds an in-place mipmap of a VDB: several half-resolution copies of the same VDB packed so many levels fit in roughly the original storage. A technical node meant to be computed once and sampled by other nodes, not an end-user effect.",
+  "inputs": [
+    "source: Float or Vector VDB to compute the mipmap for"
+  ],
+  "key_parameters": [
+    "Signature: sets which VDB types the node accepts (see the Signatures glossary entry on the page)",
+    "MipMap Depth: number of resolution levels stored, each half the resolution of the previous; most nodes use the first three levels; maximum 10"
+  ],
+  "caveats": [
+    "The output is not a valid VDB and must not be used as one; it is a mipmap container with the input topology but values encoding several resolutions",
+    "Requires DOP-level permissions; not in Houdini Core, works in Houdini FX, Apprentice, Indie and Education"
+  ],
+  "resume_fr": "Pyro Packed MipMap construit un conteneur multi-résolution d'un VDB, réutilisable par les autres nœuds Pyro, et non un VDB exploitable directement."
+}

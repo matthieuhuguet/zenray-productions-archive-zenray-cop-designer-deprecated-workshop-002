@@ -1,0 +1,21 @@
+{
+  "name": "vectorxform2d",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/vectorxform2d.html",
+  "status": "ok",
+  "summary_en": "Transforms the values of a UV layer or attribute in 2D space. Each value is treated as an XY location, transformed, and written back as the new values. Output: the transformed layer.",
+  "inputs": [
+    "source: the UV layer or attribute whose pixel values define the XY locations",
+    "mask (optional): per-pixel mask scaled by the Mask parameter"
+  ],
+  "key_parameters": [
+    "Mask: how much of the new value is blended with the original (default 1 uses only the new value)",
+    "Order: sequence in which translate, rotate and scale are applied",
+    "Translate, Rotate (degrees about the pivot), Scale (non-uniform), Shear (XY), Uniform Scale",
+    "Pivot: pivot point for rotations and scales, in the value's coordinates",
+    "Invert Transformation: inverts the computed transform before it is applied"
+  ],
+  "caveats": [
+    "The node does not move pixels; each pixel operates in place"
+  ],
+  "resume_fr": "Transforme en 2D les valeurs XY d'une couche UV, sans déplacer les pixels."
+}

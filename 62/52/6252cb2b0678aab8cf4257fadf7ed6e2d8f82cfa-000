@@ -1,0 +1,22 @@
+{
+  "name": "vdbactivatefrompoints",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/vdbactivatefrompoints.html",
+  "status": "ok",
+  "summary_en": "Turns on the leaves of a VDB that contain points from one or more point clouds. The reference VDB sets the original size and origin of the result.",
+  "inputs": [
+    "refvdb: reference VDB; its origin and voxel size are the starting point",
+    "activate_pts1: one or more geometry inputs; any leaf containing one of their points is activated"
+  ],
+  "key_parameters": [
+    "Leaf Dilation: expands the active region by a fixed number of leaves",
+    "Leaf Dilation Dist: expands the active region by a world-space distance rounded to the nearest leaf; the larger of this and Leaf Dilation is used",
+    "Voxel Scale: scales the reference voxel size to produce a higher or lower resolution VDB",
+    "Sort Leaves: makes leaf processing order repeatable, at extra time cost",
+    "Clip Min X/Y/Z and Clip Max X/Y/Z: deactivate leaves whose world positions fall outside the bounds"
+  ],
+  "caveats": [
+    "Leaf order is non-deterministic by default; enable Sort Leaves if the algorithm depends on processing order",
+    "Reads optional point attributes: integer invalid (non-zero means the point is ignored) and integer dilation (packs per-direction dilation hints)"
+  ],
+  "resume_fr": "Active les feuilles d'un VDB qui contiennent des points de nuages de points, en gardant la taille et l'origine du VDB de référence."
+}

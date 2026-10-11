@@ -1,0 +1,20 @@
+{
+  "name": "testgeometry_squab",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/testgeometry_squab.html",
+  "status": "ok",
+  "summary_en": "Generates a procedurally built test model, called a squab, for prototyping and experimenting with effects. The page presents it as a more realistic alternative to a basic torus, with several components, holes and imperfect geometry.",
+  "inputs": [],
+  "key_parameters": [
+    {"name": "Signature", "meaning": "Sets whether the output is polygon geometry or a VDB signed distance field (SDF)."},
+    {"name": "Voxel Size", "meaning": "Voxel size for SDF output."},
+    {"name": "Translate", "meaning": "Positions the centre of the geometry."},
+    {"name": "Rotate", "meaning": "Rotates the geometry about its centre."},
+    {"name": "Uniform Scale", "meaning": "Scales the geometry evenly on all axes."},
+    {"name": "Add Shader", "meaning": "Attaches a default shader with embedded texture maps for rendering."}
+  ],
+  "caveats": [
+    "Smaller voxel sizes represent the geometry more accurately but increase time and memory cost.",
+    "The page lists outputs geo and basecolor, with no further technical limitations given."
+  ],
+  "resume_fr": "Ce nœud produit un modèle de test construit procéduralement, le squab, pour prototyper et tester des effets, avec des composants multiples, des trous et une géométrie imparfaite."
+}

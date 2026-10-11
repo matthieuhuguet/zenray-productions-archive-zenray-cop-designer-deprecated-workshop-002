@@ -1,0 +1,22 @@
+{
+  "name": "polartouv",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/polartouv.html",
+  "status": "ok",
+  "date": "11 October 2026",
+  "summary_en": "The Polar To UV node converts polar coordinates (distance and angle from an origin) into Cartesian coordinates, output as a uv layer or attribute. It recalculates each pixel's value in place and does not relocate pixels by itself.",
+  "inputs": [
+    "angle (optional): layer or attribute setting how far around the origin each point rotates",
+    "length (optional): layer or attribute setting each point's distance from the origin"
+  ],
+  "key_parameters": [
+    "Signature: layer type accepted by the source",
+    "Angle Units: Radians (unit circle), Degrees or Circles (0 to 1, where a full turn is 1)",
+    "Angle: fallback angle when no angle input is wired",
+    "Length: fallback distance from the origin when no length input is wired",
+    "Output: uv, the Cartesian coordinates"
+  ],
+  "caveats": [
+    "Does not move pixels by itself. To relocate pixels, chain UV Map COP, then Polar to UV COP, then UV Sample COP."
+  ],
+  "resume_fr": "Le nœud Polar To UV convertit des coordonnées polaires en coordonnées UV cartésiennes, sans déplacer les pixels : il faut le chaîner avec UV Map et UV Sample."
+}

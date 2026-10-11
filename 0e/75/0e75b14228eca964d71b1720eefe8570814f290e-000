@@ -1,0 +1,48 @@
+{
+  "name": "previewmaterial",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/previewmaterial.html",
+  "status": "ok",
+  "date": "11 October 2026",
+  "summary_en": "The Preview Material node applies a standard preview material to incoming geometry so you can see how a material looks. With no geometry connected it creates a built-in proxy shape, and textures wired into its inputs override the material's layers.",
+  "inputs": [
+    "geo (optional; a proxy is used if unwired)",
+    "basecolor",
+    "metalness",
+    "specular",
+    "spec_color",
+    "roughness",
+    "coat",
+    "coat_color",
+    "coat_roughness",
+    "sheen",
+    "sheen_color",
+    "sheen_roughness",
+    "emission",
+    "emission_color",
+    "opacity",
+    "normal",
+    "height",
+    "transmission",
+    "transmission_color",
+    "sss_amount",
+    "sss_color",
+    "sss_radius"
+  ],
+  "key_parameters": [
+    "Signature: Geometry input, or a grid (Metadata) matching the input size and orientation",
+    "UDIM List: tiles cooked for preview: Use Context, Explicit, Automatic or Disabled",
+    "Geometry: proxy shape when no geo is wired: Grid, Sphere, Box, Tube, Torus or Shader Ball",
+    "Translate / Rotate / Scale / UV Scale / Divisions: proxy placement, UV tiling and refinement",
+    "Default Color and Tint With Cd: base colour when basecolor is unwired, optionally tinted by Cd",
+    "Default and scale parameters (Metalness, Specular, Roughness, Coat, Sheen, Emission, Opacity): fallback values and scaling of incoming layers",
+    "Normal Map Scale and Height Scale: normal and displacement strength; Height Scale is often needed because height maps range 0 to 1",
+    "Index of Refraction: specular and transmission calculations"
+  ],
+  "caveats": [
+    "The geometry needs a uv attribute and ideally MikkT tangents, otherwise normal maps may display incorrectly.",
+    "Transmission and subsurface parameters apply to Karma only.",
+    "The USD parameters (Base Asset Path, Base Primitive Path) are for Solaris and not meant for artistic adjustment.",
+    "The page does not state the internal name cop previewmaterial; the match rests on the page title and file name."
+  ],
+  "resume_fr": "Le nœud Preview Material applique un matériau d'aperçu standard à une géométrie, avec un proxy intégré si rien n'est branché, et ses entrées remplacent les couches du matériau."
+}

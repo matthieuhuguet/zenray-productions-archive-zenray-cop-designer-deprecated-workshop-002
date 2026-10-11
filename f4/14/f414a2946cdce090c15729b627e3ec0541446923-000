@@ -1,0 +1,20 @@
+{
+  "name": "prefixsumcore",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/prefixsumcore.html",
+  "status": "ok",
+  "date": "11 October 2026",
+  "summary_en": "The Prefix Sum Core node computes a prefix sum by scanning the buffer of an input layer. Besides addition, it can produce running minimums, maximums, or counts of non-zero elements.",
+  "inputs": [
+    "source: original layer to compute the prefix sum from"
+  ],
+  "key_parameters": [
+    "Signature: layer type accepted by the source",
+    "Operation: Add, Minimum, Maximum or Count Non-Zero",
+    "Inclusive: when on, each prefix includes the current element; when off, the first element becomes the identity value of the operation"
+  ],
+  "caveats": [
+    "The node type is hidden and no longer supported; do not use it in new work.",
+    "The Copernicus index lists a separate Prefix Sum node, which this page does not cover."
+  ],
+  "resume_fr": "Le nœud Prefix Sum Core est un ancien nœud de préfixe masqué et non supporté, à ne pas utiliser dans un nouveau travail."
+}

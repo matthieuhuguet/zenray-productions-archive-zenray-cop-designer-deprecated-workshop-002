@@ -1,0 +1,33 @@
+{
+  "name": "pyro_buoyancy::2.0",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/pyro_buoyancy.html",
+  "status": "ok",
+  "fetched_on": "11 October 2026",
+  "summary_en": "Pyro Buoyancy Force applies a buoyancy force to a velocity VDB. Hot gas rises and cooler gas sinks, based on each voxel temperature relative to an ambient reference and to the gravity scale.",
+  "inputs": [
+    "v: Vector VDB with the original velocities",
+    "temperature: Float VDB of temperature values",
+    "temperature (equilibrium): Float VDB of equilibrium values",
+    "direction: Vector VDB for per-voxel up direction",
+    "threshold: Float or Vector VDB used as a threshold mask",
+    "control: Float or Vector VDB used as a control mask",
+    "angledir: Vector VDB for per-voxel angle mask direction"
+  ],
+  "key_parameters": [
+    "Activation: turns the node on or off",
+    "Operation: Set replaces velocities with the force, Add adds the force to them",
+    "Buoyancy Scale: global strength",
+    "Ambient Temp (K) / Reference Temp (K): temperature range that sets force strength",
+    "Equilibrium Temp: temperature above or below which gas rises or falls",
+    "Gravity Acceleration: scales buoyancy strength",
+    "Direction: direction hotter gas is pushed",
+    "Threshold, Control, Angle and Axis masks: volume or direction, range, optional ramp limiting where the force applies"
+  ],
+  "caveats": [
+    "Set mode is meant for debugging and the page warns it breaks the simulation",
+    "Equilibrium Temp is usually left at zero so empty regions are unaffected",
+    "Vector VDBs used for threshold or control masks are read by their length",
+    "Requires DOP-level permissions, not available in Houdini Core"
+  ],
+  "resume_fr": "Pyro Buoyancy Force applique une force de flottabilité à un VDB de vitesse : le gaz chaud monte et le gaz froid descend, selon la température de chaque voxel par rapport à une référence ambiante et à l'échelle de gravité. Le mode Set sert au débogage et casse la simulation. Requiert les permissions DOP."
+}

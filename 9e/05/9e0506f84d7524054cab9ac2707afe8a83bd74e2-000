@@ -1,0 +1,26 @@
+{
+  "name": "pyro_sourcefrompoints",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/pyro_sourcefrompoints.html",
+  "status": "ok",
+  "summary_en": "Adds values to a Float VDB by treating each input point as a sphere that updates the voxels it overlaps. With no geometry connected, it creates a single source from its own parameters. Available since Houdini 21.0.",
+  "inputs": [
+    "source: Float VDB to modify",
+    "points (optional): geometry whose points act as sphere sources"
+  ],
+  "key_parameters": [
+    "Method: how point values combine with the existing VDB (Set, Add, Minimum, Maximum)",
+    "Radius: sphere size, scaled per point by pscale",
+    "Center: source location when no geometry is connected",
+    "Scale by Timestep: makes Add mode add the same total amount per second, even with substepping",
+    "Amount: point density, scaled by the density attribute",
+    "Falloff: ramp controlling how the value fades from the point centre to its radius",
+    "Noise (Enable, Scale, Element Size, Element Scale, Offset, Pulse): modulates the value with noise",
+    "Distortion (Enable, Scale, Element Size, Element Scale, Offset, Pulse): warps the sphere shape with noise"
+  ],
+  "caveats": [
+    "Does not activate voxels, so sources outside already-active areas have no effect",
+    "Every point is evaluated against every voxel, so high point counts can be slow",
+    "Requires DOP-level permissions; not in Houdini Core, included in Houdini FX, Apprentice, Indie and Education"
+  ],
+  "resume_fr": "Pyro Source from Points ajoute des valeurs à un VDB en traitant chaque point comme une sphère qui met à jour les voxels qu'elle recouvre."
+}

@@ -1,0 +1,18 @@
+{
+  "name": "udimpack",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/udimpack.html",
+  "status": "ok",
+  "summary_en": "Takes one input and samples it at several UDIM tiles, packaging the samples into a cable, a Copernicus data type that carries multiple layers. Added in Houdini 22.0.",
+  "inputs": [
+    "Single input: the source sampled at each UDIM tile. The node has no input ordering."
+  ],
+  "key_parameters": [
+    {"name": "UDIMs", "meaning": "List of UDIM tiles to sample, comma-separated, with hyphens for ranges. If this list is not enabled, the node uses the default UDIM list from the COP Network."},
+    {"name": "Add UDIM As", "meaning": "Adds the UDIM number to the output name as a Prefix or a Suffix."}
+  ],
+  "caveats": [
+    "The page does not describe how UDIM numbers are formatted in the names, how the input is sampled at each tile, or how invalid or out-of-range entries are handled.",
+    "Time Pack is listed as a related node. It works similarly, but across times instead of UDIM tiles."
+  ],
+  "resume_fr": "Ce nœud échantillonne son entrée sur plusieurs tuiles UDIM et regroupe les résultats dans un câble, nœud disponible depuis Houdini 22.0."
+}

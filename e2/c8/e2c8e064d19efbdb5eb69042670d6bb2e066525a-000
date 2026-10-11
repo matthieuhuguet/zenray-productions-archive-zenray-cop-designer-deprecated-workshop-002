@@ -1,0 +1,17 @@
+{
+  "name": "vdbleafpoints",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/vdbleafpoints.html",
+  "status": "ok",
+  "summary_en": "Creates one point for each active leaf of an incoming VDB, where a leaf is an 8x8x8 block of voxels. The points map one-to-one to the VDB topology and can feed geometry-based operations.",
+  "inputs": [
+    "vdb: the VDB whose active leaves each generate a point"
+  ],
+  "key_parameters": [
+    "Set Positions: sets each point's P to the centre voxel of its leaf",
+    "Point Attributes: adds extra attributes for later OpenCL nodes. Name; Class (only Detail and Point apply to points); Type (integer or float); Tuple Size"
+  ],
+  "caveats": [
+    "Leaf order within a VDB is not deterministic, so the order of output points should not be relied upon"
+  ],
+  "resume_fr": "Crée un point par feuille active d'un VDB (bloc de 8 × 8 × 8 voxels), ce qui permet d'utiliser la topologie dans des opérations géométriques."
+}

@@ -1,0 +1,28 @@
+{
+  "name": "quantize",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/quantize.html",
+  "status": "ok",
+  "summary_en": "Quantize snaps input values to a set of discrete levels, reducing the number of colour levels in an image for a posterized look. Its documented input is a single source layer, and a Mask parameter blends the result with the original.",
+  "inputs": [
+    "source: layer to quantize; the Signature parameter sets the layer type it accepts"
+  ],
+  "key_parameters": [
+    "Signature: layer type accepted by source",
+    "Mask: blend between the quantized and original values; default 1 uses only the new value",
+    "Method: Width and Offset, or Number of Segments",
+    "Width: spacing between levels as a fraction of the 0 to 1 range; 0.1 gives 11 levels",
+    "Offset: shifts where the quantization levels fall",
+    "Segments: number of levels when using Number of Segments; 3 gives 0, 0.5 and 1",
+    "Minimum Value / Maximum Value: the range divided into segments",
+    "Compute Range: fills Minimum and Maximum from the source layer's actual values",
+    "Rounding: Floor, Closest, Ceiling or Custom",
+    "Rounding Threshold: cutoff between the two nearest levels, used only with Custom; 0, 0.5 and 1 behave like Floor, Closest and Ceiling",
+    "Clamp Below / Clamp Above: clamp input values to Minimum or Maximum before quantizing"
+  ],
+  "caveats": [
+    "Width/Offset and Segments/Minimum/Maximum apply under different Method settings, so only the relevant fields matter for a given setup.",
+    "Rounding Threshold has no effect unless Rounding is set to Custom.",
+    "The page does not say how multichannel or non-layer data is handled beyond the Signature setting, and gives no performance details."
+  ],
+  "resume_fr": "Ce nœud ramène les valeurs d'un calque à un nombre limité de paliers, ce qui produit un effet posterisé."
+}

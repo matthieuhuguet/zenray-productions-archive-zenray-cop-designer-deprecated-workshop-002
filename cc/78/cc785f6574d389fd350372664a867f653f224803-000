@@ -1,0 +1,30 @@
+{
+  "name": "pyro_axisforce",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/pyro_axisforce.html",
+  "status": "ok",
+  "summary_en": "Applies forces around a line segment to a velocity VDB. Forces can pull velocities toward or push them away from the axis (suction), drive them along the axis (axis force), or make them spin around it (orbit). Outputs v (updated Vector VDB) and div (Float VDB driving the suction force).",
+  "inputs": [
+    "v: Vector VDB with the initial velocities",
+    "mask: Float VDB controlling where the force is applied"
+  ],
+  "key_parameters": [
+    "Start / End: endpoints of the line segment defining the axis",
+    "Influence Distance: radius of the cylindrical region where forces act",
+    "Global Strength: multiplier on all force components",
+    "Operation: Directional Drag and Full Drag steer velocities toward a goal without overshoot; Force adds to the velocity field",
+    "Scale by Timestep: keeps the force consistent when substepping",
+    "Suction Force (Strength): positive pulls toward the axis, negative pushes outward, 0 disables",
+    "Pump Thickness: tube thickness where divergence is set",
+    "Axis Force (Speed Range, Strength): goal speed along the axis and its strength",
+    "Orbit (Speed Range, Speed Falloff, Strength): rotational speed around the axis, falloff with distance, strength",
+    "Mask Range / Remap Mask / Mask Ramp: remap and optionally reshape mask values"
+  ],
+  "caveats": [
+    "Suction does not modify v directly; it works through div, which must be wired to the divergence input of a Pyro Block End COP",
+    "Force mode is additive and unbounded, so it can produce very high velocities",
+    "Pump Thickness should be larger than the simulation voxel size to avoid aliasing",
+    "Requires DOP-level permissions; available in Houdini FX, Apprentice, Indie and Education, not Houdini Core",
+    "Added in Houdini 21.0"
+  ],
+  "resume_fr": "Pyro Axis Force applique aspiration, entraînement et rotation autour d'un segment de ligne sur un champ de vitesses VDB."
+}

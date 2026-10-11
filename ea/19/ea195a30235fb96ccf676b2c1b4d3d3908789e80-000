@@ -1,0 +1,29 @@
+# attribinsert
+
+- Label: Attribute Insert
+- Category: Copernicus (`Cop`), Houdini 22.0.368
+- Inputs: 0 to 2048
+- Parameters: 5 (exact, read from Houdini by hython)
+- Used by the height graph: no
+
+## Feature summary (web, SideFX reference)
+
+- Source: https://www.sidefx.com/docs/houdini/nodes/cop/attribinsert.html
+- Summary (EN): Adds a detached attribute to a geometry, so values computed outside the geometry can be written back into it.
+- Résumé (FR) : Réinjecte un attribut détaché dans une géométrie, à condition que sa longueur corresponde au nombre d'éléments de la classe choisie.
+
+- Inputs meaning: ["geometry: geometry that receives the attribute", "input2: attribute to insert"]
+
+- Key parameters: ["Class: geometry class to insert into; the attribute length must match its element count", "Attribute Name: name the attribute gets after insertion", "Input Type: defaults to the type of the incoming wire, or can be set explicitly (for example promote Float to Vector)", "Do Nothing If Unwired: passes the geometry through instead of raising an error"]
+
+- Caveats: ["The attribute length must match the element count of the chosen class", "An existing attribute with the same name is replaced", "An unconnected attribute input errors unless Do Nothing If Unwired is enabled", "Single output: the modified geometry", "Introduced in Houdini 22.0"]
+
+## Parameters (exact, from the installed Houdini)
+
+| parameter | label | type | default | range | menu tokens |
+|---|---|---|---|---|---|
+| `numattribs` | Inputs | Folder | 1 |  |  |
+| `class1` | Class | Menu | 0 |  | input, detail, primitive, point, vertex |
+| `attrib1` | Attribute Name | String | [""] |  |  |
+| `type1` | Input Type | Menu | 0 |  | input, aint, afloat, avector2, avector3, avector4 |
+| `optional1` | Do Nothing If Unwired | Toggle | false |  |  |

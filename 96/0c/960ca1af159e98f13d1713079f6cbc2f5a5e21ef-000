@@ -1,0 +1,16 @@
+{
+  "name": "sopnet",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/sopnet.html",
+  "status": "missing",
+  "fetched_on": "11 October 2026",
+  "summary_en": "",
+  "inputs": [],
+  "key_parameters": [],
+  "caveats": [
+    "HTTP 404 Not Found a https://www.sidefx.com/docs/houdini/nodes/cop/sopnet.html, aucune description retenue",
+    "Absent de l'index des noeuds COP (https://www.sidefx.com/docs/houdini/nodes/cop/index.html), qui ne cite aucun des douze noms de cette passe",
+    "Controle: cop/blur.html repond bien (page Blur Copernicus node), le schema d'URL est donc valide",
+    "Nom de conteneur de reseau propre a un autre contexte selon la convention Houdini, non verifie dans cette passe"
+  ],
+  "resume_fr": "Page introuvable (HTTP 404) a cette URL du contexte cop. Ce nom designe un reseau SOP, hors contexte COP et non un noeud Copernicus : a retirer de la liste COP ou a documenter dans son contexte d'origine. Aucune description retenue."
+}

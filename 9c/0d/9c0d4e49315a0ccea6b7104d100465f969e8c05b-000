@@ -1,0 +1,26 @@
+{
+  "name": "rasterizegeo",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/rasterizegeo.html",
+  "status": "ok",
+  "summary_en": "Rasterize Geometry rasterizes polygon geometry onto a layer and can also rasterize geometry attributes such as alpha, position, normals, UVs and depth. The page does not show its file name; the Copernicus node index lists Rasterize Geometry as rasterizegeo.html, so the identity is strong but inferred.",
+  "inputs": [
+    "camera_ref: optional camera metadata, typically from a Camera Import node; without it the node uses the COPnet resolution, sits at the origin and looks down the negative Z axis",
+    "geometry: polygon geometry to rasterize, usually from a SOP Import COP"
+  ],
+  "key_parameters": [
+    "Quick Setups: one-click Alpha, Position, Normal, UV or Depth from Eye attributes, or move output layers to canonical space",
+    "Border: sampling outside the layer boundaries, defaults to the layer border property",
+    "Depth Mode: rasterize data from the minimum or maximum depth sample",
+    "Face Culling: No Culling, Backface or Frontface",
+    "Number of Attributes: Output Type, Name (special tokens intrinsic:alpha, intrinsic:depth_ndc and intrinsic:depth_eye generate layers), Optional flag falling back to a layer defined by size_ref, and Default Value"
+  ],
+  "caveats": [
+    "The geometry must be polygons. Packed geometry and volumes are not supported.",
+    "Attributes must be an integer, or a float with 4 or fewer components, to be rasterized.",
+    "The Normal and UV quick setups require those attributes to exist on the input geometry.",
+    "With camera_ref connected, the layer is generated at the camera focus plane; the page suggests Match Camera to move it back to the origin.",
+    "The Optional fallback refers to a size_ref input that the page does not list among the node's inputs.",
+    "The Rasterize Setup COP can change the space in which rasterization happens, such as UV space."
+  ],
+  "resume_fr": "Ce nœud rastérise de la géométrie polygonale sur un calque et peut transporter ses attributs, comme l'alpha, les normales ou les UV."
+}

@@ -1,0 +1,30 @@
+# autostereogram
+
+- Label: Auto Stereogram
+- Category: Copernicus (`Cop`), Houdini 22.0.368
+- Inputs: 0 to 2
+- Parameters: 6 (exact, read from Houdini by hython)
+- Used by the height graph: no
+
+## Feature summary (web, SideFX reference)
+
+- Source: https://www.sidefx.com/docs/houdini/nodes/cop/autostereogram.html
+- Summary (EN): Creates a flat image that shows a 3D illusion when the viewer looks past its surface. It samples a repeating texture and warps the sampling coordinates according to a depth image.
+- Résumé (FR) : Produit une image stéréogramme qui cache une illusion de relief, en déformant l'échantillonnage d'une texture selon une carte de profondeur.
+
+- Inputs meaning: ["source: pattern sampled to form the stereogram", "depth: depth image; larger values make that area appear more raised"]
+
+- Key parameters: ["Scale: sampling frequency of the source; higher values repeat the texture more often", "Depth Range: clamps depth values so results stay stable", "Border: sampling beyond the input edges; defaults to the layer border property", "Re-Center: when on, distortion spreads outward from the center; when off, it applies left to right"]
+
+- Caveats: ["Depth values must be positive", "A Remap COP placed before the node can bring depth values into a usable range", "Use Mirror for textures that do not tile naturally, and Wrap for textures that do", "A Scale that is too high can produce noise that cannot be resolved"]
+
+## Parameters (exact, from the installed Houdini)
+
+| parameter | label | type | default | range | menu tokens |
+|---|---|---|---|---|---|
+| `scalex` | Scale | Float | 8.0 | 0.0 .. 1.0 (strict) |  |
+| `scaley` | Scale | Float | 8.0 | 0.0 .. 1.0 (strict) |  |
+| `depthrangex` | Depth Range | Float | 0.4 | 0.1 .. 1.0 (strict) |  |
+| `depthrangey` | Depth Range | Float | 0.8 | 0.1 .. 1.0 (strict) |  |
+| `border` | Border | Menu | 0 |  | mirror, wrap |
+| `recenter` | Re-Center | Toggle | true |  |  |

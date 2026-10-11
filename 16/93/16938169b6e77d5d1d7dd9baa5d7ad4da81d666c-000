@@ -1,0 +1,23 @@
+{
+  "name": "testgeometry_pighead",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/testgeometry_pighead.html",
+  "status": "ok",
+  "summary_en": "Test Geometry: Pig Head generates a pig head model as test geometry. It gives a textured, multi-part mesh to experiment with, more representative of production shapes than a simple torus.",
+  "inputs": [
+    "None documented: the node works as a standalone generator"
+  ],
+  "key_parameters": [
+    "Signature: polygons or VDB signed distance field (SDF)",
+    "Voxel Size: voxel resolution for SDF output, smaller is more accurate but costs more time and memory",
+    "Translate: position of the geometry centre",
+    "Rotate: rotation about the centre",
+    "Uniform Scale: even scale on all axes",
+    "Add Shader: default shader with embedded texture maps",
+    "Outputs: geo (surface or SDF), basecolor (RGB diffuse), specular (mono), sss_amount (mono), sss_color (RGB)"
+  ],
+  "caveats": [
+    "Voxel Size trades accuracy against cost, very small voxels can be slow and memory-heavy",
+    "Identity matched from the file name and the Copernicus index listing, the page body does not state the internal name"
+  ],
+  "resume_fr": "Test Geometry: Pig Head génère une tête de cochon texturée, maillage multi-pièces, utilisable comme géométrie de test."
+}

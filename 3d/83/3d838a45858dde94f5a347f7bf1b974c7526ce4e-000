@@ -1,0 +1,45 @@
+{
+  "name": "pyro_block_end",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/pyro_block_end.html",
+  "status": "ok",
+  "summary_en": "Closes a Pyro simulation block as the counterpart of Pyro Block Begin. Feeds the simulated fields and forces back into the loop and outputs updated density, temperature, velocity and flame. Carries the source, dissipation, cooling, diffusion, buoyancy, force, advection, pressure projection and output controls.",
+  "inputs": [
+    "density: Float VDB of current densities, fed back",
+    "temperature: Float VDB of current temperatures, fed back",
+    "v: Vector VDB of current velocities, projected to non-divergent values and fed back",
+    "flame: Float VDB of current flames, fed back",
+    "divergence (optional): Float VDB giving a goal divergence",
+    "collision (optional): Float VDB signed distance field of a collider",
+    "collisionv (optional): Vector VDB of collider velocities in world space",
+    "feedback: cable of feedback data; must match the structure set on Pyro Block Begin",
+    "passthrough: cable of passthrough data; must match the structure set on Pyro Block Begin"
+  ],
+  "key_parameters": [
+    "Reset Simulation: clears the entire simulation cache",
+    "Start Frame: playbar frame where the simulation starts",
+    "Live Simulation: interactive, non-deterministic mode running independent of the playbar, not cached",
+    "Sparse Simulation / Voxel Size: limit calculations to where fluid exists; voxel size in world units",
+    "Cache, Cached Frames, Checkpoint Rate: frame retention and checkpoint frequency for scrubbing",
+    "Clip by Bounds and Bounding Box (Center, Size): limit how far fluid can extend",
+    "Enable Collision, Velocity Scale, Correct Collisions: collision handling",
+    "Source Density / Temperature / Velocity / Flame / Divergence: Activation, Source Mode (Continuous, First Frame Only, Copy on First Frame), Operation (Add, Copy, Maximum, Average, Blend, Pull, Scale), Scale by Timestep",
+    "Dissipation (density), Cooling (temperature and flame), Diffusion: decay and smoothing of fields, with optional control masks",
+    "Advection Reflection: re-injects energy lost during pressure projection to retain vortices",
+    "Emit Density / Temperature / Expansion: use the flame field to add density, temperature or divergence",
+    "Buoyancy: Buoyancy Scale, Ambient and Reference Temp (K), Equilibrium Temp, Gravity Acceleration, Direction",
+    "Turbulence, Disturbance, Viscosity, Vortex Confinement, Ambient Velocity, Velocity Scale: forces shaping the motion",
+    "Trace Method and Scheme (Advection): integration and advection accuracy",
+    "Iterations (Pressure Projection): repeats of the projection step, affecting accuracy and collision reliability",
+    "Output (Correct by Time Scale, Correct by Ambient Velocity): output velocity adjustment for motion blur"
+  ],
+  "caveats": [
+    "Requires DOP-level permissions; not in Houdini Core, only in Houdini FX, Apprentice, Indie and Education",
+    "Compiled COP networks do not support simulation",
+    "Live Simulation does not save results; use a Stash COP to keep output",
+    "Without Sparse Simulation, a bounds_geo input must be provided",
+    "Uncached simulations recook from the start frame whenever a new frame is requested",
+    "Must be paired with a Pyro Block Begin COP; feedback and passthrough cable structures must match",
+    "The page text is longer than what was read; the last 25130 characters were not read, so this list may be incomplete"
+  ],
+  "resume_fr": "Pyro Block End referme un bloc de simulation Pyro, renvoie les champs simulés dans la boucle et sort densité, température, vitesse et flamme mises à jour."
+}

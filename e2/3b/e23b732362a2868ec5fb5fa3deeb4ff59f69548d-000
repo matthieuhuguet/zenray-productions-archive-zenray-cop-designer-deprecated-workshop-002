@@ -1,0 +1,22 @@
+{
+  "name": "timepack",
+  "url": "https://www.sidefx.com/docs/houdini/nodes/cop/timepack.html",
+  "status": "ok",
+  "summary_en": "Takes one input and samples it at several points in time, gathering those samples into a single cable. The page describes it as combining its input at multiple times into a cable. Available since Houdini 22.0.",
+  "inputs": [
+    "Single input: the layer or source to sample over time."
+  ],
+  "key_parameters": [
+    {"name": "Mode", "meaning": "Relative uses a window around the requested frame. Absolute sets a start and end directly."},
+    {"name": "Method", "meaning": "Sets how sample times are specified. Only By Frame is documented."},
+    {"name": "Range", "meaning": "Span of time to sample, in frames or seconds, for relative or absolute mode."},
+    {"name": "Step", "meaning": "Interval between samples, in frames or seconds."},
+    {"name": "Add Time As", "meaning": "Adds the sample time to each wire name as a Prefix or a Suffix."}
+  ],
+  "caveats": [
+    "Default values and the ordering of wires in the cable are not described.",
+    "Several parameters have frame and second variants, and relative and absolute variants, whose interaction is not explained.",
+    "Time Shift is listed as a related node, but the page does not explain how the two differ."
+  ],
+  "resume_fr": "Ce nœud échantillonne son entrée à plusieurs instants et regroupe ces échantillons dans un seul câble, utile pour travailler sur une fenêtre de temps."
+}
